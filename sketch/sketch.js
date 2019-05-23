@@ -4,10 +4,10 @@ let sketches;
 function preload() {
   sketches = [];
   spacer = 25;
-  mS = (windowWidth-windowHeight)/2-spacer;
+  mS = (1980-1270)/2-spacer;
   
-  mW = windowWidth-mS;
-  mH = windowHeight-mS;
+  mW = 1980-mS;
+  mH = 1270-mS;
 }
 function setup() {
 //set mainc
