@@ -40,7 +40,7 @@ function windowResized() {
 //  resizeCanvas(windowWidth,windowHeight);
   mW = windowWidth-mS;
   mH = windowHeight-mS;
-  createDiv("").id("main_frame")
+  createDiv("").id("main_frame").parent("content")
     .style("width", ""+mW+"")
     .style("height", ""+mH+"");
 }
