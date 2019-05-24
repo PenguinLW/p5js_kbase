@@ -49,7 +49,7 @@ function windowResized() {
 //  resizeCanvas(windowWidth,windowHeight);
   mW = windowWidth-mS;
   mH = windowHeight-mS;
-  content[0]
+  contents[0]
     .style("width", ""+mW+"")
     .style("height", ""+mH+"");
 }
