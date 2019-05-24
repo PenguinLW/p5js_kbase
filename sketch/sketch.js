@@ -81,7 +81,10 @@ function initWL() {
             "https://discourse.processing.org/t/trying-to-play-one-random-video-after-another-in-one-screen/11418/5\n"+
             "https://github.com/processing/p5.js/issues/1373\n"+
             "https://eparraaravena.github.io/clase-p5-1/referencias.html\n"+
-            "https://pages.github.com/"+
+            "https://pages.github.com/\n"+
+            "https://www.w3schools.com/howto/howto_css_center_website.asp\n"+
+            "https://github.com/processing/p5.js/wiki/Positioning-your-canvas\n"+
+            "https://github.com/processing/p5.js/issues/879\n"+
             "";
         wlinks = wlinks.split("\n");
         for(let i = 0; i <= wlinks.length-1; i++) {
