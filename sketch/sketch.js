@@ -96,7 +96,7 @@ function initWL() {
             "https://p5js.org/reference/#/p5.Element/parent\n"+
             "";
         links = links.split("\n");
-        for(let i = 0; i <= links.length-20-1; i++) {
+        for(let i = 0; i <= 14-1; i++) {
           wlinks += "../resources/"+(i+1)+".jpg\n";
         }
         alert(wlinks);
