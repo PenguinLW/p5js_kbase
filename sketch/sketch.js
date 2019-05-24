@@ -17,7 +17,7 @@ function setup() {
   sketches.push(initWL());
   sketches.push(initMV());
 //set mainc
-  contents.push(createElement("body"));
+  contents.push($("body"));
   contents[contents.length-1].id("content")
     .style("width", ""+windowWidth+"")
     .style("height", ""+windowHeight+"")
