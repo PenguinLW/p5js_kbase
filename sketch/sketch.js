@@ -18,12 +18,14 @@ function setup() {
   sketches.push(initMV());
 //set mainc
   contents.push($("body"));
-  contents[contents.length-1].id("content")
-    .style("width", ""+windowWidth+"")
-    .style("height", ""+windowHeight+"")
-    .style("display", "flex")
-    .style("justify-content", "center")
-    .style("align-items", "center");
+  contents[contents.length-1].css({
+    "id":"content",
+    "width":""+windowWidth+"",
+    "height":""+windowHeight+"",
+    "display":"flex",
+    "justify-content":"center",
+    "align-items":"center"
+  });
   contents.push(createDiv(""));
   contents[contents.length-1].id("main_view").parent("content")
     .style("width", ""+mW+"")
