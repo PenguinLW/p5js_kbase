@@ -15,7 +15,8 @@ function setup() {
   createDiv("").id("main_frame")
     .style("width", ""+mW+"")
     .style("height", ""+mH+"")
-    .style("margin", "auto")
+    .style("display", "flex")
+    .style("justify-content", "center")
     .style("align-items", "center");
   createDiv("").id("wiki_links").position(0,0).parent("main_frame");
   wlinks = new p5(sketches[0],"wiki_links");
