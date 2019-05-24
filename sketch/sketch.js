@@ -35,7 +35,7 @@ function windowResized() {
 }
 function showContent(lnk) {
   console.log(lnk);
-  createDiv(""+lnk).id("frame_tmp");
+  createDiv(""+lnk).id("frame_tmp").parent("user_page");
   mviewm.remove();//wlinks.remove();
 }
 function initStyle() {
