@@ -64,6 +64,9 @@ function initWL() {
           "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
           "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
           "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
+          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
+          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
+          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
           "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg"+
           "";
         links = "https://ru.wikipedia.org/w/index.php?title=Метод_проектов&stable=1\n"+
@@ -89,6 +92,9 @@ function initWL() {
             "https://www.w3schools.com/howto/howto_css_center_website.asp\n"+
             "https://github.com/processing/p5.js/wiki/Positioning-your-canvas\n"+
             "https://github.com/processing/p5.js/issues/879\n"+
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Center_an_element\n"+
+            "https://github.com/processing/p5.js/issues/1014\n"+
+            "https://p5js.org/reference/#/p5.Element/parent\n"+
             "";
         wlinks = wlinks.split("\n");
         for(let i = 0; i <= wlinks.length-1; i++) {
