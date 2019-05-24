@@ -102,7 +102,7 @@ function initWL() {
         }
         alert(wlinks);
         wlinks = wlinks.split("\n");
-        for(let i = 0; i <= links.length-1; i++) {
+        for(let i = 0; i <= links.length-20-1; i++) {
           wlinks[i] = sk.loadImage(wlinks[i]);
         }
         ptl = [];
