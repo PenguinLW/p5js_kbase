@@ -61,6 +61,9 @@ function initWL() {
           "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
           "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
           "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
+          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
+          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
+          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
           "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg"+
           "";
         links = "https://ru.wikipedia.org/w/index.php?title=Метод_проектов&stable=1\n"+
