@@ -22,8 +22,6 @@ function setup() {
   contents[contents.length-1].css({
     "width":""+windowWidth+"",
     "height":""+windowHeight+"",
-    "display":"flex",
-    "justify-content":"center",
     "align-items":"center"
   });
   contents.push(createDiv(""));
