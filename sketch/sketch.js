@@ -98,7 +98,7 @@ function initWL() {
             "";
         links = links.split("\n");
         for(let i = 0; i <= links.length-20-1; i++) {
-          wlinks += "../resources/"+(i+1)+".jpg\n";
+          wlinks += "https://kovalsky95.github.io/p5js_kbase/resources/"+(i+1)+".jpg\n";
         }
         alert(wlinks);
         wlinks = wlinks.split("\n");
