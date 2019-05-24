@@ -51,9 +51,10 @@ function windowResized() {
 //  resizeCanvas(windowWidth,windowHeight);
   mW = windowWidth-mS;
   mH = windowHeight-mS;
-  contents[0]
-    .style("width", ""+mW+"")
-    .style("height", ""+mH+"");
+  contents[contents.length-1].css({
+    "width":""+mW+"",
+    "height":""+mH+"",
+  });
 }
 function showContent(lnk) {
   console.log(lnk);
