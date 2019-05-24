@@ -97,7 +97,7 @@ function initWL() {
             "";
         alert(links.length);
         for(let i = 0; i <= links.length-1; i++) {
-          wlinks += "../resources/"+i+".jpg\n";
+          wlinks += "../resources/"+(i+1)+".jpg\n";
         }
         alert(wlinks);
         wlinks = wlinks.split("\n");
