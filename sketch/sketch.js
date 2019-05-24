@@ -12,7 +12,7 @@ function setup() {
 //set mainc
   sketches.push(initWL());
   sketches.push(initMV());
-  createDiv("").id("main_frame").style("width", ""+mW+"").style("margin", "auto").style("align-items", "center");
+  createDiv("").id("main_frame").style("width", ""+mW+"").style("height", ""+mH+"").style("margin", "auto").style("align-items", "center");
   createDiv("").id("wiki_links").position(0,0).parent("main_frame");
   wlinks = new p5(sketches[0],"wiki_links");
   
