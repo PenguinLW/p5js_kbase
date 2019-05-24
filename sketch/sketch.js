@@ -12,13 +12,13 @@ function setup() {
 //set mainc
   sketches.push(initWL());
   sketches.push(initMV());
-  createElement("body")
+  createElement("body").id("content")
     .style("width", ""+windowWidth+"")
     .style("height", ""+windowHeight+"")
     .style("display", "flex")
     .style("justify-content", "center")
     .style("align-items", "center");
-  createDiv("").id("main_frame")
+  createDiv("").id("main_frame").parent("content")
     .style("width", ""+mW+"")
     .style("height", ""+mH+"")
     .style("display", "flex")
