@@ -1,33 +1,42 @@
+//size of html&canvas content
 let spacer, mW, mH, mS;
-let wlinks, mview;
-let sketches;
+//sketches instance (list, el)
+let sketches, wlinks, mview;
+//el-html manipulate
+let contents;
 function preload() {
   sketches = [];
+  contents = [];
   spacer = 25;
   mS = (windowWidth-windowHeight)/10-spacer;
   mW = windowWidth-mS;
   mH = windowHeight-mS;
 }
 function setup() {
-//set mainc
+//init mainc
   sketches.push(initWL());
   sketches.push(initMV());
-  createElement("body").id("content")
+//set mainc
+  contents.push(createElement("body"));
+  contents[contents.length-1].id("content")
     .style("width", ""+windowWidth+"")
     .style("height", ""+windowHeight+"")
     .style("display", "flex")
     .style("justify-content", "center")
     .style("align-items", "center");
-  createDiv("").id("main_frame").parent("content")
+  contents.push(createDiv(""));
+  contents[contents.length-1].id("main_view").parent("content")
     .style("width", ""+mW+"")
     .style("height", ""+mH+"")
     .style("display", "flex")
     .style("justify-content", "center")
     .style("align-items", "center");
-  createDiv("").id("wiki_links").position(0,0).parent("main_frame");
+  contents.push(createDiv(""));
+  contents[contents.length-1].id("wiki_links").position(0,0).parent("main_view");
   wlinks = new p5(sketches[0],"wiki_links");
   
-  createDiv("").id("user_page").position(mW/7,0).parent("main_frame");
+  contents.push(createDiv(""));
+  contents[contents.length-1].id("user_page").position(mW/7,0).parent("main_view");
   mviewm = new p5(sketches[1],"user_page");
   initStyle();
   noCanvas();
@@ -40,7 +49,7 @@ function windowResized() {
 //  resizeCanvas(windowWidth,windowHeight);
   mW = windowWidth-mS;
   mH = windowHeight-mS;
-  createDiv("").id("main_frame").parent("content")
+  content[0]
     .style("width", ""+mW+"")
     .style("height", ""+mH+"");
 }
