@@ -13,11 +13,12 @@ function setup() {
 //set mainc
   sketches.push(initWL());
   sketches.push(initMV());
-  createDiv("").id("wiki_links").position(250,0);
+  createDiv("").id("wiki_links").position(0,0);
   wlinks = new p5(sketches[0],"wiki_links");
   
   createDiv("").id("user_page").position(mW/7,0);
   mviewm = new p5(sketches[1],"user_page");
+  initStyle();
   noCanvas();
 //end set mainc
 }
@@ -25,6 +26,9 @@ function showContent(lnk) {
   console.log(lnk);
   createDiv(""+lnk).id("frame_tmp");
   mviewm.remove();//wlinks.remove();
+}
+function initStyle() {
+  $("body).css("":"");
 }
 function initWL() {
   return function(sk) {
@@ -85,7 +89,7 @@ function initWL() {
       }
       
       sk.setup = function() {
-        
+        alert(windowWidth+" : "+windowHeight+" : "+w+" : "+h);
         sk.createCanvas(w, h);
         let lis = sk.locatedB(0, h, wlinks.length);
         for(let i = 0; i <= wlinks.length-1; i++) {
@@ -158,7 +162,7 @@ function initMV() {
         h = mH-mS;
       }
       sk.setup = function() {
-        
+        alert(windowWidth+" : "+windowHeight+" : "+w+" : "+h);
         sk.createCanvas(w, h);
         
       }
