@@ -95,7 +95,7 @@ function initWL() {
             "https://github.com/processing/p5.js/issues/1014\n"+
             "https://p5js.org/reference/#/p5.Element/parent\n"+
             "";
-        alert(links.length);
+        links = links.split("\n");
         for(let i = 0; i <= links.length-1; i++) {
           wlinks += "../resources/"+(i+1)+".jpg\n";
         }
@@ -104,7 +104,6 @@ function initWL() {
         for(let i = 0; i <= links.length-1; i++) {
           wlinks[i] = sk.loadImage(wlinks[i]);
         }
-        links = links.split("\n");
         ptl = [];
         w = mW/7;
         h = mH-mS;
