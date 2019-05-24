@@ -7,7 +7,6 @@ function preload() {
   mS = 0;//(windowWidth-windowHeight)/2-spacer;
   mW = windowWidth-mS;
   mH = windowHeight-mS;
-  alert(windowWidth+" : "+windowHeight);
 }
 function setup() {
 //set mainc
@@ -21,6 +20,12 @@ function setup() {
   initStyle();
   noCanvas();
 //end set mainc
+}
+function draw() {
+  
+}
+function windowResized() {
+  resizeCanvas(windowWidth,windowHeight);
 }
 function showContent(lnk) {
   console.log(lnk);
@@ -89,7 +94,6 @@ function initWL() {
       }
       
       sk.setup = function() {
-        alert(windowWidth+" : "+windowHeight+" : "+w+" : "+h);
         sk.createCanvas(w, h);
         let lis = sk.locatedB(0, h, wlinks.length);
         for(let i = 0; i <= wlinks.length-1; i++) {
@@ -105,7 +109,6 @@ function initWL() {
         for(let i = 0; i <= ptl.length-1; i++) {
           ptl[i].show();
         }
-        
       }
       
       sk.mousePressed = function() {
@@ -162,13 +165,10 @@ function initMV() {
         h = mH-mS;
       }
       sk.setup = function() {
-        alert(windowWidth+" : "+windowHeight+" : "+w+" : "+h);
         sk.createCanvas(w, h);
-        
       }
       sk.draw = function() {
         sk.background(112);
-        
       }
     }
 }
