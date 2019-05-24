@@ -4,7 +4,7 @@ let sketches;
 function preload() {
   sketches = [];
   spacer = 25;
-  mS = (windowWidth-windowHeight)/2-spacer;
+  mS = (windowWidth-windowHeight)/10-spacer;
   mW = windowWidth-mS;
   mH = windowHeight-mS;
 }
