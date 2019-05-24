@@ -18,8 +18,8 @@ function setup() {
   sketches.push(initMV());
 //set mainc
   contents.push($("body"));
+  contents[contents.length-1].attr("id","content");
   contents[contents.length-1].css({
-    "id":"content",
     "width":""+windowWidth+"",
     "height":""+windowHeight+"",
     "display":"flex",
