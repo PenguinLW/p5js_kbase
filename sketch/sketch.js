@@ -95,6 +95,7 @@ function initWL() {
             "https://github.com/processing/p5.js/issues/1014\n"+
             "https://p5js.org/reference/#/p5.Element/parent\n"+
             "";
+        alert(links.length);
         for(let i = 0; i <= links.length-1; i++) {
           wlinks += "../resources/"+i+".jpg\n";
         }
