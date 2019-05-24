@@ -28,7 +28,7 @@ function showContent(lnk) {
   mviewm.remove();//wlinks.remove();
 }
 function initStyle() {
-  $("body).css("":"");
+//  $("body).css("":"");
 }
 function initWL() {
   return function(sk) {
