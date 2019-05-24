@@ -31,7 +31,12 @@ function draw() {
   
 }
 function windowResized() {
-  resizeCanvas(windowWidth,windowHeight);
+//  resizeCanvas(windowWidth,windowHeight);
+  mW = windowWidth-mS;
+  mH = windowHeight-mS;
+  createDiv("").id("main_frame")
+    .style("width", ""+mW+"")
+    .style("height", ""+mH+"");
 }
 function showContent(lnk) {
   console.log(lnk);
