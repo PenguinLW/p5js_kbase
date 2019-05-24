@@ -5,7 +5,6 @@ function preload() {
   sketches = [];
   spacer = 25;
   mS = (windowWidth-windowHeight)/2-spacer;
-  
   mW = windowWidth-mS;
   mH = windowHeight-mS;
   alert(windowWidth+" : "+windowHeight);
@@ -14,7 +13,7 @@ function setup() {
 //set mainc
   sketches.push(initWL());
   sketches.push(initMV());
-  createDiv("").id("wiki_links").position(0,0);
+  createDiv("").id("wiki_links").position(250,0);
   wlinks = new p5(sketches[0],"wiki_links");
   
   createDiv("").id("user_page").position(mW/7,0);
@@ -26,7 +25,6 @@ function showContent(lnk) {
   console.log(lnk);
   createDiv(""+lnk).id("frame_tmp");
   mviewm.remove();//wlinks.remove();
-  
 }
 function initWL() {
   return function(sk) {
