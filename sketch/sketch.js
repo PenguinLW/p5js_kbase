@@ -67,34 +67,7 @@ function initWL() {
       let wlinks, links, ptl;
       let w, h;
       sk.preload = function() {
-        wlinks =
-          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
-          "https://sun9-5.userapi.com/c845324/v845324799/39c58/rfzOuIQGpNo.jpg?ava=1\n"+
-          "https://pp.userapi.com/c850120/v850120467/123a53/XW5Q7yv5oDI.jpg\n"+
-          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
-          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
-          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
-          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
-          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
-          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
-          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
-          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
-          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
-          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
-          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
-          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
-          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
-          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
-          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
-          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
-          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
-          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
-          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
-          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
-          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
-          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg\n"+
-          "https://sun9-14.userapi.com/c846520/v846520467/c8128/L_pnTyDJRL4.jpg"+
-          "";
+        
         links = "https://ru.wikipedia.org/w/index.php?title=Метод_проектов&stable=1\n"+
             "https://web.archive.org/web/20080503101731/http://vio.fio.ru/vio_01/Article_0_1.htm\n"+
             "http://p5js.org/es/get-started/\n"+
@@ -122,6 +95,10 @@ function initWL() {
             "https://github.com/processing/p5.js/issues/1014\n"+
             "https://p5js.org/reference/#/p5.Element/parent\n"+
             "";
+        for(let i = 0; i <= links.length-1; i++) {
+          wlinks += "../resources/"+i+".jpg\n";
+        }
+        alert(wlinks);
         wlinks = wlinks.split("\n");
         for(let i = 0; i <= wlinks.length-1; i++) {
           wlinks[i] = sk.loadImage(wlinks[i]);
