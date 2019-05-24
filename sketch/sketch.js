@@ -22,7 +22,8 @@ function setup() {
   contents[contents.length-1].css({
     "width":""+windowWidth+"",
     "height":""+windowHeight+"",
-    "text-align":"center"
+    "display":"table",
+    "margin":"0 auto"
   });
   contents.push(createDiv(""));
   contents[contents.length-1].id("main_view").parent("content")
