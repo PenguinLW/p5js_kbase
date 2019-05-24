@@ -33,7 +33,7 @@ function showContent(lnk) {
   mviewm.remove();//wlinks.remove();
 }
 function initStyle() {
-  $("body).css({"margin":"auto"});
+//  $("body).css({"margin":"auto"});
 }
 function initWL() {
   return function(sk) {
