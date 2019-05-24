@@ -12,10 +12,11 @@ function setup() {
 //set mainc
   sketches.push(initWL());
   sketches.push(initMV());
-  createDiv("").id("wiki_links").position(0,0);
+  
+  createDiv("").id("wiki_links").position(0,0).style("display", "block");
   wlinks = new p5(sketches[0],"wiki_links");
   
-  createDiv("").id("user_page").position(mW/7,0);
+  createDiv("").id("user_page").position(mW/7,0).style("display", "block");
   mviewm = new p5(sketches[1],"user_page");
   initStyle();
   noCanvas();
