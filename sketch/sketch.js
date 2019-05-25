@@ -100,10 +100,9 @@ function initWL() {
         for(let i = 0; i <= links.length-1; i++) {
           wlinks += "https://kovalsky95.github.io/p5js_kbase/resources/"+(i+1)+".jpg\n";
         }
-        wlinks = wlinks.split("\n");
-        console.log(wlinks);
+        wlinks = wlinks.substring(0, wlinks.length-2).split("\n");
         for(let i = 0; i <= links.length-1; i++) {
-          wlinks[i] = sk.loadImage("https://kovalsky95.github.io/p5js_kbase/resources/1.jpg");
+          wlinks[i] = sk.loadImage(wlinks[i]);
         }
         ptl = [];
         w = mW/7;
