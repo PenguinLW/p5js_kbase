@@ -68,7 +68,7 @@ function initWL() {
       let wlinks, links, ptl;
       let w, h;
       sk.preload = function() {
-        
+        wlinks = "";
         links = "https://ru.wikipedia.org/w/index.php?title=Метод_проектов&stable=1\n"+
             "https://web.archive.org/web/20080503101731/http://vio.fio.ru/vio_01/Article_0_1.htm\n"+
             "http://p5js.org/es/get-started/\n"+
@@ -100,9 +100,7 @@ function initWL() {
         for(let i = 0; i <= links.length-1; i++) {
           wlinks += "https://kovalsky95.github.io/p5js_kbase/resources/"+(i+1)+".jpg\n";
         }
-        console.log(wlinks);
         wlinks = wlinks.substring(0, wlinks.length-1).split("\n");
-        console.log(wlinks);
         for(let i = 0; i <= links.length-1; i++) {
           wlinks[i] = sk.loadImage(wlinks[i]);
         }
