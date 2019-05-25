@@ -76,33 +76,33 @@ function initWL() {
             "http://p5js.org/es/reference/\n"+
             "http://p5js.org/es/reference/#group-DOM\n"+
             "http://p5js.org/es/examples/instance-mode-instantiation.html\n"+
-            "https://github.com/processing/p5.js/wiki/Modos-Global-e-Instance\n"+
-            "https://p5js.org/reference/#/p5.Element/parent\n"+
-            "https://p5js.org/reference/#/p5/createButton\n"+
-            "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array\n"+
-            "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/map\n"+
-            "https://p5js.org/examples/image-load-and-display-image.html\n"+
-            "https://p5js.org/reference/#/p5.Element/size\n"+
-            "https://p5js.org/examples/image-create-image.html\n"+
-            "https://p5js.org/reference/#/p5/image\n"+
-            "https://discourse.processing.org/t/trying-to-play-one-random-video-after-another-in-one-screen/11418/5\n"+
-            "https://github.com/processing/p5.js/issues/1373\n"+
-            "https://eparraaravena.github.io/clase-p5-1/referencias.html\n"+
-            "https://pages.github.com/\n"+
-            "https://www.w3schools.com/howto/howto_css_center_website.asp\n"+
-            "https://github.com/processing/p5.js/wiki/Positioning-your-canvas\n"+
-            "https://github.com/processing/p5.js/issues/879\n"+
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Center_an_element\n"+
-            "https://github.com/processing/p5.js/issues/1014\n"+
-            "https://p5js.org/reference/#/p5.Element/parent\n"+
+//            "https://github.com/processing/p5.js/wiki/Modos-Global-e-Instance\n"+
+//            "https://p5js.org/reference/#/p5.Element/parent\n"+
+//            "https://p5js.org/reference/#/p5/createButton\n"+
+//            "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array\n"+
+//            "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/map\n"+
+//            "https://p5js.org/examples/image-load-and-display-image.html\n"+
+//            "https://p5js.org/reference/#/p5.Element/size\n"+
+//            "https://p5js.org/examples/image-create-image.html\n"+
+//            "https://p5js.org/reference/#/p5/image\n"+
+//            "https://discourse.processing.org/t/trying-to-play-one-random-video-after-another-in-one-screen/11418/5\n"+
+//            "https://github.com/processing/p5.js/issues/1373\n"+
+//            "https://eparraaravena.github.io/clase-p5-1/referencias.html\n"+
+//            "https://pages.github.com/\n"+
+//            "https://www.w3schools.com/howto/howto_css_center_website.asp\n"+
+//            "https://github.com/processing/p5.js/wiki/Positioning-your-canvas\n"+
+//            "https://github.com/processing/p5.js/issues/879\n"+
+//            "https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Center_an_element\n"+
+//            "https://github.com/processing/p5.js/issues/1014\n"+
+//            "https://p5js.org/reference/#/p5.Element/parent\n"+
             "";
         links = links.split("\n");
-        for(let i = 0; i <= links.length-20-1; i++) {
+        for(let i = 0; i <= links.length-1; i++) {
           wlinks += "https://kovalsky95.github.io/p5js_kbase/resources/"+(i+1)+".jpg\n";
         }
-        console.log(wlinks);
         wlinks = wlinks.split("\n");
-        for(let i = 0; i <= links.length-20-1; i++) {
+        console.log(wlinks);
+        for(let i = 0; i <= links.length-1; i++) {
           wlinks[i] = sk.loadImage(wlinks[i]);
         }
         ptl = [];
