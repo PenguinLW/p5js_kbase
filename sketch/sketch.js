@@ -75,7 +75,7 @@ function initWL() {
             "https://github.com/processing/p5.js/wiki/Transici%C3%B3n-desde-Processing\n"+
             "http://p5js.org/es/reference/\n"+
             "http://p5js.org/es/reference/#group-DOM\n"+
-            "http://p5js.org/es/examples/instance-mode-instantiation.html\n"+
+            "http://p5js.org/es/examples/instance-mode-instantiation.html"+
 //            "https://github.com/processing/p5.js/wiki/Modos-Global-e-Instance\n"+
 //            "https://p5js.org/reference/#/p5.Element/parent\n"+
 //            "https://p5js.org/reference/#/p5/createButton\n"+
