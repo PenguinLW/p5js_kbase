@@ -103,7 +103,7 @@ function initWL() {
         wlinks = wlinks.split("\n");
         console.log(wlinks);
         for(let i = 0; i <= links.length-1; i++) {
-          wlinks[i] = sk.loadImage(wlinks[i]);
+          wlinks[i] = sk.loadImage("https://kovalsky95.github.io/p5js_kbase/resources/1.jpg");
         }
         ptl = [];
         w = mW/7;
