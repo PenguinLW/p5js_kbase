@@ -22,8 +22,11 @@ function setup() {
   contents[contents.length-1].css({
     "width":""+windowWidth+"",
     "height":""+windowHeight+"",
-    "display":"table",
-    "margin":"0 auto"
+//    "display":"table",
+//    "margin":"0 auto",
+		"display":"flex",
+		"align-items":"center",
+		"justify-content":"center"
   });
   contents.push(createDiv(""));
   contents[contents.length-1].id("main_view").parent("content")
