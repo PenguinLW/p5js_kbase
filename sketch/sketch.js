@@ -133,8 +133,8 @@ function initWL() {
         }
       }
       sk.windowResized = function() {
-	mW = windowWidth-mS;
-	mH = windowHeight-mS;
+	mW = mW/7;
+	mH = mH-mS;
 	sk.resizeCanvas(mW, mH);
       }
       sk.mousePressed = function() {
@@ -197,8 +197,8 @@ function initMV() {
         sk.background(112);
       }
       sk.windowResized = function() {
-	mW = windowWidth-mS;
-	mH = windowHeight-mS;
+	mW = mW/1.7;
+	mH = mH-mS;
 	sk.resizeCanvas(mW, mH);
       }
     }
