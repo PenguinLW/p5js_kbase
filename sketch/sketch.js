@@ -57,6 +57,9 @@ function windowResized() {
     "width":""+mW+"",
     "height":""+mH+"",
   });
+  contents[1]
+	  .style("width",""+mW+"")
+	  .style("height",""+mH+"");
 }
 function showContent(lnk) {
   console.log(lnk);
