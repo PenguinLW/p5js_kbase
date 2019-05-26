@@ -132,7 +132,11 @@ function initWL() {
           ptl[i].show();
         }
       }
-      
+      sk.windowResized = function() {
+	mW = windowWidth-mS;
+	mH = windowHeight-mS;
+	resizeCanvas(mW, mH);
+      }
       sk.mousePressed = function() {
         for(let i = 0; i <= ptl.length-1; i++) {
           ptl[i].clicked(sk.mouseX, sk.mouseY);
@@ -191,6 +195,11 @@ function initMV() {
       }
       sk.draw = function() {
         sk.background(112);
+      }
+      sk.windowResized = function() {
+	mW = windowWidth-mS;
+	mH = windowHeight-mS;
+	resizeCanvas(mW, mH);
       }
     }
 }
