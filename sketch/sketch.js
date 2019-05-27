@@ -5,45 +5,24 @@ let sketches, wlinks, mview;
 //el-html manipulate
 let contents;
 function preload() {
-  sketches = [];
-  contents = [];
-  spacer = 25;
-  mS = (windowWidth-windowHeight)/10-spacer;
-  mW = windowWidth-mS;
-  mH = windowHeight-mS;
+	sketches = [];
+	contents = [];
+	spacer = 25;
+	mS = (windowWidth-windowHeight)/10-spacer;
+	mW = windowWidth-mS;
+	mH = windowHeight-mS;
 }
 function setup() {
 //init mainc
-  sketches.push(initWL());
-  sketches.push(initMV());
+	sketches.push(initWL());
+	sketches.push(initMV());
 //set mainc
-  contents.push($("body"));
-  contents[contents.length-1].attr("id","content");
-  contents[contents.length-1].css({
-    "width":""+windowWidth+"",
-    "height":""+windowHeight+"",
-//    "display":"table",
-//    "margin":"0 auto",
-		"display":"flex",
-		"align-items":"center",
-		"justify-content":"center"
-  });
-  contents.push(createDiv(""));
-  contents[contents.length-1].id("main_view").parent("content")
-    .style("width", ""+mW+"")
-    .style("height", ""+mH+"")
-    .style("display", "flex")
-    .style("justify-content", "center")
-    .style("align-items", "center");
-  contents.push(createDiv(""));
-  contents[contents.length-1].id("wiki_links").position(0,0).parent("main_view");
-  wlinks = new p5(sketches[0],"wiki_links");
-  
-  contents.push(createDiv(""));
-  contents[contents.length-1].id("user_page").position(mW/7,0).parent("main_view");
-  mviewm = new p5(sketches[1],"user_page");
-  initStyle();
-  noCanvas();
+	initStyle();
+	
+	wlinks = new p5(sketches[0],"wiki_links");
+	
+	mviewm = new p5(sketches[1],"user_page");
+	noCanvas();
 //end set mainc
 }
 function draw() {
@@ -51,23 +30,50 @@ function draw() {
 }
 function windowResized() {
 //  resizeCanvas(windowWidth,windowHeight);
-  mW = windowWidth-mS;
-  mH = windowHeight-mS;
-  contents[0].css({
-    "width":""+mW+"",
-    "height":""+mH+"",
-  });
-  contents[1]
-	  .style("width",""+mW+"")
-	  .style("height",""+mH+"");
+	mW = windowWidth-mS;
+	mH = windowHeight-mS;
+/*
+	contents[0].css({
+		"width":""+mW+"",
+		"height":""+mH+"",
+	});
+*/
+	contents[1]
+		.style("width",""+mW+"")
+		.style("height",""+mH+"");
 }
 function showContent(lnk) {
-  console.log(lnk);
-  createP(""+lnk).id("frame_tmp").parent("user_page");
-  mviewm.remove();//wlinks.remove();
+	console.log(lnk);
+	createP(""+lnk).id("frame_tmp").parent("user_page");
+	mviewm.remove();//wlinks.remove();
 }
 function initStyle() {
-//  $("body).css({"margin":"auto"});
+//	$("body).css({"margin":"auto"});
+	contents.push($("body"));
+	contents[0].attr("id","content");
+	contents[0].css({
+		"width":""+windowWidth+"",
+		"height":""+windowHeight+"",
+//		"display":"table",
+//		"margin":"0 auto",
+		"display":"flex",
+		"align-items":"center",
+		"justify-content":"center"
+	});
+	
+	contents.push(createDiv(""));
+	contents[1].id("main_view").parent("content")
+		.style("width", ""+mW+"")
+		.style("height", ""+mH+"")
+		.style("display", "flex")
+		.style("justify-content", "center")
+		.style("align-items", "center");
+	
+	contents.push(createDiv(""));
+	contents[2].id("wiki_links").position(0,0).parent("main_view");
+	
+	contents.push(createDiv(""));
+	contents[3].id("user_page").position(mW/7,0).parent("main_view");
 }
 function initWL() {
   return function(sk) {
