@@ -19,9 +19,9 @@ function setup() {
 //set mainc
 	initStyle();
 	
-	wlinks = new p5(sketches[0],"wiki_links");
+	wlinks = new p5(sketches[0], "wiki_links");
 	
-	mviewm = new p5(sketches[1],"user_page");
+	mviewm = new p5(sketches[1], "user_page");
 	noCanvas();
 //end set mainc
 }
@@ -169,29 +169,31 @@ function initWL() {
 	}
 }
 function initMV(ch) {
+	let fn;
 	switch(ch) {
 		case 0:
-			return scene1();
+			fn = scene1();
 		break;
 		case 1:
-			return scene2();
+			fn = scene2();
 		break;
 		case 2:
-			return scene3();
+			fn = scene3();
 		break;
 		case 3:
-			return scene4();
+			fn = scene4();
 		break;
 		case 4:
-			return scene5();
+			fn = scene5();
 		break;
 		case 5:
-			return scene6();
+			fn = scene6();
 		break;
 		case 6:
-			return scene7();
+			fn = scene7();
 		break;
 		default:
 			
 	}
+	return fn;
 }
