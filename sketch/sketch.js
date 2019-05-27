@@ -45,8 +45,9 @@ function windowResized() {
 function showContent(index, lnk) {
 	console.log(index, lnk);
 	sketches[1] = initMV(index);
+	mviewm.remove();
 	mviewm = new p5(sketches[1], "user_page");//createP(""+lnk).id("frame_tmp").parent("user_page");
-//	mviewm.remove();//wlinks.remove();
+//	wlinks.remove();
 }
 function initStyle() {
 //	$("body).css({"margin":"auto"});
