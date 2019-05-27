@@ -224,7 +224,8 @@ function initMV(ch) {
 						"https://github.com/processing/p5.js/issues/879\n"+
 						"https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Center_an_element\n"+
 						"https://github.com/processing/p5.js/issues/1014\n"+
-						"https://p5js.org/reference/#/p5.Element/parent"+
+						"https://p5js.org/reference/#/p5.Element/parent\n"+
+						"https://p5js.org/reference/#/p5/text"+
 						"";
 				}
 				sk.setup = function() {
