@@ -176,7 +176,7 @@ function initMV(ch) {
 			return function(sk) {
 				let w, h;
 				sk.preload = function() {
-					w = mW/1.6;
+					w = mW/1.8;
 					h = mH-mS;
 				}
 				sk.setup = function() {
@@ -186,7 +186,7 @@ function initMV(ch) {
 					sk.background(255);
 				}
 				sk.windowResized = function() {
-					mW = mW/1.6;
+					mW = mW/1.8;
 					mH = mH-mS;
 					sk.resizeCanvas(mW, mH);
 				}
@@ -196,7 +196,7 @@ function initMV(ch) {
 			return function(sk) {
 				let links;
 				sk.preload = function() {
-					w = mW/1.6;
+					w = mW/1.8;
 					h = mH-mS;
 					links = "https://ru.wikipedia.org/w/index.php?title=Метод_проектов&stable=1\n"+
 						"https://web.archive.org/web/20080503101731/http://vio.fio.ru/vio_01/Article_0_1.htm\n"+
@@ -233,7 +233,7 @@ function initMV(ch) {
 					sk.background(255);
 				}
 				sk.windowResized = function() {
-					mW = mW/1.6;
+					mW = mW/1.8;
 					mH = mH-mS;
 					sk.resizeCanvas(mW, mH);
 				}
@@ -243,7 +243,7 @@ function initMV(ch) {
 			return function(sk) {
 				let w, h;
 				sk.preload = function() {
-					w = mW/1.6;
+					w = mW/1.8;
 					h = mH-mS;
 				}
 				sk.setup = function() {
@@ -253,7 +253,7 @@ function initMV(ch) {
 					sk.background(225);
 				}
 				sk.windowResized = function() {
-					mW = mW/1.6;
+					mW = mW/1.8;
 					mH = mH-mS;
 					sk.resizeCanvas(mW, mH);
 				}
@@ -263,7 +263,7 @@ function initMV(ch) {
 			return function(sk) {
 				let w, h;
 				sk.preload = function() {
-					w = mW/1.6;
+					w = mW/1.8;
 					h = mH-mS;
 				}
 				sk.setup = function() {
@@ -273,7 +273,7 @@ function initMV(ch) {
 					sk.background(225);
 				}
 				sk.windowResized = function() {
-					mW = mW/1.6;
+					mW = mW/1.8;
 					mH = mH-mS;
 					sk.resizeCanvas(mW, mH);
 				}
@@ -283,7 +283,7 @@ function initMV(ch) {
 			return function(sk) {
 				let w, h;
 				sk.preload = function() {
-					w = mW/1.6;
+					w = mW/1.8;
 					h = mH-mS;
 				}
 				sk.setup = function() {
@@ -293,7 +293,7 @@ function initMV(ch) {
 					sk.background(225);
 				}
 				sk.windowResized = function() {
-					mW = mW/1.6;
+					mW = mW/1.8;
 					mH = mH-mS;
 					sk.resizeCanvas(mW, mH);
 				}
@@ -303,7 +303,7 @@ function initMV(ch) {
 			return function(sk) {
 				let w, h;
 				sk.preload = function() {
-					w = mW/1.6;
+					w = mW/1.8;
 					h = mH-mS;
 				}
 				sk.setup = function() {
@@ -313,7 +313,7 @@ function initMV(ch) {
 					sk.background(225);
 				}
 				sk.windowResized = function() {
-					mW = mW/1.6;
+					mW = mW/1.8;
 					mH = mH-mS;
 					sk.resizeCanvas(mW, mH);
 				}
@@ -323,7 +323,7 @@ function initMV(ch) {
 			return function(sk) {
 				let w, h;
 				sk.preload = function() {
-					w = mW/1.6;
+					w = mW/1.8;
 					h = mH-mS;
 				}
 				sk.setup = function() {
@@ -333,7 +333,7 @@ function initMV(ch) {
 					sk.background(225);
 				}
 				sk.windowResized = function() {
-					mW = mW/1.6;
+					mW = mW/1.8;
 					mH = mH-mS;
 					sk.resizeCanvas(mW, mH);
 				}
