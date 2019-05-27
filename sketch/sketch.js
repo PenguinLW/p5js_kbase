@@ -176,6 +176,21 @@ function initMV(ch) {
 		case 1:
 			return scene2();
 		break;
+		case 2:
+			return scene3();
+		break;
+		case 3:
+			return scene4();
+		break;
+		case 4:
+			return scene5();
+		break;
+		case 5:
+			return scene6();
+		break;
+		case 6:
+			return scene7();
+		break;
 		default:
 			
 	}
