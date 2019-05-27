@@ -113,7 +113,7 @@ function initWL() {
 			}
 		}
 		sk.draw = function() {
-			sk.background(225);
+			sk.background(255);
 			for(let i = 0; i <= ptl.length-1; i++) {
 				ptl[i].show();
 			}
@@ -181,7 +181,7 @@ function initMV(ch) {
 					sk.createCanvas(w, h);
 				}
 				sk.draw = function() {
-					sk.background(225);
+					sk.background(255);
 				}
 				sk.windowResized = function() {
 					mW = mW/1.6;
@@ -228,7 +228,7 @@ function initMV(ch) {
 					sk.createCanvas(w, h);
 				}
 				sk.draw = function() {
-					sk.background(225);
+					sk.background(255);
 				}
 				sk.windowResized = function() {
 					mW = mW/1.6;
