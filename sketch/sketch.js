@@ -164,7 +164,8 @@ function initWL() {
 						sk.goLink(this.index, links[this.index]);
 			}
 			show() {
-				sk.image(this.lpl, this.x, this.y, this.w, this.h);
+				sk.text(links[this.index], this.x, this.y);
+				sk.image(this.lpl, this.x, this.y, this.w/2, this.h/2);
 			}
 		}
 	}
