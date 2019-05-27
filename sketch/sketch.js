@@ -45,7 +45,7 @@ function windowResized() {
 function showContent(index, lnk) {
 	console.log(index, lnk);
 	sketches[1] = initMV(index);
-	mview = new P5(sketches[1], "user_page");//createP(""+lnk).id("frame_tmp").parent("user_page");
+	mview = new p5(sketches[1], "user_page");//createP(""+lnk).id("frame_tmp").parent("user_page");
 //	mviewm.remove();//wlinks.remove();
 }
 function initStyle() {
