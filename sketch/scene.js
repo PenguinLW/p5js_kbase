@@ -61,3 +61,75 @@ function scene2(sk) {
     sk.resizeCanvas(mW, mH);
   }
 }
+function scene3(sk) {
+  let w, h;
+  sk.preload = function() {
+    w = mW/1.6;
+    h = mH-mS;
+  }
+  sk.setup = function() {
+    sk.createCanvas(w, h);
+  }
+  sk.draw = function() {
+    sk.background(225);
+  }
+  sk.windowResized = function() {
+    mW = mW/1.6;
+    mH = mH-mS;
+    sk.resizeCanvas(mW, mH);
+  }
+}
+function scene4(sk) {
+  let w, h;
+  sk.preload = function() {
+    w = mW/1.6;
+    h = mH-mS;
+  }
+  sk.setup = function() {
+    sk.createCanvas(w, h);
+  }
+  sk.draw = function() {
+    sk.background(225);
+  }
+  sk.windowResized = function() {
+    mW = mW/1.6;
+    mH = mH-mS;
+    sk.resizeCanvas(mW, mH);
+  }
+}
+function scene5(sk) {
+  let w, h;
+  sk.preload = function() {
+    w = mW/1.6;
+    h = mH-mS;
+  }
+  sk.setup = function() {
+    sk.createCanvas(w, h);
+  }
+  sk.draw = function() {
+    sk.background(225);
+  }
+  sk.windowResized = function() {
+    mW = mW/1.6;
+    mH = mH-mS;
+    sk.resizeCanvas(mW, mH);
+  }
+}
+function scene6(sk) {
+  let w, h;
+  sk.preload = function() {
+    w = mW/1.6;
+    h = mH-mS;
+  }
+  sk.setup = function() {
+    sk.createCanvas(w, h);
+  }
+  sk.draw = function() {
+    sk.background(225);
+  }
+  sk.windowResized = function() {
+    mW = mW/1.6;
+    mH = mH-mS;
+    sk.resizeCanvas(mW, mH);
+  }
+}
