@@ -15,7 +15,7 @@ function preload() {
 function setup() {
 //init mainc
 	sketches.push(initWL());
-	sketches.push(initMV());
+	sketches.push(initMV(0));
 //set mainc
 	initStyle();
 	
@@ -42,10 +42,11 @@ function windowResized() {
 		.style("width",""+mW+"")
 		.style("height",""+mH+"");
 }
-function showContent(lnk) {
-	console.log(lnk);
-	createP(""+lnk).id("frame_tmp").parent("user_page");
-	mviewm.remove();//wlinks.remove();
+function showContent(index, lnk) {
+	console.log(index, lnk);
+	sketches[1] = initMV(index);
+	mview = new P5(sketches[1], "user_page");//createP(""+lnk).id("frame_tmp").parent("user_page");
+//	mviewm.remove();//wlinks.remove();
 }
 function initStyle() {
 //	$("body).css({"margin":"auto"});
@@ -81,32 +82,13 @@ function initWL() {
 		let w, h;
 		sk.preload = function() {
 			wlinks = "";
-			links = "https://ru.wikipedia.org/w/index.php?title=Метод_проектов&stable=1\n"+
-				"https://web.archive.org/web/20080503101731/http://vio.fio.ru/vio_01/Article_0_1.htm\n"+
-				"http://p5js.org/es/get-started/\n"+
-				"https://github.com/processing/p5.js/wiki/Transici%C3%B3n-desde-Processing\n"+
-				"http://p5js.org/es/reference/\n"+
-				"http://p5js.org/es/reference/#group-DOM\n"+
-				"http://p5js.org/es/examples/instance-mode-instantiation.html"+
-//				"https://github.com/processing/p5.js/wiki/Modos-Global-e-Instance\n"+
-//				"https://p5js.org/reference/#/p5.Element/parent\n"+
-//				"https://p5js.org/reference/#/p5/createButton\n"+
-//				"https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array\n"+
-//				"https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/map\n"+
-//				"https://p5js.org/examples/image-load-and-display-image.html\n"+
-//				"https://p5js.org/reference/#/p5.Element/size\n"+
-//				"https://p5js.org/examples/image-create-image.html\n"+
-//				"https://p5js.org/reference/#/p5/image\n"+
-//				"https://discourse.processing.org/t/trying-to-play-one-random-video-after-another-in-one-screen/11418/5\n"+
-//				"https://github.com/processing/p5.js/issues/1373\n"+
-//				"https://eparraaravena.github.io/clase-p5-1/referencias.html\n"+
-//				"https://pages.github.com/\n"+
-//				"https://www.w3schools.com/howto/howto_css_center_website.asp\n"+
-//				"https://github.com/processing/p5.js/wiki/Positioning-your-canvas\n"+
-//				"https://github.com/processing/p5.js/issues/879\n"+
-//				"https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Center_an_element\n"+
-//				"https://github.com/processing/p5.js/issues/1014\n"+
-//				"https://p5js.org/reference/#/p5.Element/parent\n"+
+			links = "1\n"+
+				"2\n"+
+				"3\n"+
+				"4\n"+
+				"5\n"+
+				"6\n"+
+				"7"+
 				"";
 			links = links.split("\n");
 			for(let i = 0; i <= links.length-1; i++) {
@@ -131,7 +113,7 @@ function initWL() {
 			}
 		}
 		sk.draw = function() {
-			sk.background(220);
+			sk.background(225);
 			for(let i = 0; i <= ptl.length-1; i++) {
 				ptl[i].show();
 			}
@@ -147,7 +129,7 @@ function initWL() {
 			}
 		}
 		sk.goLink = function(index, lnk) {
-			showContent(lnk);
+			showContent(index, lnk);
 		}
 		sk.locatedB = function(s_point, all_area, c_el) {
 			let size_el, step_y, lis;
@@ -186,23 +168,77 @@ function initWL() {
 		}
 	}
 }
-function initMV() {
-	return function(sk) {
-		let w, h;
-		sk.preload = function() {
-			w = mW/1.7;
-			h = mH-mS;
-		}
-		sk.setup = function() {
-			sk.createCanvas(w, h);
-		}
-		sk.draw = function() {
-			sk.background(112);
-		}
-		sk.windowResized = function() {
-			mW = mW/1.7;
-			mH = mH-mS;
-			sk.resizeCanvas(mW, mH);
-		}
+function initMV(ch) {
+	switch(ch) {
+		case 0:
+			return function(sk) {
+				let w, h;
+				sk.preload = function() {
+					w = mW/1.6;
+					h = mH-mS;
+				}
+				sk.setup = function() {
+					sk.createCanvas(w, h);
+				}
+				sk.draw = function() {
+					sk.background(225);
+				}
+				sk.windowResized = function() {
+					mW = mW/1.6;
+					mH = mH-mS;
+					sk.resizeCanvas(mW, mH);
+				}
+			}
+		break;
+		case 1:
+			return function(sk) {
+				let links;
+				sk.preload = function() {
+					w = mW/1.6;
+					h = mH-mS;
+					links = "https://ru.wikipedia.org/w/index.php?title=Метод_проектов&stable=1\n"+
+						"https://web.archive.org/web/20080503101731/http://vio.fio.ru/vio_01/Article_0_1.htm\n"+
+						"http://p5js.org/es/get-started/\n"+
+						"https://github.com/processing/p5.js/wiki/Transici%C3%B3n-desde-Processing\n"+
+						"http://p5js.org/es/reference/\n"+
+						"http://p5js.org/es/reference/#group-DOM\n"+
+						"http://p5js.org/es/examples/instance-mode-instantiation.html\n"+
+						"https://github.com/processing/p5.js/wiki/Modos-Global-e-Instance\n"+
+						"https://p5js.org/reference/#/p5.Element/parent\n"+
+						"https://p5js.org/reference/#/p5/createButton\n"+
+						"https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array\n"+
+						"https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/map\n"+
+						"https://p5js.org/examples/image-load-and-display-image.html\n"+
+						"https://p5js.org/reference/#/p5.Element/size\n"+
+						"https://p5js.org/examples/image-create-image.html\n"+
+						"https://p5js.org/reference/#/p5/image\n"+
+						"https://discourse.processing.org/t/trying-to-play-one-random-video-after-another-in-one-screen/11418/5\n"+
+						"https://github.com/processing/p5.js/issues/1373\n"+
+						"https://eparraaravena.github.io/clase-p5-1/referencias.html\n"+
+						"https://pages.github.com/\n"+
+						"https://www.w3schools.com/howto/howto_css_center_website.asp\n"+
+						"https://github.com/processing/p5.js/wiki/Positioning-your-canvas\n"+
+						"https://github.com/processing/p5.js/issues/879\n"+
+						"https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Center_an_element\n"+
+						"https://github.com/processing/p5.js/issues/1014\n"+
+						"https://p5js.org/reference/#/p5.Element/parent"+
+						"";
+				}
+				sk.setup = function() {
+					sk.createCanvas(w, h);
+				}
+				sk.draw = function() {
+					sk.background(225);
+				}
+				sk.windowResized = function() {
+					mW = mW/1.6;
+					mH = mH-mS;
+					sk.resizeCanvas(mW, mH);
+				}
+			}
+			
+		break;
+		default:
+			
 	}
 }
