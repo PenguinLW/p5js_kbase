@@ -254,7 +254,9 @@ function initMV(ch) {
 					links = links.split("\n");
 					let lis = sk.locatedL(2, h, links.length);
 					for(let i = 0; i <= links.length-1; i++) {
-						links[i] = new WondL(mS, lis[1][i], links[i], lis[0]);
+						let l = links[i].length;
+						links[i] = new WondL(links[i]);
+						links[i].setPosition(mS, lis[1][i], l, lis[0]);
 					}
 				}
 				sk.draw = function() {
@@ -290,15 +292,22 @@ function initMV(ch) {
 					return [size_el, lis];
 				}
 				class WondL {
-					constructor(x, y, link, h) {
+					constructor(link) {
+						this.x = 0;
+						this.y = 0;
+						this.w = 0;
+						this.h = 0;
+						this.link = link;
+					}
+					setPosition(x, y, w, h) {
 						this.x = x;
 						this.y = y;
-						this.link = link;
+						this.w = w;
 						this.h = h;
 					}
 					clicked(mX, mY) {
-						if(mX >= this.x && mX <= this.x+this.link.length)
-							if(mY >= this.y && mY <= this.y+mS*2)
+						if(mX >= this.x && mX <= this.x+this.w)
+							if(mY >= this.y && mY <= this.y+this.h)
 								sk.goLink(this.link);
 					}
 					show() {
