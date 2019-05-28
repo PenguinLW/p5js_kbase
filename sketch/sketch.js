@@ -253,7 +253,7 @@ function initMV(ch) {
 					sk.createCanvas(w, h);
 					links = links.split("\n");
 					for(let i = 0; i <= links.length-1; i++) {
-						links[i] = new WondL(mS, (i+3)*mS, links[i]);
+						links[i] = new WondL(mS, (i+2.4)*mS, links[i]);
 					}
 				}
 				sk.draw = function() {
