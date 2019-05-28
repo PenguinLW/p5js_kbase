@@ -307,11 +307,11 @@ function initMV(ch) {
 					}
 					clicked(mX, mY) {
 						if(mX >= this.x && mX <= this.x+this.w)
-							if(mY >= this.y && mY <= this.y+this.h)
+							if(mY >= this.y+this.h && mY <= this.y+this.h*2)
 								sk.goLink(this.link);
 					}
 					show() {
-						sk.text(this.link, this.x, this.y+this.h);
+						sk.text(this.link, this.x, this.y+this.h/2);
 					}
 				}
 			}
