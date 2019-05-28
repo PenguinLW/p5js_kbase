@@ -177,7 +177,7 @@ function initMV(ch) {
 			return function(sk) {
 				let w, h;
 				sk.preload = function() {
-					w = mH-mW/7;
+					w = mW-mW/7;
 					h = mH-mS;
 				}
 				sk.setup = function() {
@@ -187,7 +187,7 @@ function initMV(ch) {
 					sk.background(255);
 				}
 				sk.windowResized = function() {
-					w = mH-mW/7;
+					w = mW-mW/7;
 					h = mH-mS;
 					sk.resizeCanvas(w, h);
 				}
@@ -197,7 +197,7 @@ function initMV(ch) {
 			return function(sk) {
 				let w, h;
 				sk.preload = function() {
-					w = mH-mW/7;
+					w = mW-mW/7;
 					h = mH-mS;
 				}
 				sk.setup = function() {
@@ -207,7 +207,7 @@ function initMV(ch) {
 					sk.background(255);
 				}
 				sk.windowResized = function() {
-					w = mH-mW/7;
+					w = mW-mW/7;
 					h = mH-mS;
 					sk.resizeCanvas(w, h);
 				}
@@ -217,7 +217,7 @@ function initMV(ch) {
 			return function(sk) {
 				let w, h;
 				sk.preload = function() {
-					w = mH-mW/7;
+					w = mW-mW/7;
 					h = mH-mS;
 				}
 				sk.setup = function() {
@@ -227,7 +227,7 @@ function initMV(ch) {
 					sk.background(225);
 				}
 				sk.windowResized = function() {
-					w = mH-mW/7;
+					w = mW-mW/7;
 					h = mH-mS;
 					sk.resizeCanvas(w, h);
 				}
@@ -237,7 +237,7 @@ function initMV(ch) {
 			return function(sk) {
 				let w, h;
 				sk.preload = function() {
-					w = mH-mW/7;
+					w = mW-mW/7;
 					h = mH-mS;
 				}
 				sk.setup = function() {
@@ -247,7 +247,7 @@ function initMV(ch) {
 					sk.background(225);
 				}
 				sk.windowResized = function() {
-					w = mH-mW/7;
+					w = mW-mW/7;
 					h = mH-mS;
 					sk.resizeCanvas(w, h);
 				}
@@ -257,7 +257,7 @@ function initMV(ch) {
 			return function(sk) {
 				let w, h;
 				sk.preload = function() {
-					w = mH-mW/7;
+					w = mW-mW/7;
 					h = mH-mS;
 				}
 				sk.setup = function() {
@@ -267,7 +267,7 @@ function initMV(ch) {
 					sk.background(225);
 				}
 				sk.windowResized = function() {
-					w = mH-mW/7;
+					w = mW-mW/7;
 					h = mH-mS;
 					sk.resizeCanvas(w, h);
 				}
@@ -277,7 +277,7 @@ function initMV(ch) {
 			return function(sk) {
 				let w, h;
 				sk.preload = function() {
-					w = mH-mW/7;
+					w = mW-mW/7;
 					h = mH-mS;
 				}
 				sk.setup = function() {
@@ -287,7 +287,7 @@ function initMV(ch) {
 					sk.background(225);
 				}
 				sk.windowResized = function() {
-					w = mH-mW/7;
+					w = mW-mW/7;
 					h = mH-mS;
 					sk.resizeCanvas(w, h);
 				}
@@ -297,7 +297,7 @@ function initMV(ch) {
 			return function(sk) {
 				let w, h, links;
 				sk.preload = function() {
-					w = mH-mW/7;
+					w = mW-mW/7;
 					h = mH-mS;
 					links = "https://ru.wikipedia.org/w/index.php?title=Метод_проектов&stable=1\n"+
 						"https://web.archive.org/web/20080503101731/http://vio.fio.ru/vio_01/Article_0_1.htm\n"+
@@ -335,7 +335,7 @@ function initMV(ch) {
 					sk.background(225);
 				}
 				sk.windowResized = function() {
-					w = mH-mW/7;
+					w = mW-mW/7;
 					h = mH-mS;
 					sk.resizeCanvas(w, h);
 				}
