@@ -224,9 +224,9 @@ function initMV(ch) {
 						"https://web.archive.org/web/20080503101731/http://vio.fio.ru/vio_01/Article_0_1.htm\n"+
 						"http://p5js.org/es/get-started/\n"+
 						"https://github.com/processing/p5.js/wiki/Transici%C3%B3n-desde-Processing\n"+
-						"http://p5js.org/es/reference/\n"+
-						"http://p5js.org/es/reference/#group-DOM\n"+
-						"http://p5js.org/es/examples/instance-mode-instantiation.html\n"+
+						"https://p5js.org/es/reference/\n"+
+						"https://p5js.org/es/reference/#group-DOM\n"+
+						"https://p5js.org/es/examples/instance-mode-instantiation.html\n"+
 						"https://github.com/processing/p5.js/wiki/Modos-Global-e-Instance\n"+
 						"https://p5js.org/reference/#/p5.Element/parent\n"+
 						"https://p5js.org/reference/#/p5/createButton\n"+
