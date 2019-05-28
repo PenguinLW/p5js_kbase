@@ -86,7 +86,7 @@ function initWL() {
 			links = "Введение в JS\n"+
 				"Возможности p5.js\n"+
 				"Интересные примеры\n"+
-				"Полезные ресурсы\n"+
+				"Полезные ресурсы"+
 				"";
 			links = links.split("\n");
 			for(let i = 0; i <= links.length-1; i++) {
