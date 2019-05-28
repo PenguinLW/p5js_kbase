@@ -38,9 +38,11 @@ function windowResized() {
 		"height":""+mH+"",
 	});
 */
+/*
 	contents[1]
 		.style("width",""+mW+"")
 		.style("height",""+mH+"");
+*/
 }
 function showContent(index, lnk) {
 	console.log(index, lnk);
@@ -54,8 +56,8 @@ function initStyle() {
 	contents.push($("body"));
 	contents[0].attr("id","content");
 	contents[0].css({
-		"width":""+windowWidth+"",
-		"height":""+windowHeight+"",
+//		"width":""+windowWidth+"",
+//		"height":""+windowHeight+"",
 //		"display":"table",
 //		"margin":"0 auto",
 		"display":"flex",
@@ -65,8 +67,8 @@ function initStyle() {
 	
 	contents.push(createDiv(""));
 	contents[1].id("main_view").parent("content")
-		.style("width", ""+mW+"")
-		.style("height", ""+mH+"")
+//		.style("width", ""+mW+"")
+//		.style("height", ""+mH+"")
 		.style("display", "flex")
 		.style("justify-content", "center")
 		.style("align-items", "center");
