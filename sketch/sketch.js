@@ -254,7 +254,7 @@ function initMV(ch) {
 					links = links.split("\n");
 					let lis = sk.locatedL(2, h, links.length);
 					for(let i = 0; i <= links.length-1; i++) {
-						links[i] = new WondL(mS, lis[1][i], links[i], lis[0]);
+//						links[i] = new WondL(mS, lis[1][i], links[i], lis[0]);
 					}
 				}
 				sk.draw = function() {
