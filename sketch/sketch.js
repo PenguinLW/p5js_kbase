@@ -252,9 +252,9 @@ function initMV(ch) {
 				sk.setup = function() {
 					sk.createCanvas(w, h);
 					links = links.split("\n");
-//					let lis = sk.locatedL(2, h, links.length);
+					let lis = sk.locatedL(2, h, links.length);
 					for(let i = 0; i <= links.length-1; i++) {
-//						links[i] = new WondL(mS, lis[1][i], links[i], lis[0]);
+						links[i] = new WondL(mS, lis[1][i], links[i], lis[0]);
 					}
 				}
 				sk.draw = function() {
@@ -277,7 +277,6 @@ function initMV(ch) {
 				sk.goLink = function(link) {
 					console.log(link);
 				}
-/*
 				sk.locatedL = function(s_point, all_area, count_el) {
 					let lis, step_y, size_el;
 					lis = [];
@@ -290,7 +289,6 @@ function initMV(ch) {
 					}
 					return [size_el, lis];
 				}
-*/
 				class WondL {
 					constructor(x, y, link, h) {
 						this.x = x;
