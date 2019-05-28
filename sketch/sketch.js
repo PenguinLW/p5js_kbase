@@ -121,7 +121,7 @@ function initWL() {
 			size_el = step_y-2;
 			
 			lis.push(s_point);
-			for(let i = 3; i <= c_el-1; i++) {
+			for(let i = 1; i <= c_el-1; i++) {
 				lis.push(lis[i-1]+step_y);
 			}
 			return [size_el, lis];
