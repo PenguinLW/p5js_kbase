@@ -86,7 +86,7 @@ function initWL() {
 				.style("display", "flex")
 				.style("justify-content", "center")
 				.style("align-items", "center");
-			let lis = sk.locatedB(0, h, wlinks.length);
+			let lis = sk.locatedB(2, h, wlinks.length);
 			for(let i = 0; i <= wlinks.length-1; i++) {
 				ptl.push(new PLink(i, lis[0]));
 			}
@@ -121,7 +121,7 @@ function initWL() {
 			size_el = step_y-2;
 			
 			lis.push(s_point);
-			for(let i = 1; i <= c_el-1; i++) {
+			for(let i = 3; i <= c_el-1; i++) {
 				lis.push(lis[i-1]+step_y);
 			}
 			return [size_el, lis];
@@ -252,8 +252,9 @@ function initMV(ch) {
 				sk.setup = function() {
 					sk.createCanvas(w, h);
 					links = links.split("\n");
+					let lis = sk.locatedL(2, h, links.length);
 					for(let i = 0; i <= links.length-1; i++) {
-						links[i] = new WondL(mS, (i+2.4)*mS, links[i]);
+						links[i] = new WondL(mS, lis[1][i], links[i], lis[0]);
 					}
 				}
 				sk.draw = function() {
@@ -276,14 +277,26 @@ function initMV(ch) {
 				sk.goLink = function(link) {
 					console.log(link);
 				}
+				sk.locatedL = function(s_point, all_area, count_el) {
+					let lis, step_y, size_el;
+					lis = [];
+					size_el = step_y-2;
+					step_y = all_area/count_el;
+					
+					lis.push(s_point);
+					for(let i = 1; i <= count_el-1; i++) {
+						lis.push(lis[lis[i-1]+step_y]);
+					}
+					rerurn [size_el, lis];
+				}
 				class WondL {
-					constructor(x, y, link) {
+					constructor(x, y, link, h) {
 						this.x = x;
 						this.y = y;
 						this.link = link;
+						this.h = h;
 					}
 					clicked(mX, mY) {
-						sk.goLink(this.link);
 						if(mX >= this.x && mX <= this.x+this.link.length)
 							if(mY >= this.y && mY <= this.y+mS*2)
 								sk.goLink(this.link);
