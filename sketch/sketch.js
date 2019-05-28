@@ -103,7 +103,10 @@ function initWL() {
 			h = mH-mS;
 		}
 		sk.setup = function() {
-			sk.createCanvas(w, h);
+			sk.createCanvas(w, h)
+				.style("display", "flex")
+				.style("justify-content", "center")
+				.style("align-items", "center");
 			let lis = sk.locatedB(0, h, wlinks.length);
 			for(let i = 0; i <= wlinks.length-1; i++) {
 				ptl.push(new PLink(i, lis[0]));
