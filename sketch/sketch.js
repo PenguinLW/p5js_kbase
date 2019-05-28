@@ -253,8 +253,9 @@ function initMV(ch) {
 					sk.createCanvas(w, h);
 					links = links.split("\n");
 					let lis = sk.locatedL(h/2, h/2, links.length);
+					alert(lis[1]);
 					for(let i = 0; i <= links.length-1; i++) {
-						let l = links[i].length;
+						let l = links[i].length*100;
 						links[i] = new WondL(links[i]);
 						links[i].setPosition(w/2, lis[1][i], l, lis[0]);
 					}
