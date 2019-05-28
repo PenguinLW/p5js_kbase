@@ -311,7 +311,7 @@ function initMV(ch) {
 								sk.goLink(this.link);
 					}
 					show() {
-						sk.text(this.link, this.x, this.y);
+						sk.text(this.link, this.x, this.y+this.h);
 					}
 				}
 			}
