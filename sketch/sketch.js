@@ -120,9 +120,9 @@ function initWL() {
 			}
 		}
 		sk.windowResized = function() {
-			mW = mW/7;
-			mH = mH-mS;
-			sk.resizeCanvas(mW, mH);
+			w = mW/7;
+			h = mH-mS;
+			sk.resizeCanvas(w, h);
 		}
 		sk.mousePressed = function() {
 			for(let i = 0; i <= ptl.length-1; i++) {
@@ -177,7 +177,7 @@ function initMV(ch) {
 			return function(sk) {
 				let w, h;
 				sk.preload = function() {
-					w = mW/1.8;
+					w = mH-mW/7;
 					h = mH-mS;
 				}
 				sk.setup = function() {
@@ -187,17 +187,117 @@ function initMV(ch) {
 					sk.background(255);
 				}
 				sk.windowResized = function() {
-					mW = mW/1.8;
-					mH = mH-mS;
-					sk.resizeCanvas(mW, mH);
+					w = mH-mW/7;
+					h = mH-mS;
+					sk.resizeCanvas(w, h);
 				}
 			}
 		break;
 		case 1:
 			return function(sk) {
-				let links;
+				let w, h;
 				sk.preload = function() {
-					w = mW/1.8;
+					w = mH-mW/7;
+					h = mH-mS;
+				}
+				sk.setup = function() {
+					sk.createCanvas(w, h);
+				}
+				sk.draw = function() {
+					sk.background(255);
+				}
+				sk.windowResized = function() {
+					w = mH-mW/7;
+					h = mH-mS;
+					sk.resizeCanvas(w, h);
+				}
+			}
+		break;
+		case 2:
+			return function(sk) {
+				let w, h;
+				sk.preload = function() {
+					w = mH-mW/7;
+					h = mH-mS;
+				}
+				sk.setup = function() {
+					sk.createCanvas(w, h);
+				}
+				sk.draw = function() {
+					sk.background(225);
+				}
+				sk.windowResized = function() {
+					w = mH-mW/7;
+					h = mH-mS;
+					sk.resizeCanvas(w, h);
+				}
+			}
+		break;
+		case 3:
+			return function(sk) {
+				let w, h;
+				sk.preload = function() {
+					w = mH-mW/7;
+					h = mH-mS;
+				}
+				sk.setup = function() {
+					sk.createCanvas(w, h);
+				}
+				sk.draw = function() {
+					sk.background(225);
+				}
+				sk.windowResized = function() {
+					w = mH-mW/7;
+					h = mH-mS;
+					sk.resizeCanvas(w, h);
+				}
+			}
+		break;
+		case 4:
+			return function(sk) {
+				let w, h;
+				sk.preload = function() {
+					w = mH-mW/7;
+					h = mH-mS;
+				}
+				sk.setup = function() {
+					sk.createCanvas(w, h);
+				}
+				sk.draw = function() {
+					sk.background(225);
+				}
+				sk.windowResized = function() {
+					w = mH-mW/7;
+					h = mH-mS;
+					sk.resizeCanvas(w, h);
+				}
+			}
+		break;
+		case 5:
+			return function(sk) {
+				let w, h;
+				sk.preload = function() {
+					w = mH-mW/7;
+					h = mH-mS;
+				}
+				sk.setup = function() {
+					sk.createCanvas(w, h);
+				}
+				sk.draw = function() {
+					sk.background(225);
+				}
+				sk.windowResized = function() {
+					w = mH-mW/7;
+					h = mH-mS;
+					sk.resizeCanvas(w, h);
+				}
+			}
+		break;
+		case 6:
+			return function(sk) {
+				let w, h, links;
+				sk.preload = function() {
+					w = mH-mW/7;
 					h = mH-mS;
 					links = "https://ru.wikipedia.org/w/index.php?title=Метод_проектов&stable=1\n"+
 						"https://web.archive.org/web/20080503101731/http://vio.fio.ru/vio_01/Article_0_1.htm\n"+
@@ -232,112 +332,12 @@ function initMV(ch) {
 					sk.createCanvas(w, h);
 				}
 				sk.draw = function() {
-					sk.background(255);
-				}
-				sk.windowResized = function() {
-					mW = mW/1.8;
-					mH = mH-mS;
-					sk.resizeCanvas(mW, mH);
-				}
-			}
-		break;
-		case 2:
-			return function(sk) {
-				let w, h;
-				sk.preload = function() {
-					w = mW/1.8;
-					h = mH-mS;
-				}
-				sk.setup = function() {
-					sk.createCanvas(w, h);
-				}
-				sk.draw = function() {
 					sk.background(225);
 				}
 				sk.windowResized = function() {
-					mW = mW/1.8;
-					mH = mH-mS;
-					sk.resizeCanvas(mW, mH);
-				}
-			}
-		break;
-		case 3:
-			return function(sk) {
-				let w, h;
-				sk.preload = function() {
-					w = mW/1.8;
+					w = mH-mW/7;
 					h = mH-mS;
-				}
-				sk.setup = function() {
-					sk.createCanvas(w, h);
-				}
-				sk.draw = function() {
-					sk.background(225);
-				}
-				sk.windowResized = function() {
-					mW = mW/1.8;
-					mH = mH-mS;
-					sk.resizeCanvas(mW, mH);
-				}
-			}
-		break;
-		case 4:
-			return function(sk) {
-				let w, h;
-				sk.preload = function() {
-					w = mW/1.8;
-					h = mH-mS;
-				}
-				sk.setup = function() {
-					sk.createCanvas(w, h);
-				}
-				sk.draw = function() {
-					sk.background(225);
-				}
-				sk.windowResized = function() {
-					mW = mW/1.8;
-					mH = mH-mS;
-					sk.resizeCanvas(mW, mH);
-				}
-			}
-		break;
-		case 5:
-			return function(sk) {
-				let w, h;
-				sk.preload = function() {
-					w = mW/1.8;
-					h = mH-mS;
-				}
-				sk.setup = function() {
-					sk.createCanvas(w, h);
-				}
-				sk.draw = function() {
-					sk.background(225);
-				}
-				sk.windowResized = function() {
-					mW = mW/1.8;
-					mH = mH-mS;
-					sk.resizeCanvas(mW, mH);
-				}
-			}
-		break;
-		case 6:
-			return function(sk) {
-				let w, h;
-				sk.preload = function() {
-					w = mW/1.8;
-					h = mH-mS;
-				}
-				sk.setup = function() {
-					sk.createCanvas(w, h);
-				}
-				sk.draw = function() {
-					sk.background(225);
-				}
-				sk.windowResized = function() {
-					mW = mW/1.8;
-					mH = mH-mS;
-					sk.resizeCanvas(mW, mH);
+					sk.resizeCanvas(w, h);
 				}
 			}
 		break;
