@@ -253,7 +253,7 @@ function initMV(ch) {
 					sk.createCanvas(w, h);
 					links = links.split("\n");
 					for(let i = 0; i <= links.length-1; i++) {
-						links[i] = new WondL(mS, (i+2)*mS, links[i]);
+						links[i] = new WondL(mS, (i+3)*mS, links[i]);
 					}
 				}
 				sk.draw = function() {
@@ -283,6 +283,7 @@ function initMV(ch) {
 						this.link = link;
 					}
 					clicked(mX, mY) {
+						sk.goLink(this.link);
 						if(mX >= this.x && mX <= this.x+this.link.length)
 							if(mY >= this.y && mY <= this.y+mS*2)
 								sk.goLink(this.link);
