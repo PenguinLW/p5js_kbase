@@ -282,14 +282,13 @@ function initMV(ch) {
 				sk.locatedL = function(s_point, all_area, count_el) {
 					let lis, step_y, size_el;
 					lis = [];
-					size_el = step_y-2;
 					step_y = all_area/count_el;
+					size_el = step_y-2;
 					
 					lis.push(s_point);
 					for(let i = 1; i <= count_el-1; i++) {
-						lis.push(lis[lis[i-1]+step_y]);
+						lis.push(lis[i-1]+step_y);
 					}
-					alert(lis);
 					return [size_el, lis];
 				}
 				class WondL {
