@@ -273,7 +273,7 @@ function initMV(ch) {
 				}
 				sk.mousePressed = function() {
 					for(let i = 0; i <= links.length-1; i++) {
-						links[i].clicked(mouseX, mouseY);
+						links[i].clicked(sk.mouseX, sk.mouseY);
 					}
 				}
 				sk.goLink = function(link) {
