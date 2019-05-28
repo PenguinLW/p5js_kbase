@@ -253,6 +253,7 @@ function initMV(ch) {
 					sk.createCanvas(w, h);
 					links = links.split("\n");
 					let lis = sk.locatedL(2, h, links.length);
+					alert(lis);
 					for(let i = 0; i <= links.length-1; i++) {
 						let l = links[i].length;
 						links[i] = new WondL(links[i]);
@@ -311,6 +312,9 @@ function initMV(ch) {
 								sk.goLink(this.link);
 					}
 					show() {
+						alert(this.link);
+						alert(this.x);
+						alert(this.y);
 						sk.text(this.link, this.x, this.y);
 					}
 				}
