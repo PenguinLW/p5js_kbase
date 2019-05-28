@@ -246,7 +246,8 @@ function initMV(ch) {
 						"https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Center_an_element\n"+
 						"https://github.com/processing/p5.js/issues/1014\n"+
 						"https://p5js.org/reference/#/p5.Element/parent\n"+
-						"https://p5js.org/reference/#/p5/text"+
+						"https://p5js.org/reference/#/p5/text\n"+
+						"https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe"+
 						"";
 				}
 				sk.setup = function() {
@@ -277,7 +278,15 @@ function initMV(ch) {
 					}
 				}
 				sk.goLink = function(link) {
-					alert(link);
+					createElement("div", "<iframe frameBorder=\"0\" src=\""+link+"\"></iframe>")
+						.style("display", "flex")
+						.style("position", "absolute")
+						.style("align-items", "center")
+						.style("justify-content", "center")
+						.style("width", mW)
+						.style("height", mH)
+						.style("background", "url(\"https://kovalsky95.github.io/p5js_kbase/resources/b/t.png\")")
+						.style("opacity", "0.7");
 				}
 				sk.locatedL = function(s_point, all_area, count_el) {
 					let lis, step_y, size_el;
