@@ -272,14 +272,32 @@ function initMV(ch) {
 				}
 				sk.setup = function() {
 					sk.createCanvas(w, h);
+					links = links.split("\n");
+					for(let i = 0; i <= links.length-1; i++) {
+						links[i] = new WondL(w, i*10*h, links[i]);
+					}
 				}
 				sk.draw = function() {
 					sk.background(225);
+					for(let i = 0; i <= links.length-1; i++) {
+						links[i].show();
+					}
+					
 				}
 				sk.windowResized = function() {
 					w = mW-mW/7;
 					h = mH-mS;
 					sk.resizeCanvas(w, h);
+				}
+				class WondL {
+					constructor(x, y, link) {
+						this.x = x;
+						this.y = y;
+						this.link = link;
+					}
+					show() {
+						text(link, this.x, this.y);
+					}
 				}
 			}
 		break;
