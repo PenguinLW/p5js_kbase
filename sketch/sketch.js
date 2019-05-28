@@ -296,7 +296,7 @@ function initMV(ch) {
 						this.link = link;
 					}
 					show() {
-						text(link, this.x, this.y);
+						text(this.link, this.x, this.y);
 					}
 				}
 			}
