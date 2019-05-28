@@ -289,7 +289,7 @@ function initMV(ch) {
 					}
 					show() {
 						sk.text(this.link, this.x, this.y);
-						console.log("sh)");
+						console.log(this.x, this.y);
 					}
 				}
 			}
