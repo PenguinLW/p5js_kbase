@@ -283,7 +283,7 @@ function initMV(ch) {
 					let lis, step_y, size_el;
 					lis = [];
 					step_y = all_area/count_el;
-					size_el = step_y-1;
+					size_el = step_y-2;
 					
 					lis.push(s_point);
 					for(let i = 1; i <= count_el-1; i++) {
