@@ -252,11 +252,11 @@ function initMV(ch) {
 				sk.setup = function() {
 					sk.createCanvas(w, h);
 					links = links.split("\n");
-					let lis = sk.locatedL(2, h, links.length);
+					let lis = sk.locatedL(h/2, h/2, links.length);
 					for(let i = 0; i <= links.length-1; i++) {
 						let l = links[i].length;
 						links[i] = new WondL(links[i]);
-						links[i].setPosition(mS, lis[1][i], l, lis[0]);
+						links[i].setPosition(w/2, lis[1][i], l, lis[0]);
 					}
 				}
 				sk.draw = function() {
