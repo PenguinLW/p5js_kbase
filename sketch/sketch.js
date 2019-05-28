@@ -83,13 +83,10 @@ function initWL() {
 		let w, h;
 		sk.preload = function() {
 			wlinks = "";
-			links = "1\n"+
-				"2\n"+
-				"3\n"+
-				"4\n"+
-				"5\n"+
-				"6\n"+
-				"7"+
+			links = "Введение в JS\n"+
+				"Возможности p5.js\n"+
+				"Интересные примеры\n"+
+				"Полезные ресурсы\n"+
 				"";
 			links = links.split("\n");
 			for(let i = 0; i <= links.length-1; i++) {
@@ -234,66 +231,6 @@ function initMV(ch) {
 			}
 		break;
 		case 3:
-			return function(sk) {
-				let w, h;
-				sk.preload = function() {
-					w = mW-mW/7;
-					h = mH-mS;
-				}
-				sk.setup = function() {
-					sk.createCanvas(w, h);
-				}
-				sk.draw = function() {
-					sk.background(225);
-				}
-				sk.windowResized = function() {
-					w = mW-mW/7;
-					h = mH-mS;
-					sk.resizeCanvas(w, h);
-				}
-			}
-		break;
-		case 4:
-			return function(sk) {
-				let w, h;
-				sk.preload = function() {
-					w = mW-mW/7;
-					h = mH-mS;
-				}
-				sk.setup = function() {
-					sk.createCanvas(w, h);
-				}
-				sk.draw = function() {
-					sk.background(225);
-				}
-				sk.windowResized = function() {
-					w = mW-mW/7;
-					h = mH-mS;
-					sk.resizeCanvas(w, h);
-				}
-			}
-		break;
-		case 5:
-			return function(sk) {
-				let w, h;
-				sk.preload = function() {
-					w = mW-mW/7;
-					h = mH-mS;
-				}
-				sk.setup = function() {
-					sk.createCanvas(w, h);
-				}
-				sk.draw = function() {
-					sk.background(225);
-				}
-				sk.windowResized = function() {
-					w = mW-mW/7;
-					h = mH-mS;
-					sk.resizeCanvas(w, h);
-				}
-			}
-		break;
-		case 6:
 			return function(sk) {
 				let w, h, links;
 				sk.preload = function() {
