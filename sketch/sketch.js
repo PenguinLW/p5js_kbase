@@ -29,37 +29,18 @@ function draw() {
   
 }
 function windowResized() {
-//  resizeCanvas(windowWidth,windowHeight);
 	mW = windowWidth-mS;
 	mH = windowHeight-mS;
-/*
-	contents[0].css({
-		"width":""+mW+"",
-		"height":""+mH+"",
-	});
-*/
-/*
-	contents[1]
-		.style("width",""+mW+"")
-		.style("height",""+mH+"");
-*/
 }
 function showContent(index, lnk) {
-	console.log(index, lnk);
 	sketches[1] = initMV(index);
 	mviewm.remove();
-	mviewm = new p5(sketches[1], "user_page");//createP(""+lnk).id("frame_tmp").parent("user_page");
-//	wlinks.remove();
+	mviewm = new p5(sketches[1], "user_page");
 }
 function initStyle() {
-//	$("body).css({"margin":"auto"});
 	contents.push($("body"));
 	contents[0].attr("id","content");
 	contents[0].css({
-//		"width":""+windowWidth+"",
-//		"height":""+windowHeight+"",
-//		"display":"table",
-//		"margin":"0 auto",
 		"display":"flex",
 		"align-items":"center",
 		"justify-content":"center"
@@ -67,8 +48,6 @@ function initStyle() {
 	
 	contents.push(createDiv(""));
 	contents[1].id("main_view").parent("content")
-//		.style("width", ""+mW+"")
-//		.style("height", ""+mH+"")
 		.style("display", "flex")
 		.style("justify-content", "center")
 		.style("align-items", "center");
@@ -289,11 +268,24 @@ function initMV(ch) {
 					h = mH-mS;
 					sk.resizeCanvas(w, h);
 				}
+				sk.mousePressed = function() {
+					for(let i = 0; i <= links.length-1; i++) {
+						links[i].clicked(mouseX, mouseY);
+					}
+				}
+				sk.goLink = function(link) {
+					console.log(link);
+				}
 				class WondL {
 					constructor(x, y, link) {
 						this.x = x;
 						this.y = y;
 						this.link = link;
+					}
+					clicked(mX, mY) {
+						if(mX >= this.x && mX <= this.x+this.link.length)
+							if(mY >= this.y && mY <= this.y+4)
+								sk.goLink(this.link);
 					}
 					show() {
 						sk.text(this.link, this.x, this.y);
