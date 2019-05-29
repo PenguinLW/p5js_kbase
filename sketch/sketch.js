@@ -176,21 +176,48 @@ function initMV(ch) {
 		break;
 		case 1:
 			return function(sk) {
-				let w, h;
+				let w, h, lis, ho;
 				sk.preload = function() {
 					w = mW-mW/7;
 					h = mH-mS;
+					lis = [];
+					ho = [];
+					lis.push("Как используется JS?");
+					lis.push([]);
+					lis.push("Переменные");
+					lis.push(["Синтаксис объявления переменных и констант","Тип данных","Некоторые \"уловки\" для приведения типов","Структуры данных"]);
+					
 				}
 				sk.setup = function() {
 					sk.createCanvas(w, h);
+					for(let i = 0; i <= lis.length-2; i+=2) {
+						ho.push(new KTheme(lis[i], lis[i+1], 10, 10+10*i));
+					}
 				}
 				sk.draw = function() {
 					sk.background(255);
+					for(let i = 0; i<= ho.length-1; i++) {
+						ho[i].show();
+					}
 				}
 				sk.windowResized = function() {
 					w = mW-mW/7;
 					h = mH-mS;
 					sk.resizeCanvas(w, h);
+				}
+				class KTheme {
+					constructor(title, lis, x, y) {
+						this.x = x;
+						this.y = y;
+						this.title = title;
+						this.lis = lis;
+					}
+					show() {
+						sk.text(this.title, this.x, this.y);
+						for(let i = 0; i <= lis.length-1; i++) {
+							sk.text(lis[i], this.x+10, this.y+7);
+						}
+					}
 				}
 			}
 		break;
