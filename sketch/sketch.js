@@ -280,6 +280,7 @@ function initMV(ch) {
 				sk.goLink = function(link) {
 					createElement("div", "<iframe frameBorder=\"0\" width=\""+mW+"\" height=\""+mH+"\" src=\""+link+"\"></iframe>")
 						.parent("main_view")
+						.position(0, 0)
 						.size(mW, mH)
 						.style("display", "flex")
 						.style("position", "absolute")
