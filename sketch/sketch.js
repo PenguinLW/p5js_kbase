@@ -175,11 +175,11 @@ function initMV(ch) {
 					let lis_c;
 					sk.createCanvas(w, h);
 					for(let i = 0; i <= lis.length-2; i+=2) {
-						ho.push(new KTheme(lis[i], lis[i+1], lis_c[0]));
+						ho.push(new KTheme(lis[i], lis[i+1]));
 					}
 					lis_c = sk.locateT(10, h, ho.length-1);
 					for(let i = 0; i <= ho.length-1; i++) {
-						ho[i].setPosition(mS, lis_c[1][i]);
+						ho[i].setPosition(mS, lis_c[1][i], lis_c[0]);
 					}
 				}
 				sk.draw = function() {
@@ -206,16 +206,17 @@ function initMV(ch) {
 					return [size_el, lis];
 				}
 				class KTheme {
-					constructor(title, lis, h) {
+					constructor(title, lis) {
 						this.x = 0;
 						this.y = 0;
-						this.h = h;
+						this.h = 0;
 						this.title = title;
 						this.lis = lis;
 					}
-					setPosition(x, y) {
+					setPosition(x, y, h) {
 						this.x = x;
 						this.y = y;
+						this.h = h;
 					}
 					show() {
 						sk.text(this.title, this.x, this.y);
