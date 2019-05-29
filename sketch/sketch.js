@@ -165,16 +165,17 @@ function initMV(ch) {
 					lis.push("Как используется JS?");
 					lis.push([]);
 					lis.push("Переменные");
-					lis.push(["Синтаксис объявления переменных и констант","Тип данных","Некоторые \"уловки\" для приведения типов","Структуры данных"]);
+					lis.push(["Синтаксис объявления переменных и констант", "Тип данных", "Некоторые \"уловки\" для приведения типов", "Структуры данных"]);
 					lis.push("Операторы языка JS");
-					lis.push(["Базовые","Логические"]);
+					lis.push(["Базовые", "Логические"]);
 					lis.push("Управляющие операторы языка JS");
-					lis.push(["Разветвляющийся алгоритм","Циклический алгоритм"]);
+					lis.push(["Разветвляющийся алгоритм", "Циклический алгоритм"]);
 				}
 				sk.setup = function() {
 					let lis_c;
 					sk.createCanvas(w, h);
 					for(let i = 0; i <= lis.length-2; i+=2) {
+						alert(lis[i+1]);
 						ho.push(new KTheme(lis[i], lis[i+1]));
 					}
 					lis_c = sk.locateT(mS, h, ho.length);
@@ -220,7 +221,6 @@ function initMV(ch) {
 					}
 					show() {
 						sk.text(this.title, this.x, this.y);
-						alert(lis);
 						for(let i = 0; i <= lis.length-1; i++) {
 							sk.text(lis[i], this.x+10, this.y+10+i*mS);
 						}
