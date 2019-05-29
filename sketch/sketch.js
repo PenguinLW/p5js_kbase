@@ -278,7 +278,11 @@ function initMV(ch) {
 					}
 				}
 				sk.goLink = function(link) {
-					createElement("div", "<iframe frameBorder=\"0\" width=\""+(mW-mS)+"\" height=\""+(mH-mS)+"\" src=\""+link+"\"></iframe>")
+					frame_tmp = createElement(
+							"div",
+							"<iframe frameBorder=\"0\" width=\""+(mW-mS)+"\" height=\""+(mH-mS)+"\" src=\""+link+"\"></iframe>"+
+							"<button /><img src=\"url(\"https://kovalsky95.github.io/p5js_kbase/resources/b/t.png\")\" />"
+						).id("frame_tmp")
 						.parent("main_view")
 						.position(0, 0)
 						.size(mW, mH)
