@@ -222,7 +222,7 @@ function initMV(ch) {
 					h = mH-mS;
 					links = "https://ru.wikipedia.org/w/index.php?title=Метод_проектов&stable=1\n"+
 						"https://web.archive.org/web/20080503101731/http://vio.fio.ru/vio_01/Article_0_1.htm\n"+
-						"http://p5js.org/es/get-started/\n"+
+						"https://p5js.org/es/get-started/\n"+
 						"https://github.com/processing/p5.js/wiki/Transici%C3%B3n-desde-Processing\n"+
 						"https://p5js.org/es/reference/\n"+
 						"https://p5js.org/es/reference/#group-DOM\n"+
@@ -278,13 +278,13 @@ function initMV(ch) {
 					}
 				}
 				sk.goLink = function(link) {
-					createElement("div", "<iframe frameBorder=\"0\" src=\""+link+"\"></iframe>")
+					createElement("div", "<iframe frameBorder=\"0\" width=\""+mW+"\" height=\""+mH+"\" src=\""+link+"\"></iframe>")
+						.parent("main_view")
+						.size(mW, mH)
 						.style("display", "flex")
 						.style("position", "absolute")
 						.style("align-items", "center")
 						.style("justify-content", "center")
-						.style("width", mW)
-						.style("height", mH)
 						.style("background", "url(\"https://kovalsky95.github.io/p5js_kbase/resources/b/t.png\")")
 						.style("opacity", "0.7");
 				}
