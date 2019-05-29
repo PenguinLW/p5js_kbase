@@ -285,8 +285,8 @@ function initMV(ch) {
 								"<td>"+
 									"<iframe frameBorder=\"0\" width=\""+(mW-mS)+"\" height=\""+(mH-mS)+"\" src=\""+link+"\"></iframe>"+
 								"</td>"+
-								"<td style=\"align:vertical;\">"+
-									"<button style=\"border-color:transparent; border-width:0\" width=\""+(mS/2)+"\" height=\""+(mS/2)+"\" />"+
+								"<td style=\"align-items:vertical;\">"+
+									"<button style=\"border-color:transparent; border-width:0\" width=\""+(mS/3)+"\" height=\""+(mS/3)+"\" />"+
 										"<img width=\""+(mS/2)+"\" height=\""+(mS/2)+"\" src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/t.png\" />"+
 								"</td>"+
 							"</tr></table>"
