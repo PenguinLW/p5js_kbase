@@ -175,7 +175,6 @@ function initMV(ch) {
 					let lis_c;
 					sk.createCanvas(w, h);
 					for(let i = 0; i <= lis.length-2; i+=2) {
-						alert(lis[i+1]);
 						ho.push(new KTheme(lis[i], lis[i+1]));
 					}
 					lis_c = sk.locateT(mS, h, ho.length);
@@ -208,11 +207,13 @@ function initMV(ch) {
 				}
 				class KTheme {
 					constructor(title, lis) {
+						alert(lis);
 						this.x = 0;
 						this.y = 0;
 						this.h = 0;
 						this.title = title;
 						this.lis = lis;
+						alert(this.lis);
 					}
 					setPosition(x, y, h) {
 						this.x = x;
