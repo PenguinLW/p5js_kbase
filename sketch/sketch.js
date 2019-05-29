@@ -156,26 +156,6 @@ function initMV(ch) {
 	switch(ch) {
 		case 0:
 			return function(sk) {
-				let w, h;
-				sk.preload = function() {
-					w = mW-mW/7;
-					h = mH-mS;
-				}
-				sk.setup = function() {
-					sk.createCanvas(w, h);
-				}
-				sk.draw = function() {
-					sk.background(144,77,55);
-				}
-				sk.windowResized = function() {
-					w = mW-mW/7;
-					h = mH-mS;
-					sk.resizeCanvas(w, h);
-				}
-			}
-		break;
-		case 1:
-			return function(sk) {
 				let w, h, lis, ho;
 				sk.preload = function() {
 					w = mW-mW/7;
@@ -195,7 +175,7 @@ function initMV(ch) {
 					}
 				}
 				sk.draw = function() {
-					sk.background(255);
+					sk.background(144,77,55);
 					for(let i = 0; i<= ho.length-1; i++) {
 						ho[i].show();
 					}
@@ -219,6 +199,26 @@ function initMV(ch) {
 							sk.text(lis[i], this.x+10, this.y+7);
 						}
 					}
+				}
+			}
+		break;
+		case 1:
+			return function(sk) {
+				let w, h;
+				sk.preload = function() {
+					w = mW-mW/7;
+					h = mH-mS;
+				}
+				sk.setup = function() {
+					sk.createCanvas(w, h);
+				}
+				sk.draw = function() {
+					sk.background(255);
+				}
+				sk.windowResized = function() {
+					w = mW-mW/7;
+					h = mH-mS;
+					sk.resizeCanvas(w, h);
 				}
 			}
 		break;
