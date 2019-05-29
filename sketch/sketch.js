@@ -281,7 +281,7 @@ function initMV(ch) {
 					frame_tmp = createElement(
 							"div",
 							"<iframe frameBorder=\"0\" width=\""+(mW-mS)+"\" height=\""+(mH-mS)+"\" src=\""+link+"\"></iframe>"+
-							"<button /><img src=\"url(\"https://kovalsky95.github.io/p5js_kbase/resources/b/t.png\")\" />"
+							"<button /><img src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/t.png\" />"
 						).id("frame_tmp")
 						.parent("main_view")
 						.position(0, 0)
