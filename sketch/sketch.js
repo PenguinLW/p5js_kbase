@@ -207,13 +207,11 @@ function initMV(ch) {
 				}
 				class KTheme {
 					constructor(title, lis) {
-						alert(lis);
 						this.x = 0;
 						this.y = 0;
 						this.h = 0;
 						this.title = title;
 						this.lis = lis;
-						alert(this.lis);
 					}
 					setPosition(x, y, h) {
 						this.x = x;
@@ -222,8 +220,8 @@ function initMV(ch) {
 					}
 					show() {
 						sk.text(this.title, this.x, this.y);
-						for(let i = 0; i <= lis.length-1; i++) {
-							sk.text(lis[i], this.x+10, this.y+10+i*mS);
+						for(let i = 0; i <= this.lis.length-1; i++) {
+							sk.text(this.lis[i], this.x+10, this.y+10+i*mS);
 						}
 					}
 				}
