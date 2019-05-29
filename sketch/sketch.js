@@ -177,7 +177,7 @@ function initMV(ch) {
 					for(let i = 0; i <= lis.length-2; i+=2) {
 						ho.push(new KTheme(lis[i], lis[i+1]));
 					}
-					lis_c = sk.locateT(mS, h, ho.length-1);
+					lis_c = sk.locateT(mS, h, ho.length);
 					for(let i = 0; i <= ho.length-1; i++) {
 						ho[i].setPosition(mS, lis_c[1][i], lis_c[0]);
 					}
