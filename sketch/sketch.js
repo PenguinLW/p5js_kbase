@@ -177,7 +177,7 @@ function initMV(ch) {
 					for(let i = 0; i <= lis.length-2; i+=2) {
 						ho.push(new KTheme(lis[i], lis[i+1]));
 					}
-					lis_c = sk.locateT(10, h, ho.length-1);
+					lis_c = sk.locateT(mS, h, ho.length-1);
 					for(let i = 0; i <= ho.length-1; i++) {
 						ho[i].setPosition(mS, lis_c[1][i], lis_c[0]);
 					}
@@ -221,7 +221,7 @@ function initMV(ch) {
 					show() {
 						sk.text(this.title, this.x, this.y);
 						for(let i = 0; i <= lis.length-1; i++) {
-							sk.text(lis[i], this.x+10, this.y);
+							sk.text(lis[i], this.x+10, this.y+10+i*mS);
 						}
 					}
 				}
