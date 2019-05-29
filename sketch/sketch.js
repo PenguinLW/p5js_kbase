@@ -222,7 +222,7 @@ function initMV(ch) {
 						sk.text(this.title, this.x, this.y);
 						for(let i = 0; i <= this.lis.length-1; i++) {
 							sk.textSize(20);
-							sk.text(this.lis[i], this.x+10, this.y+i*mS*2);
+							sk.text(this.lis[i], this.x+10, this.y+mS+i*mS);
 						}
 					}
 				}
