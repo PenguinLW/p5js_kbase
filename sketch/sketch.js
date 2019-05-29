@@ -278,7 +278,7 @@ function initMV(ch) {
 					}
 				}
 				sk.goLink = function(link) {
-					createElement("div", "<iframe frameBorder=\"0\" width=\""+mW+"\" height=\""+mH+"\" src=\""+link+"\"></iframe>")
+					createElement("div", "<iframe frameBorder=\"0\" width=\""+(mW-mS)+"\" height=\""+(mH-mS)+"\" src=\""+link+"\"></iframe>")
 						.parent("main_view")
 						.position(0, 0)
 						.size(mW, mH)
