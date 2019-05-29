@@ -284,11 +284,11 @@ function initMV(ch) {
 							"div",
 							"<table><tr>"+
 								"<td>"+
-									"<iframe frameBorder=\"0\" width=\""+(mW-mS)+"\" height=\""+(mH-mS)+"\" src=\""+link+"\"></iframe>"+
+									"<iframe frameBorder=\"0\" width=\""+(mW-mS*2)+"\" height=\""+(mH-mS*2)+"\" src=\""+link+"\"></iframe>"+
 								"</td>"+
 								"<td style=\"vertical-align:top;\">"+
-									"<button style=\"border-color:transparent; border-width:0\" width=\""+(mS/4)+"\" height=\""+(mS/4)+"\" />"+
-										"<img width=\""+(mS/4)+"\" height=\""+(mS/4)+"\" src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/t.png\" />"+
+									"<button style=\"border-color:transparent; border-width:0\" width=\""+(mS/3)+"\" height=\""+(mS/3)+"\" />"+
+										"<img width=\""+(mS/3)+"\" height=\""+(mS/3)+"\" src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/t.png\" />"+
 								"</td>"+
 							"</tr></table>"
 						).id("frame_tmp")
