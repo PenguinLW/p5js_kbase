@@ -216,7 +216,7 @@ function initMV(ch) {
 		break;
 		case 3:
 			return function(sk) {
-				let w, h, links;
+				let w, h, links, frame_tmp;
 				sk.preload = function() {
 					w = mW-mW/7;
 					h = mH-mS;
@@ -288,9 +288,7 @@ function initMV(ch) {
 									"<iframe frameBorder=\"0\" width=\""+(mW-mS*2)+"\" height=\""+(mH-mS*2)+"\" src=\""+link+"\"></iframe>"+
 								"</td>"+
 								"<td style=\"vertical-align:top;\">"+
-									"<button onclick=\"alert(\"hi\");\" style=\"border-color:transparent; border-width:0\" width=\""+(mS/3)+"\" height=\""+(mS/3)+"\">"+
-										"<img width=\""+(mS/3)+"\" height=\""+(mS/3)+"\" src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/t.png\" />"+
-									"</button>"+
+									"<img width=\""+(mS)+"\" height=\""+(mS)+"\" src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/t.png\" />"+
 								"</td>"+
 							"</tr></table>"
 						).id("frame_tmp")
@@ -303,6 +301,7 @@ function initMV(ch) {
 						.style("justify-content", "center")
 						.style("background", "url(\"https://kovalsky95.github.io/p5js_kbase/resources/b/t.png\")")
 						.style("opacity", "0.7");
+					frame_tmp.mouseClicked(sk.remove_tmpp);
 				}
 				sk.locatedL = function(s_point, all_area, count_el) {
 					let lis, step_y, size_el;
@@ -315,6 +314,9 @@ function initMV(ch) {
 						lis.push(lis[i-1]+step_y);
 					}
 					return [size_el, lis];
+				}
+				sk.remove_tmpp = function() {
+					frame_tmp.remove();
 				}
 				class WondL {
 					constructor(link) {
