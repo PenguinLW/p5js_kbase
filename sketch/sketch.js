@@ -283,7 +283,7 @@ function initMV(ch) {
 							"div",
 							"<iframe frameBorder=\"0\" width=\""+(mW-mS)+"\" height=\""+(mH-mS)+"\" src=\""+link+"\"></iframe>"+
 							"<button style=\"border-color:transparent; border-width:0\" width=\""+(mS)+"\" height=\""+(mS)+"\" />"+
-							"<img  src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/t.png\" />"
+							"<img width=\""+(mS)+"\" height=\""+(mS)+"\" src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/t.png\" />"
 						).id("frame_tmp")
 						.parent("main_view")
 						.position(0, 0)
