@@ -166,12 +166,20 @@ function initMV(ch) {
 					lis.push([]);
 					lis.push("Переменные");
 					lis.push(["Синтаксис объявления переменных и констант","Тип данных","Некоторые \"уловки\" для приведения типов","Структуры данных"]);
-					
+					lis.push("Операторы языка JS");
+					lis.push(["Базовые","Логические"]);
+					lis.push("Управляющие операторы языка JS");
+					lis.push(["Разветвляющийся алгоритм","Циклический алгоритм"]);
 				}
 				sk.setup = function() {
+					let lis_c;
 					sk.createCanvas(w, h);
 					for(let i = 0; i <= lis.length-2; i+=2) {
-						ho.push(new KTheme(lis[i], lis[i+1], 10, 10+10*i));
+						ho.push(new KTheme(lis[i], lis[i+1], lis_c[0]));
+					}
+					lis_c = sk.locateT(10, h, ho.length-1);
+					for(let i = 0; i <= ho.length-1; i++) {
+						ho[i].setPosition(mS, lis_c[1][i]);
 					}
 				}
 				sk.draw = function() {
@@ -185,18 +193,34 @@ function initMV(ch) {
 					h = mH-mS;
 					sk.resizeCanvas(w, h);
 				}
+				sk.locateT = function(s_point, all_area, count_el) {
+					let size_el, step_y, lis;
+					lis = [];
+					step_y = all_area/count_el;
+					size_el = step_y-2;
+					
+					lis.push(s_point);
+					for(let i = 1; i <= count_el-1; i++) {
+						lis.push(lis[i-1]+step_y);
+					}
+					return [size_el, lis];
+				}
 				class KTheme {
-					constructor(title, lis, x, y) {
-						this.x = x;
-						this.y = y;
+					constructor(title, lis, h) {
+						this.x = 0;
+						this.y = 0;
+						this.h = h;
 						this.title = title;
 						this.lis = lis;
 					}
+					setPosition(x, y) {
+						this.x = x;
+						this.y = y;
+					}
 					show() {
-						console.log(this.title);
 						sk.text(this.title, this.x, this.y);
 						for(let i = 0; i <= lis.length-1; i++) {
-							sk.text(lis[i], this.x+10, this.y+7);
+							sk.text(lis[i], this.x+10, this.y);
 						}
 					}
 				}
