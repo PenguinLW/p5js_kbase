@@ -213,6 +213,7 @@ function initMV(ch) {
 						this.lis = lis;
 					}
 					show() {
+						console.log(this.title);
 						sk.text(this.title, this.x, this.y);
 						for(let i = 0; i <= lis.length-1; i++) {
 							sk.text(lis[i], this.x+10, this.y+7);
