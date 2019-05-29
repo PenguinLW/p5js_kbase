@@ -220,6 +220,7 @@ function initMV(ch) {
 					}
 					show() {
 						sk.text(this.title, this.x, this.y);
+						alert(lis);
 						for(let i = 0; i <= lis.length-1; i++) {
 							sk.text(lis[i], this.x+10, this.y+10+i*mS);
 						}
