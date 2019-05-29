@@ -248,7 +248,8 @@ function initMV(ch) {
 						"https://p5js.org/reference/#/p5.Element/parent\n"+
 						"https://p5js.org/reference/#/p5/text\n"+
 						"https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe\n"+
-						"https://github.com/NativeScript/NativeScript/issues/3884"+
+						"https://github.com/NativeScript/NativeScript/issues/3884\n"+
+						"https://developer.mozilla.org/ru/docs/Web/CSS/vertical-align"
 						"";
 				}
 				sk.setup = function() {
