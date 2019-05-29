@@ -165,7 +165,7 @@ function initMV(ch) {
 					sk.createCanvas(w, h);
 				}
 				sk.draw = function() {
-					sk.background(255);
+					sk.background(144,77,55);
 				}
 				sk.windowResized = function() {
 					w = mW-mW/7;
