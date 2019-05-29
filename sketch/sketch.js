@@ -221,7 +221,7 @@ function initMV(ch) {
 					show() {
 						sk.text(this.title, this.x, this.y);
 						for(let i = 0; i <= this.lis.length-1; i++) {
-							sk.textSize(44);
+							sk.textSize(21);
 							sk.text(this.lis[i], this.x+10, this.y+10+i*mS);
 						}
 					}
