@@ -247,7 +247,8 @@ function initMV(ch) {
 						"https://github.com/processing/p5.js/issues/1014\n"+
 						"https://p5js.org/reference/#/p5.Element/parent\n"+
 						"https://p5js.org/reference/#/p5/text\n"+
-						"https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe"+
+						"https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe\n"+
+						"https://github.com/NativeScript/NativeScript/issues/3884"+
 						"";
 				}
 				sk.setup = function() {
