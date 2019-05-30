@@ -217,11 +217,12 @@ function initMV(ch, title) {
 						this.x = x;
 						this.y = y;
 						this.h = h;
+						this.lis_c = sk.locateT(this.y+mS*2, this.h, this.lis.length);
 					}
 					show() {
 						sk.text(this.title, this.x, this.y);
 						for(let i = 0; i <= this.lis.length-1; i++) {
-							sk.text(this.lis[i], this.x+10, this.y+mS+i*mS);
+							sk.text(this.lis[i], this.x+10, this.lis_c[1][i]);
 						}
 					}
 				}
