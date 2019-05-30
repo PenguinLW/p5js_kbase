@@ -185,7 +185,7 @@ function initMV(ch, title) {
 					sk.background(144,77,55);
 					sk.text(title, w/2, h-h+mS);
 					for(let i = 0; i<= ho.length-1; i++) {
-						ho[i].show();10
+						ho[i].show();
 					}
 				}
 				sk.windowResized = function() {
@@ -220,9 +220,9 @@ function initMV(ch, title) {
 						this.lis_c = sk.locateT(this.y+mS*2, this.h, this.lis.length);
 					}
 					show() {
-						sk.text(this.title, this.x, this.y);
+						sk.text(this.title, this.x+mS, this.y);
 						for(let i = 0; i <= this.lis.length-1; i++) {
-							sk.text(this.lis[i], this.x+mS, this.lis_c[1][i]);
+							sk.text(this.lis[i], this.x, this.lis_c[1][i]);
 						}
 					}
 				}
