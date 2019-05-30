@@ -250,6 +250,34 @@ function initMV(ch, title) {
 						this.y = y;
 						this.h = h;
 						this.lis_c = sk.locateT(this.y+mS*2, this.h, this.lis.length);
+						for(let i = 0; i <= this.lis.length-1; i++) {
+							this.lis[i] = new SubKTheme(
+								this.lis[i],
+								this.x+mS*2,
+								this.lis_c[1][i],
+								this.lis_c[0]
+							);
+						}
+					}
+					clicked(mX, mY) {
+						for(let i = 0; i <= this.lis.length-1; i++) {
+							this.lis[i].clicked(mX, mY);
+						}
+					}
+					show() {
+						sk.text(this.title, this.x, this.y+mS);
+						for(let i = 0; i <= this.lis.length-1; i++) {
+							this.lis[i].show();
+						}
+					}
+				}
+				class SubKTheme {
+					constructor(title, x, y, h) {
+						this.title = title;
+						this.x = x+mS*2;
+						this.y = y;
+						this.w = this.title.length*10;
+						this.h = h;
 					}
 					clicked(mX, mY) {
 						if(mX >= this.x && mX <= this.x+this.w)
@@ -257,10 +285,7 @@ function initMV(ch, title) {
 								sk.goLink(this.title);
 					}
 					show() {
-						sk.text(this.title, this.x, this.y+mS);
-						for(let i = 0; i <= this.lis.length-1; i++) {
-							sk.text(this.lis[i], this.x+mS*2, this.lis_c[1][i]);
-						}
+						sk.text(this.title, this.x, this.y);
 					}
 				}
 			}
