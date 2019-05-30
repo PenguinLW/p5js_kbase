@@ -91,7 +91,7 @@ function initWL() {
 				ptl.push(new PLink(i, lis[0]));
 			}
 			for(let i = 0; i <= ptl.length-1; i++) {
-				ptl[i].setPosition(mS/2,lis[1][i]);
+				ptl[i].setPosition(mS/2, lis[1][i]);
 			}
 		}
 		sk.draw = function() {
