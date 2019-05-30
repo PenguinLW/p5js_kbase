@@ -15,7 +15,7 @@ function preload() {
 function setup() {
 //init mainc
 	sketches.push(initWL());
-	sketches.push(initMV(0));
+	sketches.push(initMV(0, "Введение в JS"));
 //set mainc
 	initStyle();
 	
