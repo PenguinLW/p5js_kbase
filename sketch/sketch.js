@@ -155,7 +155,7 @@ function initMV(ch, title) {
 	switch(ch) {
 		case 0:
 			return function(sk) {
-				let w, h, lis, ho;
+				let w, h, lis, ho, frame_tmp;
 				sk.preload = function() {
 					w = mW-mW/7;
 					h = mH-mS;
@@ -205,10 +205,42 @@ function initMV(ch, title) {
 					}
 					return [size_el, lis];
 				}
+				sk.mousePressed = function() {
+					for(let i = 0; i <= ho.length-1; i++) {
+						ho[i].clicked(sk.mouseX, sk.mouseY);
+					}
+				}
+				sk.goLink = function(link) {
+					frame_tmp = createElement(
+							"div",
+							"<table><tr>"+
+								"<td>"+
+									"<iframe frameBorder=\"0\" width=\""+(mW-mS*6)+"\" height=\""+(mH-mS*4)+"\" src=\""+link+"\"></iframe>"+
+								"</td>"+
+								"<td style=\"vertical-align:top;\">"+
+									"<img width=\""+(mS)+"\" height=\""+(mS)+"\" src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/close.png\" />"+
+								"</td>"+
+							"</tr></table>"
+						).id("frame_tmp")
+						.parent("main_view")
+						.position(0, 0)
+						.size(mW, mH)
+						.style("display", "flex")
+						.style("position", "absolute")
+						.style("align-items", "center")
+						.style("justify-content", "center")
+						.style("background", "url(\"https://kovalsky95.github.io/p5js_kbase/resources/b/t.png\")")
+						.style("opacity", "0.7");
+					frame_tmp.mouseClicked(sk.remove_tmpp);
+				}
+				sk.remove_tmpp = function() {
+					frame_tmp.remove();
+				}
 				class KTheme {
 					constructor(title, lis) {
 						this.x = 0;
 						this.y = 0;
+						this.w = 0;
 						this.h = 0;
 						this.title = title;
 						this.lis = lis;
@@ -219,10 +251,15 @@ function initMV(ch, title) {
 						this.h = h;
 						this.lis_c = sk.locateT(this.y+mS*2, this.h, this.lis.length);
 					}
+					clicked(mX, mY) {
+						if(mX >= this.x && mX <= this.x+this.w)
+							if(mY >= this.y && mY <= this.y+this.h)
+								sk.goLink(this.title);
+					}
 					show() {
-						sk.text(this.title, this.x+mS, this.y);
+						sk.text(this.title, this.x, this.y+mS);
 						for(let i = 0; i <= this.lis.length-1; i++) {
-							sk.text(this.lis[i], this.x, this.lis_c[1][i]);
+							sk.text(this.lis[i], this.x+mS*2, this.lis_c[1][i]);
 						}
 					}
 				}
@@ -230,7 +267,7 @@ function initMV(ch, title) {
 		break;
 		case 1:
 			return function(sk) {
-				let w, h;
+				let w, h;//, links, frame_tmp;
 				sk.preload = function() {
 					w = mW-mW/7;
 					h = mH-mS;
@@ -247,11 +284,47 @@ function initMV(ch, title) {
 					h = mH-mS;
 					sk.resizeCanvas(w, h);
 				}
+				sk.mousePressed = function() {
+// 					for(let i = 0; i <= links.length-1; i++) {
+// 						links[i].clicked(sk.mouseX, sk.mouseY);
+// 					}
+				}
+// 				sk.goLink = function(link) {
+// 					frame_tmp = createElement(
+// 							"div",
+// 							"<table><tr>"+
+// 								"<td>"+
+// 									"<iframe frameBorder=\"0\" width=\""+(mW-mS*6)+"\" height=\""+(mH-mS*4)+"\" src=\""+link+"\"></iframe>"+
+// 								"</td>"+
+// 								"<td style=\"vertical-align:top;\">"+
+// 									"<img width=\""+(mS)+"\" height=\""+(mS)+"\" src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/close.png\" />"+
+// 								"</td>"+
+// 							"</tr></table>"
+// 						).id("frame_tmp")
+// 						.parent("main_view")
+// 						.position(0, 0)
+// 						.size(mW, mH)
+// 						.style("display", "flex")
+// 						.style("position", "absolute")
+// 						.style("align-items", "center")
+// 						.style("justify-content", "center")
+// 						.style("background", "url(\"https://kovalsky95.github.io/p5js_kbase/resources/b/t.png\")")
+// 						.style("opacity", "0.7");
+// 					frame_tmp.mouseClicked(sk.remove_tmpp);
+// 				}
+				sk.remove_tmpp = function() {
+					frame_tmp.remove();
+				}
+// 					clicked(mX, mY) {
+// 						if(mX >= this.x && mX <= this.x+this.w)
+// 							if(mY >= this.y && mY <= this.y+this.h)
+// 								sk.goLink(this.link);
+// 					}
 			}
 		break;
 		case 2:
 			return function(sk) {
-				let w, h;
+				let w, h;//, links, frame_tmp;
 				sk.preload = function() {
 					w = mW-mW/7;
 					h = mH-mS;
@@ -268,6 +341,42 @@ function initMV(ch, title) {
 					h = mH-mS;
 					sk.resizeCanvas(w, h);
 				}
+				sk.mousePressed = function() {
+// 					for(let i = 0; i <= links.length-1; i++) {
+// 						links[i].clicked(sk.mouseX, sk.mouseY);
+// 					}
+				}
+// 				sk.goLink = function(link) {
+// 					frame_tmp = createElement(
+// 							"div",
+// 							"<table><tr>"+
+// 								"<td>"+
+// 									"<iframe frameBorder=\"0\" width=\""+(mW-mS*6)+"\" height=\""+(mH-mS*4)+"\" src=\""+link+"\"></iframe>"+
+// 								"</td>"+
+// 								"<td style=\"vertical-align:top;\">"+
+// 									"<img width=\""+(mS)+"\" height=\""+(mS)+"\" src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/close.png\" />"+
+// 								"</td>"+
+// 							"</tr></table>"
+// 						).id("frame_tmp")
+// 						.parent("main_view")
+// 						.position(0, 0)
+// 						.size(mW, mH)
+// 						.style("display", "flex")
+// 						.style("position", "absolute")
+// 						.style("align-items", "center")
+// 						.style("justify-content", "center")
+// 						.style("background", "url(\"https://kovalsky95.github.io/p5js_kbase/resources/b/t.png\")")
+// 						.style("opacity", "0.7");
+// 					frame_tmp.mouseClicked(sk.remove_tmpp);
+// 				}
+				sk.remove_tmpp = function() {
+					frame_tmp.remove();
+				}
+// 					clicked(mX, mY) {
+// 						if(mX >= this.x && mX <= this.x+this.w)
+// 							if(mY >= this.y && mY <= this.y+this.h)
+// 								sk.goLink(this.link);
+// 					}
 			}
 		break;
 		case 3:
@@ -306,7 +415,8 @@ function initMV(ch, title) {
 						"https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe\n"+
 						"https://github.com/NativeScript/NativeScript/issues/3884\n"+
 						"https://developer.mozilla.org/ru/docs/Web/CSS/vertical-align\n"+
-						"https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XUL/Attribute/onclick"+
+						"https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XUL/Attribute/onclick\n"+
+						"https://learn.javascript.ru/window-methods"
 						"";
 				}
 				sk.setup = function() {
@@ -360,6 +470,9 @@ function initMV(ch, title) {
 						.style("opacity", "0.7");
 					frame_tmp.mouseClicked(sk.remove_tmpp);
 				}
+				sk.showLink = function(link) {
+					window.open("about:blank", ""+link, "width="+(w-mS)+", height="+(h-mS)+"")
+				}
 				sk.locatedL = function(s_point, all_area, count_el) {
 					let lis, step_y, size_el;
 					lis = [];
@@ -371,9 +484,6 @@ function initMV(ch, title) {
 						lis.push(lis[i-1]+step_y);
 					}
 					return [size_el, lis];
-				}
-				sk.remove_tmpp = function() {
-					frame_tmp.remove();
 				}
 				class WondL {
 					constructor(link) {
@@ -392,7 +502,7 @@ function initMV(ch, title) {
 					clicked(mX, mY) {
 						if(mX >= this.x && mX <= this.x+this.w)
 							if(mY >= this.y && mY <= this.y+this.h)
-								sk.goLink(this.link);
+								sk.showLink(this.link);
 					}
 					show() {
 						sk.text(this.link, this.x, this.y+this.h);
