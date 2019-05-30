@@ -471,7 +471,7 @@ function initMV(ch, title) {
 					frame_tmp.mouseClicked(sk.remove_tmpp);
 				}
 				sk.showLink = function(link) {
-					window.open("about:blank", ""+link, "width="+(w-mS)+", height="+(h-mS)+"")
+					window.open(""+link, "PenguinL", "width="+(w-mS)+", height="+(h-mS)+", left="+(w/2-w/4)+"")
 				}
 				sk.locatedL = function(s_point, all_area, count_el) {
 					let lis, step_y, size_el;
