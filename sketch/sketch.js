@@ -239,6 +239,7 @@ function initMV(ch, title) {
 				}
 				sk.draw = function() {
 					sk.background(255);
+					sk.text(title, w/2, h-h+mS);
 				}
 				sk.windowResized = function() {
 					w = mW-mW/7;
@@ -259,6 +260,7 @@ function initMV(ch, title) {
 				}
 				sk.draw = function() {
 					sk.background(255);
+					sk.text(title, w/2, h-h+mS);
 				}
 				sk.windowResized = function() {
 					w = mW-mW/7;
@@ -318,6 +320,7 @@ function initMV(ch, title) {
 				}
 				sk.draw = function() {
 					sk.background(255);
+					sk.text(title, w/2, h-h+mS);
 					for(let i = 0; i <= links.length-1; i++) {
 						links[i].show();
 					}
