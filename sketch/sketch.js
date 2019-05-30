@@ -33,7 +33,7 @@ function windowResized() {
 	mH = windowHeight-mS;
 }
 function showContent(index, lnk) {
-	sketches[1] = initMV(index);
+	sketches[1] = initMV(index, lnk);
 	mviewm.remove();
 	mviewm = new p5(sketches[1], "user_page");
 }
@@ -145,13 +145,12 @@ function initWL() {
 						sk.goLink(this.index, links[this.index]);
 			}
 			show() {
-				sk.text(links[this.index], this.x+mS, this.y+mS);
 				sk.image(this.lpl, this.x+mS, this.y+mS, this.w/2, this.h/2);
 			}
 		}
 	}
 }
-function initMV(ch) {
+function initMV(ch, title) {
 	let fn;
 	switch(ch) {
 		case 0:
@@ -184,6 +183,7 @@ function initMV(ch) {
 				}
 				sk.draw = function() {
 					sk.background(144,77,55);
+					sk.text(title, w/2, h-h+mS);
 					for(let i = 0; i<= ho.length-1; i++) {
 						ho[i].show();
 					}
