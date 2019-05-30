@@ -178,14 +178,14 @@ function initMV(ch, title) {
 					}
 					lis_c = sk.locateT(mS, h, ho.length);
 					for(let i = 0; i <= ho.length-1; i++) {
-						ho[i].setPosition(mS, lis_c[1][i], 10+lis_c[0]);
+						ho[i].setPosition(mS, lis_c[1][i], mS+lis_c[0]);
 					}
 				}
 				sk.draw = function() {
 					sk.background(144,77,55);
 					sk.text(title, w/2, h-h+mS);
 					for(let i = 0; i<= ho.length-1; i++) {
-						ho[i].show();
+						ho[i].show();10
 					}
 				}
 				sk.windowResized = function() {
@@ -222,7 +222,7 @@ function initMV(ch, title) {
 					show() {
 						sk.text(this.title, this.x, this.y);
 						for(let i = 0; i <= this.lis.length-1; i++) {
-							sk.text(this.lis[i], this.x+10, this.lis_c[1][i]);
+							sk.text(this.lis[i], this.x+mS, this.lis_c[1][i]);
 						}
 					}
 				}
