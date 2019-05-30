@@ -178,7 +178,7 @@ function initMV(ch, title) {
 					}
 					lis_c = sk.locateT(mS, h, ho.length);
 					for(let i = 0; i <= ho.length-1; i++) {
-						ho[i].setPosition(mS, lis_c[1][i], lis_c[0]);
+						ho[i].setPosition(mS, lis_c[1][i], 10+lis_c[0]);
 					}
 				}
 				sk.draw = function() {
