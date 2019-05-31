@@ -160,9 +160,9 @@ function initMV(ch, title) {
 				sk.preload = function() {
 					w = mW-mW/7;
 					h = mH-mS;
-					lis = [];
 					ho = [];
 					flag = false;
+					lis = [];
 					lis.push("Как используется JS?");
 					lis.push(["Пошаговое описание создания js-приложения"]);
 					lis.push("Переменные");
@@ -299,10 +299,12 @@ function initMV(ch, title) {
 		break;
 		case 1:
 			return function(sk) {
-				let w, h, lis, frame_tmp, flag;//, links;
+				let w, h, lis, ho, frame_tmp, flag;//, links;
 				sk.preload = function() {
 					w = mW-mW/7;
 					h = mH-mS;
+					ho = [];
+					flag = false;
 					lis = [];
 					lis.push("\"Место\" исполнения программы, структура программы");
 					lis.push([]);
@@ -322,53 +324,128 @@ function initMV(ch, title) {
 					lis.push(["Манипулирование элементами (движение, перемещение, дрожание, повороты, прыжки, исчезновения) в скетч"]);
 				}
 				sk.setup = function() {
+					let lis_c;
 					sk.createCanvas(w, h);
+					for(let i = 0; i <= lis.length-2; i+=2) {
+						ho.push(new KTheme(lis[i], lis[i+1]));
+					}
+					lis_c = sk.locateT(mS-mS/2, h-mS*2, ho.length);
+					for(let i = 0; i <= ho.length-1; i++) {
+						ho[i].setPosition(mS, lis_c[1][i], lis_c[0]);
+					}
 				}
 				sk.draw = function() {
 					sk.background(255);
 					sk.text(title, w/2, h-h+mS);
+					for(let i = 0; i <= ho.length-1; i++) {
+						ho[i].show();
+					}
 				}
 				sk.windowResized = function() {
 					w = mW-mW/7;
 					h = mH-mS;
 					sk.resizeCanvas(w, h);
 				}
-				sk.mousePressed = function() {
-// 					for(let i = 0; i <= links.length-1; i++) {
-// 						links[i].clicked(sk.mouseX, sk.mouseY);
-// 					}
+				sk.locateT = function(s_point, all_area, count_el) {
+					let size_el, step_y, lis;
+					lis = [];
+					step_y = all_area/count_el;
+					size_el = step_y-2;
+					
+					lis.push(s_point);
+					for(let i = 1; i <= count_el-1; i++) {
+						lis.push(lis[i-1]+step_y);
+					}
+					return [size_el, lis];
 				}
-// 				sk.goLink = function(link) {
-// 					frame_tmp = createElement(
-// 							"div",
-// 							"<table><tr>"+
-// 								"<td>"+
-// 									"<iframe frameBorder=\"0\" width=\""+(mW-mS*6)+"\" height=\""+(mH-mS*4)+"\" src=\""+link+"\"></iframe>"+
-// 								"</td>"+
-// 								"<td style=\"vertical-align:top;\">"+
-// 									"<img width=\""+(mS)+"\" height=\""+(mS)+"\" src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/close.png\" />"+
-// 								"</td>"+
-// 							"</tr></table>"
-// 						).id("frame_tmp")
-// 						.parent("main_view")
-// 						.position(0, 0)
-// 						.size(mW, mH)
-// 						.style("display", "flex")
-// 						.style("position", "absolute")
-// 						.style("align-items", "center")
-// 						.style("justify-content", "center")
-// 						.style("background", "url(\"https://kovalsky95.github.io/p5js_kbase/resources/b/t.png\")")
-// 						.style("opacity", "0.7");
-// 					frame_tmp.mouseClicked(sk.remove_tmpp);
-// 				}
+				sk.mousePressed = function() {
+					for(let i = 0; i <= ho.length-1; i++) {
+						ho[i].clicked(sk.mouseX, sk.mouseY);
+					}
+				}
+				sk.goLink = function(link) {
+					if(!flag) {
+						alert(link);
+						flag = !flag;
+						frame_tmp = createElement(
+								"div",
+								"<table><tr>"+
+									"<td>"+
+										"<iframe frameBorder=\"0\" width=\""+(mW-mS*2)+"\" height=\""+(mH-mS*2)+"\" src=\""+link+"\"></iframe>"+
+									"</td>"+
+									"<td style=\"vertical-align:top;\">"+
+										"<img width=\""+(mS/2)+"\" height=\""+(mS/2)+"\" src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/close.png\" />"+
+									"</td>"+
+								"</tr></table>"
+							).id("frame_tmp")
+							.parent("main_view")
+							.position(0, 0)
+							.size(mW, mH)
+							.style("display", "flex")
+							.style("position", "absolute")
+							.style("align-items", "center")
+							.style("justify-content", "center")
+							.style("background", "url(\"https://kovalsky95.github.io/p5js_kbase/resources/b/t.png\")")
+							.style("opacity", "0.7");
+						frame_tmp.mouseClicked(sk.remove_tmpp);
+					}
+				}
 				sk.remove_tmpp = function() {
+					flag = false;
 					frame_tmp.remove();
 				}
-// 					clicked(mX, mY) {
-// 						if(mX >= this.x && mX <= this.x+this.w)
-// 							if(mY >= this.y && mY <= this.y+this.h)
-// 								sk.goLink(this.link);
-// 					}
+				class KTheme {
+					constructor(title, lis) {
+						this.x = 0;
+						this.y = 0;
+						this.w = 0;
+						this.h = 0;
+						this.title = title;
+						this.lis = lis;
+					}
+					setPosition(x, y, h) {
+						this.x = x;
+						this.y = y;
+						this.h = h;
+						this.lis_c = sk.locateT(this.y+mS, this.h-mS/2, this.lis.length);
+						for(let i = 0; i <= this.lis.length-1; i++) {
+							this.lis[i] = new SubKTheme(
+								this.lis[i],
+								this.x+mS*2,
+								this.lis_c[1][i]-mS/4,
+								this.lis_c[0]
+							);
+						}
+					}
+					clicked(mX, mY) {
+						for(let i = 0; i <= this.lis.length-1; i++) {
+							this.lis[i].clicked(mX, mY);
+						}
+					}
+					show() {
+						sk.text(this.title, this.x, this.y+mS);
+						for(let i = 0; i <= this.lis.length-1; i++) {
+							this.lis[i].show();
+						}
+					}
+				}
+				class SubKTheme {
+					constructor(title, x, y, h) {
+						this.title = title;
+						this.x = x;
+						this.y = y;
+						this.w = this.title.length*25;
+						this.h = h;
+					}
+					clicked(mX, mY) {
+						if(mX >= this.x && mX <= this.x+this.w)
+							if(mY >= this.y && mY <= this.y+this.h)
+								sk.goLink(this.title);
+					}
+					show() {
+						sk.text(this.title, this.x, this.y+this.h);
+					}
+				}
 			}
 		break;
 		case 2:
