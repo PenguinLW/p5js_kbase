@@ -260,7 +260,7 @@ function initMV(ch, title) {
 							this.lis[i] = new SubKTheme(
 								this.lis[i],
 								this.x+mS*2,
-								this.lis_c[1][i]-mS/2,
+								this.lis_c[1][i]-mS/3,
 								this.lis_c[0]
 							);
 						}
