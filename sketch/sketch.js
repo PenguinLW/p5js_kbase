@@ -219,7 +219,7 @@ function initMV(ch, title) {
 								"div",
 								"<table><tr>"+
 									"<td>"+
-										"<iframe frameBorder=\"0\" width=\""+(mW-mS*4)+"\" height=\""+(mH-mS*4)+"\" src=\""+link+"\"></iframe>"+
+										"<iframe frameBorder=\"0\" width=\""+(mW-spacer*2)+"\" height=\""+(mH-mS*4)+"\" src=\""+link+"\"></iframe>"+
 									"</td>"+
 									"<td style=\"vertical-align:top;\">"+
 										"<img width=\""+(mS)+"\" height=\""+(mS)+"\" src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/close.png\" />"+
@@ -502,7 +502,7 @@ function initMV(ch, title) {
 					frame_tmp.mouseClicked(sk.remove_tmpp);
 				}
 				sk.showLink = function(link) {
-					window.open(""+link, "PenguinL", "width="+(w-mS)+", height="+(h-mS)+", left="+(w/2-w/4)+"")
+					window.open(""+link, "PenguinL", "width="+(w-mS)+", height="+(h-mS)+", left="+(w/2-w/3)+"")
 				}
 				sk.locatedL = function(s_point, all_area, count_el) {
 					let lis, step_y, size_el;
