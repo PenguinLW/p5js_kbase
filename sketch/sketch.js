@@ -483,7 +483,7 @@ function initMV(ch, title) {
 							"div",
 							"<table><tr>"+
 								"<td>"+
-									"<iframe frameBorder=\"0\" width=\""+(mW-mS*2)+"\" height=\""+(mH-mS*4)+"\" src=\""+link+"\"></iframe>"+
+									"<iframe frameBorder=\"0\" width=\""+(mW-mS)+"\" height=\""+(mH-mS*4)+"\" src=\""+link+"\"></iframe>"+
 								"</td>"+
 								"<td style=\"vertical-align:top;\">"+
 									"<img width=\""+(mS)+"\" height=\""+(mS)+"\" src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/close.png\" />"+
