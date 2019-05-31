@@ -163,7 +163,7 @@ function initMV(ch, title) {
 					ho = [];
 					flag = false;
 					lis.push("Как используется JS?");
-					lis.push([]);
+					lis.push(["Пошаговое описание создания js-приложения"]);
 					lis.push("Переменные");
 					lis.push(["Синтаксис объявления переменных и констант", "Тип данных", "Некоторые \"уловки\" для приведения типов", "Структуры данных"]);
 					lis.push("Операторы языка JS");
@@ -213,6 +213,7 @@ function initMV(ch, title) {
 				}
 				sk.goLink = function(link) {
 					if(!flag) {
+						alert(lnk);
 						flag = !flag;
 						frame_tmp = createElement(
 								"div",
