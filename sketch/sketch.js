@@ -178,7 +178,7 @@ function initMV(ch, title) {
 					}
 					lis_c = sk.locateT(mS, h, ho.length);
 					for(let i = 0; i <= ho.length-1; i++) {
-						ho[i].setPosition(mS, lis_c[1][i], mS+lis_c[0]);
+						ho[i].setPosition(mS, lis_c[1][i], lis_c[0]);
 					}
 				}
 				sk.draw = function() {
@@ -249,7 +249,7 @@ function initMV(ch, title) {
 						this.x = x;
 						this.y = y;
 						this.h = h;
-						this.lis_c = sk.locateT(this.y+mS/2, this.h, this.lis.length);
+						this.lis_c = sk.locateT(this.y, this.h, this.lis.length);
 						for(let i = 0; i <= this.lis.length-1; i++) {
 							this.lis[i] = new SubKTheme(
 								this.lis[i],
@@ -285,7 +285,7 @@ function initMV(ch, title) {
 								sk.goLink(this.title);
 					}
 					show() {
-						sk.text(this.title, this.x, this.y);
+						sk.text(this.title, this.x, this.y+this.h);
 					}
 				}
 			}
@@ -496,7 +496,7 @@ function initMV(ch, title) {
 					frame_tmp.mouseClicked(sk.remove_tmpp);
 				}
 				sk.showLink = function(link) {
-					window.open(""+link, "PenguinL", "width="+(w-mS)+", height="+(h-mS)+", left="+(w/6-w/4)+"")
+					window.open(""+link, "PenguinL", "width="+(w-mS)+", height="+(h-mS)+", left="+(w/2-w/6)+"")
 				}
 				sk.locatedL = function(s_point, all_area, count_el) {
 					let lis, step_y, size_el;
