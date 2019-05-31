@@ -215,7 +215,7 @@ function initMV(ch, title) {
 							"div",
 							"<table><tr>"+
 								"<td>"+
-									"<iframe frameBorder=\"0\" width=\""+(mW-mS*4.9)+"\" height=\""+(mH-mS*4)+"\" src=\""+link+"\"></iframe>"+
+									"<iframe frameBorder=\"0\" width=\""+(mW-mS*4)+"\" height=\""+(mH-mS*4)+"\" src=\""+link+"\"></iframe>"+
 								"</td>"+
 								"<td style=\"vertical-align:top;\">"+
 									"<img width=\""+(mS)+"\" height=\""+(mS)+"\" src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/close.png\" />"+
@@ -274,7 +274,7 @@ function initMV(ch, title) {
 				class SubKTheme {
 					constructor(title, x, y, h) {
 						this.title = title;
-						this.x = x+mS*2;
+						this.x = x;
 						this.y = y;
 						this.w = this.title.length*10;
 						this.h = h;
@@ -285,7 +285,7 @@ function initMV(ch, title) {
 								sk.goLink(this.title);
 					}
 					show() {
-						sk.text(this.title, this.x, this.y);
+						sk.text(this.title, this.x, this.y+this.h);
 					}
 				}
 			}
