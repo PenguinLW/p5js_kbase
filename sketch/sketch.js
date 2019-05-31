@@ -8,8 +8,7 @@ function preload() {
 	sketches = [];
 	contents = [];
 	spacer = 25;
-	alert(windowWidth);
-	alert(windowHeight);
+//	(1920, 976);
 	mS = (windowWidth-windowHeight)/10-spacer;
 	mW = windowWidth-mS;
 	mH = windowHeight-mS;
