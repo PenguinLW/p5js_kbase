@@ -299,10 +299,27 @@ function initMV(ch, title) {
 		break;
 		case 1:
 			return function(sk) {
-				let w, h;//, links, frame_tmp;
+				let w, h, lis, frame_tmp, flag;//, links;
 				sk.preload = function() {
 					w = mW-mW/7;
 					h = mH-mS;
+					lis = [];
+					lis.push("\"Место\" исполнения программы, структура программы");
+					lis.push([]);
+					lis.push("Работа с графическими примитивами, их комбинации");
+					lis.push([]);
+					lis.push("Работа с DOM");
+					lis.push([]);
+					lis.push("Рендеринг 3D-графики");
+					lis.push([]);
+					lis.push("Работа со звуком\речью");
+					lis.push([]);
+					lis.push("Браузер - редактор растровой графики?");
+					lis.push([]);
+					lis.push("Работа с видео, аудио, изображениями");
+					lis.push([]);
+					lis.push("Интерактивность");
+					lis.push([]);
 				}
 				sk.setup = function() {
 					sk.createCanvas(w, h);
