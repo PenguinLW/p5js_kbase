@@ -276,7 +276,7 @@ function initMV(ch, title) {
 						this.title = title;
 						this.x = x;
 						this.y = y;
-						this.w = this.title.length*10;
+						this.w = this.title.length*25;
 						this.h = h;
 					}
 					clicked(mX, mY) {
@@ -477,7 +477,7 @@ function initMV(ch, title) {
 							"div",
 							"<table><tr>"+
 								"<td>"+
-									"<iframe frameBorder=\"0\" width=\""+(mW-mS*4.4)+"\" height=\""+(mH-mS*4)+"\" src=\""+link+"\"></iframe>"+
+									"<iframe frameBorder=\"0\" width=\""+(mW-mS*4.9)+"\" height=\""+(mH-mS*4)+"\" src=\""+link+"\"></iframe>"+
 								"</td>"+
 								"<td style=\"vertical-align:top;\">"+
 									"<img width=\""+(mS)+"\" height=\""+(mS)+"\" src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/close.png\" />"+
