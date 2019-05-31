@@ -213,7 +213,7 @@ function initMV(ch, title) {
 				}
 				sk.goLink = function(link) {
 					if(!flag) {
-						alert(lnk);
+						alert(link);
 						flag = !flag;
 						frame_tmp = createElement(
 								"div",
