@@ -249,7 +249,7 @@ function initMV(ch, title) {
 						this.x = x;
 						this.y = y;
 						this.h = h;
-						this.lis_c = sk.locateT(this.y+mS*2, this.h, this.lis.length);
+						this.lis_c = sk.locateT(this.y+mS/2, this.h, this.lis.length);
 						for(let i = 0; i <= this.lis.length-1; i++) {
 							this.lis[i] = new SubKTheme(
 								this.lis[i],
