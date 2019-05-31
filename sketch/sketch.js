@@ -155,12 +155,13 @@ function initMV(ch, title) {
 	switch(ch) {
 		case 0:
 			return function(sk) {
-				let w, h, lis, ho, frame_tmp;
+				let w, h, lis, ho, frame_tmp, flag;
 				sk.preload = function() {
 					w = mW-mW/7;
 					h = mH-mS;
 					lis = [];
 					ho = [];
+					flag = false;
 					lis.push("Как используется JS?");
 					lis.push([]);
 					lis.push("Переменные");
@@ -211,29 +212,33 @@ function initMV(ch, title) {
 					}
 				}
 				sk.goLink = function(link) {
-					frame_tmp = createElement(
-							"div",
-							"<table><tr>"+
-								"<td>"+
-									"<iframe frameBorder=\"0\" width=\""+(mW-mS*4)+"\" height=\""+(mH-mS*4)+"\" src=\""+link+"\"></iframe>"+
-								"</td>"+
-								"<td style=\"vertical-align:top;\">"+
-									"<img width=\""+(mS)+"\" height=\""+(mS)+"\" src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/close.png\" />"+
-								"</td>"+
-							"</tr></table>"
-						).id("frame_tmp")
-						.parent("main_view")
-						.position(0, 0)
-						.size(mW, mH)
-						.style("display", "flex")
-						.style("position", "absolute")
-						.style("align-items", "center")
-						.style("justify-content", "center")
-						.style("background", "url(\"https://kovalsky95.github.io/p5js_kbase/resources/b/t.png\")")
-						.style("opacity", "0.7");
-					frame_tmp.mouseClicked(sk.remove_tmpp);
+					if(!flag) {
+						flag = !flag;
+						frame_tmp = createElement(
+								"div",
+								"<table><tr>"+
+									"<td>"+
+										"<iframe frameBorder=\"0\" width=\""+(mW-mS*4)+"\" height=\""+(mH-mS*4)+"\" src=\""+link+"\"></iframe>"+
+									"</td>"+
+									"<td style=\"vertical-align:top;\">"+
+										"<img width=\""+(mS)+"\" height=\""+(mS)+"\" src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/close.png\" />"+
+									"</td>"+
+								"</tr></table>"
+							).id("frame_tmp")
+							.parent("main_view")
+							.position(0, 0)
+							.size(mW, mH)
+							.style("display", "flex")
+							.style("position", "absolute")
+							.style("align-items", "center")
+							.style("justify-content", "center")
+							.style("background", "url(\"https://kovalsky95.github.io/p5js_kbase/resources/b/t.png\")")
+							.style("opacity", "0.7");
+						frame_tmp.mouseClicked(sk.remove_tmpp);
+					}
 				}
 				sk.remove_tmpp = function() {
+					flag = false;
 					frame_tmp.remove();
 				}
 				class KTheme {
