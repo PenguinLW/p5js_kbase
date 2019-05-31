@@ -183,7 +183,7 @@ function initMV(ch, title) {
 					}
 				}
 				sk.draw = function() {
-					sk.background(144,77,55);
+					sk.background(255);
 					sk.text(title, w/2, h-h+mS);
 					for(let i = 0; i <= ho.length-1; i++) {
 						ho[i].show();
