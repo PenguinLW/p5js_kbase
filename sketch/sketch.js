@@ -249,7 +249,7 @@ function initMV(ch, title) {
 						this.x = x;
 						this.y = y;
 						this.h = h;
-						this.lis_c = sk.locateT(this.y, this.h, this.lis.length);
+						this.lis_c = sk.locateT(this.y+mS, this.h, this.lis.length);
 						for(let i = 0; i <= this.lis.length-1; i++) {
 							this.lis[i] = new SubKTheme(
 								this.lis[i],
@@ -477,7 +477,7 @@ function initMV(ch, title) {
 							"div",
 							"<table><tr>"+
 								"<td>"+
-									"<iframe frameBorder=\"0\" width=\""+(mW-mS*6)+"\" height=\""+(mH-mS*4)+"\" src=\""+link+"\"></iframe>"+
+									"<iframe frameBorder=\"0\" width=\""+(mW-mS*4.4)+"\" height=\""+(mH-mS*4)+"\" src=\""+link+"\"></iframe>"+
 								"</td>"+
 								"<td style=\"vertical-align:top;\">"+
 									"<img width=\""+(mS)+"\" height=\""+(mS)+"\" src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/close.png\" />"+
@@ -496,7 +496,7 @@ function initMV(ch, title) {
 					frame_tmp.mouseClicked(sk.remove_tmpp);
 				}
 				sk.showLink = function(link) {
-					window.open(""+link, "PenguinL", "width="+(w-mS)+", height="+(h-mS)+", left="+(w/2-w/6)+"")
+					window.open(""+link, "PenguinL", "width="+(w-mS)+", height="+(h-mS)+", left="+(w/2-w/4)+"")
 				}
 				sk.locatedL = function(s_point, all_area, count_el) {
 					let lis, step_y, size_el;
