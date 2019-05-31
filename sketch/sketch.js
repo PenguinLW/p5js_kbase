@@ -8,6 +8,7 @@ function preload() {
 	sketches = [];
 	contents = [];
 	spacer = 25;
+	alert(windowWidth, windowHeight);
 	mS = (windowWidth-windowHeight)/10-spacer;
 	mW = windowWidth-mS;
 	mH = windowHeight-mS;
@@ -219,7 +220,7 @@ function initMV(ch, title) {
 								"div",
 								"<table><tr>"+
 									"<td>"+
-										"<iframe frameBorder=\"0\" width=\""+(mW-mS*2)+"\" height=\""+(mH-mS*4)+"\" src=\""+link+"\"></iframe>"+
+										"<iframe frameBorder=\"0\" width=\""+(mW-mS*2)+"\" height=\""+(mH-mS*2)+"\" src=\""+link+"\"></iframe>"+
 									"</td>"+
 									"<td style=\"vertical-align:top;\">"+
 										"<img width=\""+(mS/2)+"\" height=\""+(mS/2)+"\" src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/close.png\" />"+
@@ -260,7 +261,7 @@ function initMV(ch, title) {
 							this.lis[i] = new SubKTheme(
 								this.lis[i],
 								this.x+mS*2,
-								this.lis_c[1][i]-mS/3.4,
+								this.lis_c[1][i]-mS/4,
 								this.lis_c[0]
 							);
 						}
