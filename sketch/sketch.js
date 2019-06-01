@@ -420,7 +420,7 @@ function initMV(ch, title) {
 								this.lis[i],
 								this.x+mS*2,
 								this.lis_c[1][i]+mS/7,
-								this.lis_c[0]
+								this.lis_c[0],
 								this.index,
 								i
 							);
