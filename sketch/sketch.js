@@ -212,7 +212,7 @@ function initMV(ch, title) {
 						ho[i].clicked(sk.mouseX, sk.mouseY);
 					}
 				}
-				sk.goLink = function(link) {
+				sk.goLink = function(title, link) {
 					if(!flag) {
 						flag = !flag;
 						frame_tmp = createElement(
