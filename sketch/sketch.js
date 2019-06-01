@@ -334,7 +334,7 @@ function initMV(ch, title) {
 					let lis_c;
 					sk.createCanvas(w, h);
 					for(let i = 0; i <= lis.length-2; i+=2) {
-						ho.push(new KTheme(lis[i], lis[i+1]));
+						ho.push(new KTheme(lis[i], lis[i+1], i));
 					}
 					lis_c = sk.locateT(mS-mS/2, h-mS*2, ho.length);
 					for(let i = 0; i <= ho.length-1; i++) {
@@ -370,7 +370,7 @@ function initMV(ch, title) {
 						ho[i].clicked(sk.mouseX, sk.mouseY);
 					}
 				}
-				sk.goLink = function(link) {
+				sk.goLink = function(title, link) {
 					if(!flag) {
 						flag = !flag;
 						frame_tmp = createElement(
@@ -401,13 +401,14 @@ function initMV(ch, title) {
 					frame_tmp.remove();
 				}
 				class KTheme {
-					constructor(title, lis) {
+					constructor(title, lis, index) {
 						this.x = 0;
 						this.y = 0;
 						this.w = 0;
 						this.h = 0;
 						this.title = title;
 						this.lis = lis;
+						this.index = index;
 					}
 					setPosition(x, y, h) {
 						this.x = x;
@@ -420,6 +421,8 @@ function initMV(ch, title) {
 								this.x+mS*2,
 								this.lis_c[1][i]+mS/7,
 								this.lis_c[0]
+								this.index,
+								i
 							);
 						}
 					}
@@ -436,17 +439,22 @@ function initMV(ch, title) {
 					}
 				}
 				class SubKTheme {
-					constructor(title, x, y, h) {
+					constructor(title, x, y, h, in0, in1) {
 						this.title = title;
 						this.x = x;
 						this.y = y;
 						this.w = this.title.length*25;
 						this.h = h;
+						this.in0 = in0;
+						this.in1 = in1;
 					}
 					clicked(mX, mY) {
 						if(mX >= this.x && mX <= this.x+this.w)
 							if(mY >= this.y && mY <= this.y+this.h)
-								sk.goLink(this.title);
+								sk.goLink(
+									this.title,
+									"https://kovalsky95.github.io/p5js_kbase/wiki/theme/1/"+this.in0+"/"+this.in1+"/theme/"
+								);
 					}
 					show() {
 						sk.text(this.title, this.x, this.y+this.h);
