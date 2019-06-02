@@ -287,8 +287,8 @@ function initMV(ch, title) {
 						this.y = y;
 						this.w = this.title.length*25;
 						this.h = h;
-						this.in0 = in0;
-						this.in1 = in1;
+						this.in0 = in0+1;
+						this.in1 = in1+1;
 					}
 					clicked(mX, mY) {
 						if(mX >= this.x && mX <= this.x+this.w)
@@ -445,15 +445,15 @@ function initMV(ch, title) {
 						this.y = y;
 						this.w = this.title.length*25;
 						this.h = h;
-						this.in0 = in0;
-						this.in1 = in1;
+						this.in0 = in0+1;
+						this.in1 = in1+1;
 					}
 					clicked(mX, mY) {
 						if(mX >= this.x && mX <= this.x+this.w)
 							if(mY >= this.y && mY <= this.y+this.h)
 								sk.goLink(
 									this.title,
-									"https://kovalsky95.github.io/p5js_kbase/wiki/theme/1/"+this.in0+"/"+this.in1+"/theme/"
+									"https://kovalsky95.github.io/p5js_kbase/wiki/theme/2/"+this.in0+"/"+this.in1+"/theme/"
 								);
 					}
 					show() {
