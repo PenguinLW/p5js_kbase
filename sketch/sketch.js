@@ -288,7 +288,7 @@ function initMV(ch, title) {
 						this.y = y;
 						this.w = this.title.length*25;
 						this.h = h;
-						this.in0 = in0+1;
+						this.in0 = in0;
 						this.in1 = in1+1;
 					}
 					clicked(mX, mY) {
@@ -447,7 +447,7 @@ function initMV(ch, title) {
 						this.y = y;
 						this.w = this.title.length*25;
 						this.h = h;
-						this.in0 = in0+1;
+						this.in0 = in0;
 						this.in1 = in1+1;
 					}
 					clicked(mX, mY) {
