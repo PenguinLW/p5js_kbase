@@ -175,8 +175,9 @@ function initMV(ch, title) {
 				sk.setup = function() {
 					let lis_c;
 					sk.createCanvas(w, h);
-					for(let i = 0; i <= lis.length-2; i+=2) {
-						ho.push(new KTheme(lis[i], lis[i+1], i));
+					for(let i = 0, k = 1; i <= lis.length-2; i+=2) {
+						ho.push(new KTheme(lis[i], lis[i+1], k));
+						k++;
 					}
 					lis_c = sk.locateT(mS-mS/2, h-mS*2, ho.length);
 					for(let i = 0; i <= ho.length-1; i++) {
@@ -333,8 +334,9 @@ function initMV(ch, title) {
 				sk.setup = function() {
 					let lis_c;
 					sk.createCanvas(w, h);
-					for(let i = 0; i <= lis.length-2; i+=2) {
-						ho.push(new KTheme(lis[i], lis[i+1], i));
+					for(let i = 0, k = 1; i <= lis.length-2; i+=2) {
+						ho.push(new KTheme(lis[i], lis[i+1], k));
+						k++;
 					}
 					lis_c = sk.locateT(mS-mS/2, h-mS*2, ho.length);
 					for(let i = 0; i <= ho.length-1; i++) {
