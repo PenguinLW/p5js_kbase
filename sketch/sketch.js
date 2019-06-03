@@ -164,7 +164,6 @@ function initMV(ch, title) {
 					w = mW-mW/7;
 					h = mH-mS;
 					or_s = textSize();
-					alert(sk.textSize());
 					alert(textSize());
 					ho = [];
 					flag = false;
@@ -323,7 +322,7 @@ function initMV(ch, title) {
 				sk.preload = function() {
 					w = mW-mW/7;
 					h = mH-mS;
-					or_s = sk.textSize();
+					or_s = textSize();
 					ho = [];
 					flag = false;
 					lis = [];
@@ -489,7 +488,7 @@ function initMV(ch, title) {
 				sk.preload = function() {
 					w = mW-mW/7;
 					h = mH-mS;
-					or_s = sk.textSize();
+					or_s = textSize();
 				}
 				sk.setup = function() {
 					sk.createCanvas(w, h);
@@ -550,7 +549,7 @@ function initMV(ch, title) {
 				sk.preload = function() {
 					w = mW-mW/7;
 					h = mH-mS;
-					or_s = sk.textSize();
+					or_s = textSize();
 					links = "https://ru.wikipedia.org/w/index.php?title=Метод_проектов&stable=1\n"+
 						"https://web.archive.org/web/20080503101731/http://vio.fio.ru/vio_01/Article_0_1.htm\n"+
 						"https://p5js.org/es/get-started/\n"+
