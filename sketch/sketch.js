@@ -146,7 +146,8 @@ function initWL() {
 						sk.goLink(this.index, links[this.index]);
 			}
 			show() {
-				sk.image(this.lpl, this.x+mS, this.y+mS, this.w/2, this.h/2);
+				sk.text(links[this.index], this.x+mS, this.y+mS, this.w/2, this.h/2);
+//				sk.image(this.lpl, this.x+mS, this.y+mS, this.w/2, this.h/2);
 			}
 		}
 	}
@@ -558,7 +559,8 @@ function initMV(ch, title) {
 						"https://github.com/NativeScript/NativeScript/issues/3884\n"+
 						"https://developer.mozilla.org/ru/docs/Web/CSS/vertical-align\n"+
 						"https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XUL/Attribute/onclick\n"+
-						"https://learn.javascript.ru/window-methods"
+						"https://learn.javascript.ru/window-methods\n"+
+						"https://p5js.org/reference/#/p5/text"+
 						"";
 				}
 				sk.setup = function() {
