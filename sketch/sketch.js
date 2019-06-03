@@ -707,6 +707,7 @@ function initMV(ch, title) {
 							"	}\n"+
 							"}\n"+
 						"";
+						alert(sktch);
 						flag = !flag;
 						frame_tmp = createElement(
 								"div",
