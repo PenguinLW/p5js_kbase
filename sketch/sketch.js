@@ -598,12 +598,6 @@ function initMV(ch, title) {
 					let lis_c;
 					sk.createCanvas(w, h);
 					links = links.split("\n");
-// 					let lis = sk.locatedL(h/2, h/2, links.length);
-// 					for(let i = 0; i <= links.length-1; i++) {
-// 						let l = links[i].length*10;
-// 						links[i] = new WondL(links[i]);
-// 						links[i].setPosition(w/2, lis[1][i], l, lis[0]);
-// 					}
 					for(let i = 0, k = 1; i <= lis.length-2; i+=2) {
 						ho.push(new KTheme(lis[i], lis[i+1], k));
 						k++;
@@ -619,9 +613,6 @@ function initMV(ch, title) {
 					sk.textAlign(CENTER);
 					sk.textStyle(BOLD);
 					sk.text(title, w/2, h-h+mS);
-// 					for(let i = 0; i <= links.length-1; i++) {
-// 						links[i].show();
-// 					}
 					for(let i = 0; i <= ho.length-1; i++) {
 						ho[i].show();
 					}
@@ -645,6 +636,39 @@ function initMV(ch, title) {
 				}
 				sk.goLink = function(link) {
 					if(!flag) {
+						let sktch = "let w, h, spacer;"+
+						    "function preload() {"+
+						    "	spacer = 25;"+
+						    "	w = windowWidth-spacer;"+
+						    "	h = windowHeight-spacer;"+
+						    "}"+
+						    "function setup() {"+
+						    "	createCanvas(w, h)"+
+						    "	let lis_c = sk.locatedL(h/2, h/2, links.length);"+
+						    "	for(let i = 0; i <= links.length-1; i++) {"+
+						    "		let l = links[i].length*10;"+
+						    "		links[i] = new WondL(links[i]);"+
+						    "		links[i].setPosition(w/2, lis_c[1][i], l, lis_c[0]);"+
+						    "	}"+
+						    "}"+
+						    "function draw() {"+
+						    "	"+
+						    "	for(let i = 0; i <= links.length-1; i++) {"+
+						    "		links[i].show();"+
+						    "	}"+
+						    ""+
+						    ""+
+						    ""+
+						    ""+
+						    ""+
+						    ""+
+						    ""+
+						    ""+
+						    ""+
+						    ""+
+						    ""+
+						    "}"+
+						    "";
 						flag = !flag;
 						frame_tmp = createElement(
 								"div",
