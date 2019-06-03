@@ -641,7 +641,7 @@ function initMV(ch, title) {
 					}
 				}
 				sk.showLink = function(link) {
-					window.open(""+link, "PenguinL", "width=" + (w - mS) + ", height=" + (h - mS) + ", left=" + (w / 2 - w / 3) + "";
+					window.open(""+link, "PenguinL", "width=" + (w - mS) + ", height=" + (h - mS) + ", left=" + (w / 2 - w / 3) + "");
 				}
 				sk.goLink = function(link) {
 					if(!flag) {
