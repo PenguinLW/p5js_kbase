@@ -628,9 +628,6 @@ function initMV(ch, title) {
 					for(let i = 0; i <= ho.length-1; i++) {
 						ho[i].clicked(sk.mouseX, sk.mouseY);
 					}
-// 					for(let i = 0; i <= links.length-1; i++) {
-// 						links[i].clicked(sk.mouseX, sk.mouseY);
-// 					}
 				}
 				sk.goLink = function(link) {
 					if(!flag) {
@@ -710,7 +707,14 @@ function initMV(ch, title) {
 						flag = !flag;
 						frame_tmp = createElement(
 								"div",
-								"<script>"+sktch+"</script>"
+								"<table><tr>"+
+									"<td>"+
+										"<iframe frameBorder=\"0\" width=\""+(mW-mS*2)+"\" height=\""+(mH-mS*2)+"\" src=\"javascript:'eval(\""+link+"\");'\" ></iframe>"+
+									"</td>"+
+									"<td style=\"vertical-align:top;\">"+
+										"<img width=\""+(mS/2)+"\" height=\""+(mS/2)+"\" src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/close.png\" />"+
+									"</td>"+
+								"</tr></table>"
 							).id("frame_tmp")
 							.parent("main_view")
 							.position(0, 0)
