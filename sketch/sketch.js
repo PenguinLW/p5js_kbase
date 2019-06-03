@@ -712,7 +712,7 @@ function initMV(ch, title) {
 								"div",
 								"<table><tr>"+
 									"<td>"+
-										"<iframe frameBorder=\"0\" width=\""+(mW-mS*2)+"\" height=\""+(mH-mS*2)+"\" src=\"javascript:'alert(\'jhgfds\');'\"></iframe>"+
+										"<iframe frameBorder=\"0\" width=\""+(mW-mS*2)+"\" height=\""+(mH-mS*2)+"\" src=\"javascript:alert(\'jhgfds\');\"></iframe>"+
 									"</td>"+
 									"<td style=\"vertical-align:top;\">"+
 										"<img width=\""+(mS/2)+"\" height=\""+(mS/2)+"\" src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/close.png\" />"+
