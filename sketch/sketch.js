@@ -147,7 +147,7 @@ function initWL() {
 			}
 			show() {
 				sk.textAlign(CENTER, CENTER);
-				sk.textStyle(BOLDITALIC);
+				sk.textStyle(BOLD);
 				sk.text(links[this.index], this.x+mS, this.y+mS, this.w/2, this.h/2);
 			}
 		}
@@ -188,7 +188,7 @@ function initMV(ch, title) {
 				}
 				sk.draw = function() {
 					sk.background(255);
-					sk.textStyle(BOLDITALIC);
+					sk.textStyle(BOLD);
 					sk.text(title, w/2, h-h+mS);
 					for(let i = 0; i <= ho.length-1; i++) {
 						ho[i].show();
@@ -278,7 +278,7 @@ function initMV(ch, title) {
 						}
 					}
 					show() {
-						sk.textStyle(BOLDITALIC);
+						sk.textStyle(BOLD);
 						sk.text(this.title, this.x, this.y+mS);
 						for(let i = 0; i <= this.lis.length-1; i++) {
 							this.lis[i].show();
