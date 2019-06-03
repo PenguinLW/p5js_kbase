@@ -189,6 +189,8 @@ function initMV(ch, title) {
 				}
 				sk.draw = function() {
 					sk.background(255);
+					sk.textSize(22);
+					sk.textAlign(CENTER, CENTER);
 					sk.textStyle(BOLD);
 					sk.text(title, w/2, h-h+mS);
 					for(let i = 0; i <= ho.length-1; i++) {
@@ -351,6 +353,8 @@ function initMV(ch, title) {
 				}
 				sk.draw = function() {
 					sk.background(255);
+					sk.textSize(22);
+					sk.textAlign(CENTER, CENTER);
 					sk.textStyle(BOLD);
 					sk.text(title, w/2, h-h+mS);
 					for(let i = 0; i <= ho.length-1; i++) {
