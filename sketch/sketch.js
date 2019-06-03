@@ -591,7 +591,8 @@ function initMV(ch, title) {
 						"https://learn.javascript.ru/window-methods\n"+
 						"https://p5js.org/reference/#/p5/text\n"+
 						"https://p5js.org/es/reference/#/p5/textStyle\n"+
-						"https://p5js.org/reference/#/p5/textSize"+
+						"https://p5js.org/reference/#/p5/textSize\n"+
+						"https://learn.javascript.ru/iframes"+
 						"";
 				}
 				sk.setup = function() {
@@ -711,7 +712,7 @@ function initMV(ch, title) {
 								"div",
 								"<table><tr>"+
 									"<td>"+
-										"<iframe frameBorder=\"0\" width=\""+(mW-mS*2)+"\" height=\""+(mH-mS*2)+"\" src=\"javascript\""+sktch+"\"\"></iframe>"+
+										"<iframe frameBorder=\"0\" width=\""+(mW-mS*2)+"\" height=\""+(mH-mS*2)+"\" src=\"javascript:\""+sktch+"\"\"></iframe>"+
 									"</td>"+
 									"<td style=\"vertical-align:top;\">"+
 										"<img width=\""+(mS/2)+"\" height=\""+(mS/2)+"\" src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/close.png\" />"+
