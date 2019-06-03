@@ -634,7 +634,7 @@ function initMV(ch, title) {
 				sk.goLink = function(link) {
 					if(!flag) {
 						let sktch = "";
-						sktch += "<script>alert(\"re_done\");\n"+
+						sktch += "alert(\"re_done\");\n"+
 							"let w, h, spacer, links, or_s;\n"+
 							"function preload() {\n"+
 							"	spacer = 25;\n"+
@@ -706,15 +706,12 @@ function initMV(ch, title) {
 							"	}\n"+
 							"}\n"+
 						"";
-						sktch += ""+
-							"</script>"+
-						"";
 						flag = !flag;
 						frame_tmp = createElement(
 								"div",
 								"<table><tr>"+
 									"<td>"+
-										"<iframe frameBorder=\"0\" width=\""+(mW-mS*2)+"\" height=\""+(mH-mS*2)+"\" srcdoc=\""+sktch+"\"></iframe>"+
+										"<iframe frameBorder=\"0\" width=\""+(mW-mS*2)+"\" height=\""+(mH-mS*2)+"\" src=\"javascript\""+sktch+"\"\"></iframe>"+
 									"</td>"+
 									"<td style=\"vertical-align:top;\">"+
 										"<img width=\""+(mS/2)+"\" height=\""+(mS/2)+"\" src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/close.png\" />"+
