@@ -634,7 +634,7 @@ function initMV(ch, title) {
 				sk.goLink = function(link) {
 					if(!flag) {
 						let sktch = "";
-						sktch += "<script>\n"+
+						sktch += "<script>alert(\"re_done\");\n"+
 							"let w, h, spacer, links, or_s;\n"+
 							"function preload() {\n"+
 							"	spacer = 25;\n"+
@@ -667,7 +667,7 @@ function initMV(ch, title) {
 						"";
 						sktch += ""+
 							"function showLink(link) {\n"+
-							"	window.open(\"\"+link, \"PenguinL\", \"width=\""+(w-mS)+"\", height=\""+(h-mS)+"\", left=\""+(w/2-w/3)+"\"\")\n"+
+							"	window.open(\"\"+link, \"PenguinL\", \"width="+(w-mS)+", height="+(h-mS)+", left="+(w/2-w/3)+"\")\n"+
 							"}\n"+
 							"function locatedL(s_point, all_area, count_el) {\n"+
 							"	let lis, step_y, size_el;\n"+
