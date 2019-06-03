@@ -627,9 +627,9 @@ function initMV(ch, title) {
 					for(let i = 0; i <= ho.length-1; i++) {
 						ho[i].clicked(sk.mouseX, sk.mouseY);
 					}
-					for(let i = 0; i <= links.length-1; i++) {
-						links[i].clicked(sk.mouseX, sk.mouseY);
-					}
+// 					for(let i = 0; i <= links.length-1; i++) {
+// 						links[i].clicked(sk.mouseX, sk.mouseY);
+// 					}
 				}
 				sk.goLink = function(link) {
 					if(!flag) {
@@ -642,13 +642,13 @@ function initMV(ch, title) {
 							"	h = windowHeight-spacer;\n"+
 							"	links = [];\n"+
 							"	or_s = textSize();\n"+
-							"}"+
+							"}\n"+
 							"function setup() {\n"+
 							"	createCanvas(w, h);\n"+
 						"";
 						for(let i = 0; i <= links.length-1; i++) {
 							sktch += ""+
-								"	links.push("+links[i]+");\n"+
+								"	links.push(\""+links[i]+"\");\n"+
 							"";
 						}
 						sktch += ""+
@@ -666,7 +666,7 @@ function initMV(ch, title) {
 							"}\n"+
 						"";
 						sktch += ""+
-							"function showLink(link) {\n"
+							"function showLink(link) {\n"+
 							"	window.open(\"\"+link, \"PenguinL\", \"width=\""+(w-mS)+"\", height=\""+(h-mS)+"\", left=\""+(w/2-w/3)+"\"\")\n"+
 							"}\n"+
 							"function locatedL(s_point, all_area, count_el) {\n"+
