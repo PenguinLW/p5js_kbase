@@ -546,11 +546,17 @@ function initMV(ch, title) {
 		break;
 		case 3:
 			return function(sk) {
-				let w, h, links, frame_tmp, or_s;
+				let w, h, links, lis, ho, frame_tmp, flag, or_s;
 				sk.preload = function() {
 					w = mW-mW/7;
 					h = mH-mS;
 					or_s = textSize();
+					ho = [];
+					flag = false;
+					lis = [];
+					lis.push("Дополнительные ресурсы");
+					lis.push(["Показать"]);
+
 					links = "https://ru.wikipedia.org/w/index.php?title=Метод_проектов&stable=1\n"+
 						"https://web.archive.org/web/20080503101731/http://vio.fio.ru/vio_01/Article_0_1.htm\n"+
 						"https://p5js.org/es/get-started/\n"+
@@ -589,13 +595,22 @@ function initMV(ch, title) {
 						"";
 				}
 				sk.setup = function() {
+					let lis_c;
 					sk.createCanvas(w, h);
 					links = links.split("\n");
-					let lis = sk.locatedL(h/2, h/2, links.length);
-					for(let i = 0; i <= links.length-1; i++) {
-						let l = links[i].length*10;
-						links[i] = new WondL(links[i]);
-						links[i].setPosition(w/2, lis[1][i], l, lis[0]);
+// 					let lis = sk.locatedL(h/2, h/2, links.length);
+// 					for(let i = 0; i <= links.length-1; i++) {
+// 						let l = links[i].length*10;
+// 						links[i] = new WondL(links[i]);
+// 						links[i].setPosition(w/2, lis[1][i], l, lis[0]);
+// 					}
+					for(let i = 0, k = 1; i <= lis.length-2; i+=2) {
+						ho.push(new KTheme(lis[i], lis[i+1], k));
+						k++;
+					}
+					lis_c = sk.locatedL(mS-mS/2, h-mS*2, ho.length);
+					for(let i = 0; i <= ho.length-1; i++) {
+						ho[i].setPosition(mS, lis_c[1][i], lis_c[0]);
 					}
 				}
 				sk.draw = function() {
@@ -604,8 +619,11 @@ function initMV(ch, title) {
 					sk.textAlign(CENTER);
 					sk.textStyle(BOLD);
 					sk.text(title, w/2, h-h+mS);
-					for(let i = 0; i <= links.length-1; i++) {
-						links[i].show();
+// 					for(let i = 0; i <= links.length-1; i++) {
+// 						links[i].show();
+// 					}
+					for(let i = 0; i <= ho.length-1; i++) {
+						ho[i].show();
 					}
 					
 				}
@@ -615,9 +633,15 @@ function initMV(ch, title) {
 					sk.resizeCanvas(w, h);
 				}
 				sk.mousePressed = function() {
+					for(let i = 0; i <= ho.length-1; i++) {
+						ho[i].clicked(sk.mouseX, sk.mouseY);
+					}
 					for(let i = 0; i <= links.length-1; i++) {
 						links[i].clicked(sk.mouseX, sk.mouseY);
 					}
+				}
+				sk.showLink = function(link) {
+					window.open(""+link, "PenguinL", "width="+(w-mS)+", height="+(h-mS)+", left="+(w/2-w/3)+"")
 				}
 				sk.goLink = function(link) {
 					frame_tmp = createElement(
@@ -642,8 +666,9 @@ function initMV(ch, title) {
 						.style("opacity", "0.7");
 					frame_tmp.mouseClicked(sk.remove_tmpp);
 				}
-				sk.showLink = function(link) {
-					window.open(""+link, "PenguinL", "width="+(w-mS)+", height="+(h-mS)+", left="+(w/2-w/3)+"")
+				sk.remove_tmpp = function() {
+					flag = false;
+					frame_tmp.remove();
 				}
 				sk.locatedL = function(s_point, all_area, count_el) {
 					let lis, step_y, size_el;
@@ -680,6 +705,70 @@ function initMV(ch, title) {
 						sk.textSize(or_s);
 						sk.textStyle(NORMAL);
 						sk.text(this.link, this.x, this.y+this.h);
+					}
+				}
+				class KTheme {
+					constructor(title, lis, index) {
+						this.x = 0;
+						this.y = 0;
+						this.w = 0;
+						this.h = 0;
+						this.title = title;
+						this.lis = lis;
+						this.index = index;
+					}
+					setPosition(x, y, h) {
+						this.x = x;
+						this.y = y;
+						this.h = h;
+						this.lis_c = sk.locateT(this.y+mS, this.h-mS/2, this.lis.length);
+						for(let i = 0; i <= this.lis.length-1; i++) {
+							this.lis[i] = new SubKTheme(
+								this.lis[i],
+								this.x+mS*2,
+								this.lis_c[1][i]-mS/4,
+								this.lis_c[0],
+								this.index,
+								i
+							);
+						}
+					}
+					clicked(mX, mY) {
+						for(let i = 0; i <= this.lis.length-1; i++) {
+							this.lis[i].clicked(mX, mY);
+						}
+					}
+					show() {
+						sk.textSize(or_s);
+						sk.textAlign(LEFT);
+						sk.textStyle(BOLD);
+						sk.text(this.title, this.x, this.y+mS);
+						for(let i = 0; i <= this.lis.length-1; i++) {
+							this.lis[i].show();
+						}
+					}
+				}
+				class SubKTheme {
+					constructor(title, x, y, h, in0, in1) {
+						this.title = title;
+						this.x = x;
+						this.y = y;
+						this.w = this.title.length*25;
+						this.h = h;
+						this.in0 = in0;
+						this.in1 = in1+1;
+					}
+					clicked(mX, mY) {
+						if(mX >= this.x && mX <= this.x+this.w)
+							if(mY >= this.y && mY <= this.y+this.h)
+								sk.goLink(
+									this.title,
+									"https://kovalsky95.github.io/p5js_kbase/wiki/theme/1/"+this.in0+"/"+this.in1+"/theme/"
+								);
+					}
+					show() {
+						sk.textStyle(ITALIC);
+						sk.text(this.title, this.x, this.y+this.h);
 					}
 				}
 			}
