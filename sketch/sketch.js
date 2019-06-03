@@ -607,6 +607,12 @@ function initMV(ch, title) {
 					for(let i = 0; i <= ho.length-1; i++) {
 						ho[i].setPosition(mS, lis_c[1][i], lis_c[0]);
 					}
+					lis_c = sk.locatedL(spacer, h, links.length);
+					for(let i = 0; i <= links.length-1; i++) {
+						let l = links[i].length*10;
+						links[i] = new WondL(links[i]);
+						links[i].setPosition(w/2, lis_c[1][i], l, lis_c[0]);
+					}
 				}
 				sk.draw = function() {
 					sk.background(255);
@@ -617,7 +623,9 @@ function initMV(ch, title) {
 					for(let i = 0; i <= ho.length-1; i++) {
 						ho[i].show();
 					}
-					
+					for(let i = 0; i <= links.length-1; i++) {
+						links[i].show();
+					}
 				}
 				sk.windowResized = function() {
 					w = mW-mW/7;
@@ -628,88 +636,21 @@ function initMV(ch, title) {
 					for(let i = 0; i <= ho.length-1; i++) {
 						ho[i].clicked(sk.mouseX, sk.mouseY);
 					}
+					for(let i = 0; i <= links.length-1; i++) {
+						links[i].show();
+					}
+				}
+				sk.showLink = function(link) {
+					window.open(""+link, "PenguinL", "width=" + (w - mS) + ", height=" + (h - mS) + ", left=" + (w / 2 - w / 3) + "";
 				}
 				sk.goLink = function(link) {
 					if(!flag) {
-						let sktch = "";
-						sktch += ""+
-							"let w, h, spacer, links, or_s;\n"+
-							"function preload() {\n"+
-							"	spacer = 25;\n"+
-							"	w = windowWidth-spacer;\n"+
-							"	h = windowHeight-spacer;\n"+
-							"	links = [];\n"+
-							"	or_s = textSize();\n"+
-							"}\n"+
-							"function setup() {\n"+
-							"	createCanvas(w, h);\n"+
-						"";
-						for(let i = 0; i <= links.length-1; i++) {
-							sktch += ""+
-								"	links.push(\""+links[i]+"\");\n"+
-							"";
-						}
-						sktch += ""+
-							"	let lis_c = locatedL(spacer, h, links.length);\n"+
-							"	for(let i = 0; i <= links.length-1; i++) {\n"+
-							"		let l = links[i].length*10;\n"+
-							"		links[i] = new WondL(links[i]);\n"+
-							"		links[i].setPosition(w/2, lis_c[1][i], l, lis_c[0]);\n"+
-							"	}\n"+
-							"}\n"+
-							"function draw() {\n"+
-							"	for(let i = 0; i <= links.length-1; i++) {\n"+
-							"		links[i].show();\n"+
-							"	}\n"+
-							"}\n"+
-						"";
-						sktch += ""+
-							"function showLink(link) {\n"+
-							"	window.open(\"\"+link, \"PenguinL\", \"width="+(w-mS)+", height="+(h-mS)+", left="+(w/2-w/3)+"\")\n"+
-							"}\n"+
-							"function locatedL(s_point, all_area, count_el) {\n"+
-							"	let lis, step_y, size_el;\n"+
-							"	lis = [];\n"+
-							"	step_y = all_area/count_el;\n"+
-							"	size_el = step_y-2;\n"+
-							"	lis.push(s_point);\n"+
-							"	for(let i = 1; i <= count_el-1; i++) {\n"+
-							"		lis.push(lis[i-1]+step_y);\n"+
-							"	}\n"+
-							"	return [size_el, lis];\n"+
-							"}\n"+
-							"class WondL {\n"+
-							"	constructor(link) {\n"+
-							"		this.x = 0;\n"+
-							"		this.y = 0;\n"+
-							"		this.w = 0;\n"+
-							"		this.h = 0;\n"+
-							"		this.link = link;\n"+
-							"	}\n"+
-							"	setPosition(x, y, w, h) {\n"+
-							"		this.x = x;\n"+
-							"		this.y = y;\n"+
-							"		this.w = w;\n"+
-							"		this.h = h;\n"+
-							"	}\n"+
-							"	clicked(mX, mY) {\n"+
-							"		if(mX >= this.x && mX <= this.x+this.w)\n"+
-							"			if(mY >= this.y && mY <= this.y+this.h)\n"+
-							"				showLink(this.link);\n"+
-							"	}\n"+
-							"	show() {\n"+
-							"		textSize(or_s);\n"+
-							"		textStyle(NORMAL);\n"+
-							"		text(this.link, this.x, this.y+this.h);\n"+
-							"	}\n"+
-							"}\n"+
-						"";
 						flag = !flag;
 						frame_tmp = createElement(
 								"div",
 								"<table><tr>"+
 									"<td>"+
-										"<iframe frameBorder=\"0\" width=\""+(mW-mS*2)+"\" height=\""+(mH-mS*2)+"\" src=\"javascript:'eval(\""+link+"\");'\" ></iframe>"+
+										"<iframe frameBorder=\"0\" width=\""+(mW-mS*2)+"\" height=\""+(mH-mS*2)+"\" src=\""+link+"\"></iframe>"+
 									"</td>"+
 									"<td style=\"vertical-align:top;\">"+
 										"<img width=\""+(mS/2)+"\" height=\""+(mS/2)+"\" src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/close.png\" />"+
@@ -743,6 +684,31 @@ function initMV(ch, title) {
 						lis.push(lis[i-1]+step_y);
 					}
 					return [size_el, lis];
+				}
+				class WondL {
+					constructor(link) {
+						this.x = 0;
+						this.y = 0;
+						this.w = 0;
+						this.h = 0;
+						this.link = link;
+					}
+					setPosition(x, y, w, h) {
+						this.x = x;
+						this.y = y;
+						this.w = w;
+						this.h = h;
+					}
+					clicked(mX, mY) {
+						if(mX >= this.x && mX <= this.x+this.w)
+							if(mY >= this.y && mY <= this.y+this.h)
+								sk.showLink(this.link);
+					}
+					show() {
+						sk.textSize(or_s);
+						sk.textStyle(NORMAL);
+						sk.text(this.link, this.x, this.y+this.h);
+					}
 				}
 				class KTheme {
 					constructor(title, lis, index) {
