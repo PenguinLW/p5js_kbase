@@ -159,10 +159,11 @@ function initMV(ch, title) {
 	switch(ch) {
 		case 0:
 			return function(sk) {
-				let w, h, lis, ho, frame_tmp, flag;
+				let w, h, lis, ho, frame_tmp, flag, or_s;
 				sk.preload = function() {
 					w = mW-mW/7;
 					h = mH-mS;
+					or_s = sk.textSize();
 					ho = [];
 					flag = false;
 					lis = [];
@@ -190,7 +191,7 @@ function initMV(ch, title) {
 				sk.draw = function() {
 					sk.background(255);
 					sk.textSize(22);
-					sk.textAlign(CENTER, CENTER);
+					sk.textAlign(CENTER);
 					sk.textStyle(BOLD);
 					sk.text(title, w/2, h-h+mS);
 					for(let i = 0; i <= ho.length-1; i++) {
@@ -281,7 +282,8 @@ function initMV(ch, title) {
 						}
 					}
 					show() {
-						sk.textStyle(BOLD);
+						sk.textSize(or_s);
+						sk.textAlign(LEFT);
 						sk.text(this.title, this.x, this.y+mS);
 						for(let i = 0; i <= this.lis.length-1; i++) {
 							this.lis[i].show();
@@ -315,10 +317,11 @@ function initMV(ch, title) {
 		break;
 		case 1:
 			return function(sk) {
-				let w, h, lis, ho, frame_tmp, flag;//, links;
+				let w, h, lis, ho, frame_tmp, flag, or_s;//, links;
 				sk.preload = function() {
 					w = mW-mW/7;
 					h = mH-mS;
+					or_s = sk.textSize();
 					ho = [];
 					flag = false;
 					lis = [];
@@ -354,7 +357,7 @@ function initMV(ch, title) {
 				sk.draw = function() {
 					sk.background(255);
 					sk.textSize(22);
-					sk.textAlign(CENTER, CENTER);
+					sk.textAlign(CENTER);
 					sk.textStyle(BOLD);
 					sk.text(title, w/2, h-h+mS);
 					for(let i = 0; i <= ho.length-1; i++) {
@@ -445,7 +448,8 @@ function initMV(ch, title) {
 						}
 					}
 					show() {
-						sk.textStyle(BOLD);
+						sk.textSize(or_s);
+						sk.textAlign(LEFT);
 						sk.text(this.title, this.x, this.y+mS);
 						for(let i = 0; i <= this.lis.length-1; i++) {
 							this.lis[i].show();
@@ -479,16 +483,20 @@ function initMV(ch, title) {
 		break;
 		case 2:
 			return function(sk) {
-				let w, h;//, links, frame_tmp;
+				let w, h, or_s;//, links, frame_tmp;
 				sk.preload = function() {
 					w = mW-mW/7;
 					h = mH-mS;
+					or_s = sk.textSize();
 				}
 				sk.setup = function() {
 					sk.createCanvas(w, h);
 				}
 				sk.draw = function() {
 					sk.background(255);
+					sk.textSize(22);
+					sk.textAlign(CENTER);
+					sk.textStyle(BOLD);
 					sk.text(title, w/2, h-h+mS);
 				}
 				sk.windowResized = function() {
@@ -536,10 +544,11 @@ function initMV(ch, title) {
 		break;
 		case 3:
 			return function(sk) {
-				let w, h, links, frame_tmp;
+				let w, h, links, frame_tmp, or_s;
 				sk.preload = function() {
 					w = mW-mW/7;
 					h = mH-mS;
+					or_s = sk.textSize();
 					links = "https://ru.wikipedia.org/w/index.php?title=Метод_проектов&stable=1\n"+
 						"https://web.archive.org/web/20080503101731/http://vio.fio.ru/vio_01/Article_0_1.htm\n"+
 						"https://p5js.org/es/get-started/\n"+
@@ -589,6 +598,9 @@ function initMV(ch, title) {
 				}
 				sk.draw = function() {
 					sk.background(255);
+					sk.textSize(22);
+					sk.textAlign(CENTER);
+					sk.textStyle(BOLD);
 					sk.text(title, w/2, h-h+mS);
 					for(let i = 0; i <= links.length-1; i++) {
 						links[i].show();
