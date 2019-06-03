@@ -146,6 +146,7 @@ function initWL() {
 						sk.goLink(this.index, links[this.index]);
 			}
 			show() {
+				sk.textSize(22);
 				sk.textAlign(CENTER, CENTER);
 				sk.textStyle(BOLD);
 				sk.text(links[this.index], this.x+mS, this.y+mS, this.w/2, this.h/2);
@@ -350,6 +351,7 @@ function initMV(ch, title) {
 				}
 				sk.draw = function() {
 					sk.background(255);
+					sk.textStyle(BOLD);
 					sk.text(title, w/2, h-h+mS);
 					for(let i = 0; i <= ho.length-1; i++) {
 						ho[i].show();
@@ -439,6 +441,7 @@ function initMV(ch, title) {
 						}
 					}
 					show() {
+						sk.textStyle(BOLD);
 						sk.text(this.title, this.x, this.y+mS);
 						for(let i = 0; i <= this.lis.length-1; i++) {
 							this.lis[i].show();
@@ -464,6 +467,7 @@ function initMV(ch, title) {
 								);
 					}
 					show() {
+						sk.textStyle(ITALIC);
 						sk.text(this.title, this.x, this.y+this.h);
 					}
 				}
@@ -565,7 +569,8 @@ function initMV(ch, title) {
 						"https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XUL/Attribute/onclick\n"+
 						"https://learn.javascript.ru/window-methods\n"+
 						"https://p5js.org/reference/#/p5/text\n"+
-						"https://p5js.org/es/reference/#/p5/textStyle"+
+						"https://p5js.org/es/reference/#/p5/textStyle\n"+
+						"https://p5js.org/reference/#/p5/textSize"+
 						"";
 				}
 				sk.setup = function() {
