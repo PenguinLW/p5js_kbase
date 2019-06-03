@@ -164,6 +164,8 @@ function initMV(ch, title) {
 					w = mW-mW/7;
 					h = mH-mS;
 					or_s = sk.textSize();
+					alert(sk.textSize());
+					alert(textSize());
 					ho = [];
 					flag = false;
 					lis = [];
