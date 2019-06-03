@@ -163,7 +163,7 @@ function initMV(ch, title) {
 				sk.preload = function() {
 					w = mW-mW/7;
 					h = mH-mS;
-					or_s = sk.textSize();
+					or_s = textSize();
 					alert(sk.textSize());
 					alert(textSize());
 					ho = [];
