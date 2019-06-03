@@ -644,27 +644,30 @@ function initMV(ch, title) {
 					window.open(""+link, "PenguinL", "width="+(w-mS)+", height="+(h-mS)+", left="+(w/2-w/3)+"")
 				}
 				sk.goLink = function(link) {
-					frame_tmp = createElement(
-							"div",
-							"<table><tr>"+
-								"<td>"+
-									"<iframe frameBorder=\"0\" width=\""+(mW-mS)+"\" height=\""+(mH-mS*4)+"\" src=\""+link+"\"></iframe>"+
-								"</td>"+
-								"<td style=\"vertical-align:top;\">"+
-									"<img width=\""+(mS)+"\" height=\""+(mS)+"\" src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/close.png\" />"+
-								"</td>"+
-							"</tr></table>"
-						).id("frame_tmp")
-						.parent("main_view")
-						.position(0, 0)
-						.size(mW, mH)
-						.style("display", "flex")
-						.style("position", "absolute")
-						.style("align-items", "center")
-						.style("justify-content", "center")
-						.style("background", "url(\"https://kovalsky95.github.io/p5js_kbase/resources/b/t.png\")")
-						.style("opacity", "0.7");
-					frame_tmp.mouseClicked(sk.remove_tmpp);
+					if(!flag) {
+						flag = !flag;
+						frame_tmp = createElement(
+								"div",
+								"<table><tr>"+
+									"<td>"+
+										"<iframe frameBorder=\"0\" width=\""+(mW-mS*2)+"\" height=\""+(mH-mS*2)+"\" src=\""+link+"\"></iframe>"+
+									"</td>"+
+									"<td style=\"vertical-align:top;\">"+
+										"<img width=\""+(mS/2)+"\" height=\""+(mS/2)+"\" src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/close.png\" />"+
+									"</td>"+
+								"</tr></table>"
+							).id("frame_tmp")
+							.parent("main_view")
+							.position(0, 0)
+							.size(mW, mH)
+							.style("display", "flex")
+							.style("position", "absolute")
+							.style("align-items", "center")
+							.style("justify-content", "center")
+							.style("background", "url(\"https://kovalsky95.github.io/p5js_kbase/resources/b/t.png\")")
+							.style("opacity", "0.7");
+						frame_tmp.mouseClicked(sk.remove_tmpp);
+					}
 				}
 				sk.remove_tmpp = function() {
 					flag = false;
