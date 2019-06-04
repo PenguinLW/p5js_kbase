@@ -701,6 +701,8 @@ function initMV(ch, title) {
 						this.h = h;
 					}
 					clicked(mX, mY) {
+						alert(this.x);
+						alert(this.y);
 						if(mX >= this.x && mX <= this.x+this.w)
 							if(mY >= this.y && mY <= this.y+this.h)
 								sk.showLink(this.link);
