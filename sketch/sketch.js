@@ -627,9 +627,6 @@ function initMV(ch, title) {
 					for(let i = 0; i <= ho.length-1; i++) {
 						ho[i].clicked(sk.mouseX, sk.mouseY);
 					}
-					for(let i = 0; i <= links.length-1; i++) {
-						links[i].clicked(sk.mouseX, sk.mouseY);
-					}
 				}
 				sk.goLink = function(link) {
 					if(!flag) {
@@ -664,9 +661,13 @@ function initMV(ch, title) {
 									cs_sk.background(255);
 									for(let i = 0; i <= links.length-1; i++) {
 										links[i].show();
-										console.log("re_done");
 									}
 									
+								}
+								cs_sk.mousePressed = function() {
+									for(let i = 0; i <= links.length-1; i++) {
+										links[i].clicked(cs_sk.mouseX, cs_sk.mouseY);
+									}
 								}
 								cs_sk.showLink = function(link) {
 									window.open(""+link, "PenguinL", "width=" + (w - mS) + ", height=" + (h - mS) + ", left=" + (w / 2 - w / 3) + "");
