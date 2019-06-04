@@ -638,10 +638,10 @@ function initMV(ch, title) {
 					}
 					for(let i = 0; i <= links.length-1; i++) {
 						links[i].clicked();
-						alert(""+i);
 					}
 				}
 				sk.showLink = function(link) {
+					alert(""+link);
 					window.open(""+link, "PenguinL", "width=" + (w - mS) + ", height=" + (h - mS) + ", left=" + (w / 2 - w / 3) + "");
 				}
 				sk.goLink = function(link) {
