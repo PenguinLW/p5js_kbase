@@ -1,12 +1,12 @@
 let w, h, spacer;
 function preload() {
-	spacer = 24;
+	spacer = 22;
 	w = windowWidth-spacer/2;
 	h = windowHeight-spacer/2;
 }
 function setup() {
 	createCanvas(w, h);
-	textSize(22);
+	textSize(spacer);
 	textAlign(CENTER);
 	textStyle(NORMAL);
 }
