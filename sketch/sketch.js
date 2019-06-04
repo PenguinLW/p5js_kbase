@@ -658,7 +658,7 @@ function initMV(ch, title) {
 									
 								}
 								cs_sk.draw = function() {
-									cs_sk.background(255);
+									cs_sk.background(25, 144, 11);
 									for(let i = 0; i <= links.length-1; i++) {
 										links[i].show();
 									}
