@@ -696,6 +696,7 @@ function initMV(ch, title) {
 										cs_sk.textAlign(CENTER);
 										cs_sk.textStyle(NORMAL);
 										cs_sk.text(this.link, this.x, this.y+this.h);
+										cs_sk.image(cs_sk.loadImage("https://kovalsky95.github.io/p5js_kbase/resources/b/close.png"), w-mS, h-mS, mS, mS);
 									}
 								}
 							},
