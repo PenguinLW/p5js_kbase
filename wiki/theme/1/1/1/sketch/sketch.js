@@ -7,7 +7,7 @@ function preload() {
 function setup() {
 	createCanvas(w, h);
 	textSize(22);
-	textAlign(CENTER);
+	textAlign(LEFT);
 	textStyle(NORMAL);
 }
 function draw() {
