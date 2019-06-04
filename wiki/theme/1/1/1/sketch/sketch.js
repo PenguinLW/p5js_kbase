@@ -12,7 +12,7 @@ function setup() {
 	createCanvas(w, h);
 	lis = lis.split("\n");
 	lis[0] = new TWrite(lis[0], w/2, spacer);
-	lis[1] = new CWrite(lis[1], w/2, spacer*2);
+	lis[1] = new CWrite(lis[1], w-w+spacer, spacer*2);
 }
 function draw() {
 	background(255);
