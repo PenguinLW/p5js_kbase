@@ -664,7 +664,7 @@ function initMV(ch, title) {
 									cs_sk.background(255);
 									for(let i = 0; i <= links.length-1; i++) {
 										links[i].show();
-										console.log(""+links[i].this.link);
+										console.log("re_done");
 									}
 									
 								}
@@ -703,6 +703,7 @@ function initMV(ch, title) {
 				sk.remove_tmpp = function() {
 					flag = false;
 					frame_tmp.remove();
+					cs_sk = null;
 				}
 				sk.locatedL = function(s_point, all_area, count_el) {
 					let lis, step_y, size_el;
