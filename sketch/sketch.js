@@ -697,7 +697,7 @@ function initMV(ch, title) {
 										cs_sk.textAlign(CENTER);
 										cs_sk.textStyle(NORMAL);
 										cs_sk.text(this.link, this.x, this.y+this.h);
-										cs_sk.image(p, w-mS/2, h-h+mS/2, mS/2, mS/2);
+										cs_sk.image(p, w-mS/3, h-h+mS/3, mS/2, mS/2);
 									}
 								}
 							},
