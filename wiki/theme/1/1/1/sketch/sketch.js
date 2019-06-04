@@ -5,7 +5,7 @@ function preload() {
 	h = windowHeight-spacer/2;
 }
 function setup() {
-//	createCanvas(w, h);
+	createCanvas(w, h);
 	textSize(22);
 	textAlign(CENTER);
 	textStyle(NORMAL);
