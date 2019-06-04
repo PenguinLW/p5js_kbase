@@ -641,23 +641,13 @@ function initMV(ch, title) {
 					}
 				}
 				sk.showLink = function(link) {
-					alert(""+link);
 					window.open(""+link, "PenguinL", "width=" + (w - mS) + ", height=" + (h - mS) + ", left=" + (w / 2 - w / 3) + "");
 				}
 				sk.goLink = function(link) {
 					if(!flag) {
+						let cs;
 						flag = !flag;
-						frame_tmp = createElement(
-								"div",
-								"<table><tr>"+
-									"<td>"+
-										"<iframe frameBorder=\"0\" width=\""+(mW-mS*2)+"\" height=\""+(mH-mS*2)+"\" src=\""+link+"\"></iframe>"+
-									"</td>"+
-									"<td style=\"vertical-align:top;\">"+
-										"<img width=\""+(mS/2)+"\" height=\""+(mS/2)+"\" src=\"https://kovalsky95.github.io/p5js_kbase/resources/b/close.png\" />"+
-									"</td>"+
-								"</tr></table>"
-							).id("frame_tmp")
+						frame_tmp = createDiv().id("frame_tmp")
 							.parent("main_view")
 							.position(0, 0)
 							.size(mW, mH)
@@ -668,6 +658,19 @@ function initMV(ch, title) {
 							.style("background", "url(\"https://kovalsky95.github.io/p5js_kbase/resources/b/t.png\")")
 							.style("opacity", "0.7");
 						frame_tmp.mouseClicked(sk.remove_tmpp);
+						cs = new p5(
+							function(sk) {
+								sk.preload = function() {
+									
+								}
+								sk.setup = function() {
+									alert("re_done");
+								}
+								sk.draw = function() {
+									
+								}
+							},
+							"frame_tmp");
 					}
 				}
 				sk.remove_tmpp = function() {
