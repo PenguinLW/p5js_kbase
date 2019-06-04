@@ -645,7 +645,7 @@ function initMV(ch, title) {
 				}
 				sk.goLink = function(link) {
 					if(!flag) {
-						let cs;
+						let cs_sk;
 						flag = !flag;
 						frame_tmp = createDiv().id("frame_tmp")
 							.parent("main_view")
@@ -658,15 +658,25 @@ function initMV(ch, title) {
 							.style("background", "url(\"https://kovalsky95.github.io/p5js_kbase/resources/b/t.png\")")
 							.style("opacity", "0.7");
 						frame_tmp.mouseClicked(sk.remove_tmpp);
-						cs = new p5(
-							function(sk) {
-								sk.preload = function() {
+						cs_sk = new p5(
+							function(cs_sk) {
+								cs_sk.preload = function() {
 									
 								}
-								sk.setup = function() {
+								cs_sk.setup = function() {
+									cs_sk.createCanvas(w, h);
+									lis_c = sk.locatedL(mS-mS/2, h-mS*2, links.length);
+									for(let i = 0; i <= links.length-1; i++) {
+										let l = links[i].length*10;
+										links[i] = new WondL(links[i]);
+										links[i].setPosition(w/2, lis_c[1][i], l, lis_c[0]);
+									}
 									alert("re_done");
 								}
-								sk.draw = function() {
+								cs_sk.draw = function() {
+									for(let i = 0; i <= links.length-1; i++) {
+										links[i].show();
+									}
 									
 								}
 							},
