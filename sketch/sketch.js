@@ -687,7 +687,7 @@ function initMV(ch, title) {
 										this.h = h;
 									}
 									clicked(mX, mY) {
-										if(mX >= this.x && mX <= this.x+this.w)
+										if(mX >= this.x-this.w && mX <= this.x+this.w)
 											if(mY >= this.y && mY <= this.y+this.h)
 												cs_sk.showLink(this.link);
 									}
@@ -695,7 +695,7 @@ function initMV(ch, title) {
 										cs_sk.textSize(or_s);
 										cs_sk.textAlign(CENTER);
 										cs_sk.textStyle(NORMAL);
-										cs_sk.text(this.link, this.x+this.w, this.y+this.h);
+										cs_sk.text(this.link, this.x, this.y+this.h);
 									}
 								}
 							},
