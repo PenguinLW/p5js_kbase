@@ -12,7 +12,7 @@ function setup() {
 }
 function draw() {
 	background(255);
-	text("Ваше первое js-приложение", 0, 0);
+	text("Ваше первое js-приложение", 0, spacer);
 }
 function windowResized() {
 	w = windowWidth-spacer/2;
