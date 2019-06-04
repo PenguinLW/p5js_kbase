@@ -1,7 +1,7 @@
 //size of html&canvas content
 let spacer, mW, mH, mS;
 //sketches instance (list, el)
-let sketches, wlinks, mview;
+let sketches, mview;
 //el-html manipulate
 let contents;
 function preload() {
@@ -61,7 +61,7 @@ function initStyle() {
 }
 function initWL() {
 	return function(sk) {
-		let wlinks, links, ptl;
+		let links, ptl;
 		let w, h;
 		sk.preload = function() {
 			wlinks = "";
@@ -71,13 +71,6 @@ function initWL() {
 				"Полезные ресурсы"+
 				"";
 			links = links.split("\n");
-			for(let i = 0; i <= links.length-1; i++) {
-				wlinks += "https://kovalsky95.github.io/p5js_kbase/resources/wiki/"+(i+1)+".jpg\n";
-			}
-			wlinks = wlinks.substring(0, wlinks.length-1).split("\n");
-			for(let i = 0; i <= links.length-1; i++) {
-				wlinks[i] = sk.loadImage(wlinks[i]);
-			}
 			ptl = [];
 			w = mW/7;
 			h = mH-mS;
@@ -87,8 +80,8 @@ function initWL() {
 				.style("display", "flex")
 				.style("justify-content", "center")
 				.style("align-items", "center");
-			let lis = sk.locatedB(2, h, wlinks.length);
-			for(let i = 0; i <= wlinks.length-1; i++) {
+			let lis = sk.locatedB(2, h, links.length);
+			for(let i = 0; i <= links.length-1; i++) {
 				ptl.push(new PLink(i, lis[0]));
 			}
 			for(let i = 0; i <= ptl.length-1; i++) {
@@ -134,16 +127,23 @@ function initWL() {
 				this.y = 0;
 				this.w = w-mS;
 				this.h = h;
-				this.lpl = wlinks[this.index];
 			}
 			setPosition(x, y) {
 				this.x = x;
 				this.y = y;
 			}
 			clicked(mX, mY) {
-				if((mX >= this.x && mX <= this.x+this.w))
-					if(mY >= this.y && mY <= this.y+this.h)
+				if((mX >= this.x && mX <= this.x+this.w)) {
+					if(mY >= this.y && mY <= this.y+this.h) {
+						let or_y;
 						sk.goLink(this.index, links[this.index]);
+						or_y = this.y;
+						for(let i = 25; i >= 0; i--) {
+							this.y += i;
+						}
+						this.y = or_y;
+					}
+				}
 			}
 			show() {
 				sk.textSize(22);
@@ -163,7 +163,6 @@ function initMV(ch, title) {
 				sk.preload = function() {
 					w = mW-mW/7;
 					h = mH-mS;
-					or_s = textSize();
 					ho = [];
 					flag = false;
 					lis = [];
@@ -179,6 +178,7 @@ function initMV(ch, title) {
 				sk.setup = function() {
 					let lis_c;
 					sk.createCanvas(w, h);
+					or_s = sk.textSize();
 					for(let i = 0, k = 1; i <= lis.length-2; i+=2) {
 						ho.push(new KTheme(lis[i], lis[i+1], k));
 						k++;
