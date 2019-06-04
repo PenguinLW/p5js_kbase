@@ -607,7 +607,7 @@ function initMV(ch, title) {
 					for(let i = 0; i <= ho.length-1; i++) {
 						ho[i].setPosition(mS, lis_c[1][i], lis_c[0]);
 					}
-					lis_c = sk.locatedL(mS, mS*2, links.length);
+					lis_c = sk.locatedL(mS-mS/2, h-mS*2, links.length);
 					for(let i = 0; i <= links.length-1; i++) {
 						let l = links[i].length*10;
 						links[i] = new WondL(links[i]);
