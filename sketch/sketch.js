@@ -704,7 +704,8 @@ function initMV(ch, title) {
 				sk.remove_tmpp = function() {
 					flag = false;
 					frame_tmp.remove();
-// 					cs_sk.remove();
+					cs_sk.remove();
+					cs_sk = "";
 				}
 				sk.locatedL = function(s_point, all_area, count_el) {
 					let lis, step_y, size_el;
