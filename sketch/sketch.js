@@ -643,8 +643,9 @@ function initMV(ch, title) {
 						frame_tmp.mouseClicked(sk.remove_tmpp);
 						cs_sk = new p5(
 							function(cs_sk) {
+								let p;
 								cs_sk.preload = function() {
-									
+									p = cs_sk.loadImage("https://kovalsky95.github.io/p5js_kbase/resources/b/close.png");
 								}
 								cs_sk.setup = function() {
 									cs_sk.createCanvas(w, h);
@@ -696,7 +697,7 @@ function initMV(ch, title) {
 										cs_sk.textAlign(CENTER);
 										cs_sk.textStyle(NORMAL);
 										cs_sk.text(this.link, this.x, this.y+this.h);
-										image(cs_sk.loadImage("https://kovalsky95.github.io/p5js_kbase/resources/b/close.png"), w-mS, h-mS, mS*250, mS*250);
+										cs_sk.image(p, w-mS, h-h+mS, mS, mS);
 									}
 								}
 							},
