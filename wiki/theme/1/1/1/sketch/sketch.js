@@ -1,8 +1,8 @@
 let w, h, spacer;
 function preload() {
-	w = windowWidth;
-	h = windowHeight;
 	spacer = 25;
+	w = windowWidth-spacer;
+	h = windowHeight-spacer;
 }
 function setup() {
 	createCanvas(w, h);
