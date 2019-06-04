@@ -637,7 +637,7 @@ function initMV(ch, title) {
 						ho[i].clicked(sk.mouseX, sk.mouseY);
 					}
 					for(let i = 0; i <= links.length-1; i++) {
-						links[i].clicked();
+						links[i].clicked(sk.mouseX, sk.mouseY);
 					}
 				}
 				sk.showLink = function(link) {
@@ -701,13 +701,9 @@ function initMV(ch, title) {
 						this.h = h;
 					}
 					clicked(mX, mY) {
-						if(mX >= this.x && mX <= this.x+this.w) {
-							alert(this.x);
-							alert(this.y);
-							if(mY >= this.y && mY <= this.y+this.h) {
+						if(mX >= this.x && mX <= this.x+this.w)
+							if(mY >= this.y && mY <= this.y+this.h)
 								sk.showLink(this.link);
-							}
-						}
 					}
 					show() {
 						sk.textSize(or_s);
