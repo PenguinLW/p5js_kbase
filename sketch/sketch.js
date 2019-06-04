@@ -140,8 +140,10 @@ function initWL() {
 						or_y = this.y;
 						for(let i = 25; i >= 0; i--) {
 							this.y += i;
+							sk.text(links[this.index], this.x+mS, this.y+mS, this.w/2, this.h/2);
 						}
 						this.y = or_y;
+						sk.text(links[this.index], this.x+mS, this.y+mS, this.w/2, this.h/2);
 					}
 				}
 			}
