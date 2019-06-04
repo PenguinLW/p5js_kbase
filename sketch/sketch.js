@@ -607,12 +607,6 @@ function initMV(ch, title) {
 					for(let i = 0; i <= ho.length-1; i++) {
 						ho[i].setPosition(mS, lis_c[1][i], lis_c[0]);
 					}
-					lis_c = sk.locatedL(mS-mS/2, h-mS*2, links.length);
-					for(let i = 0; i <= links.length-1; i++) {
-						let l = links[i].length*10;
-						links[i] = new WondL(links[i]);
-						links[i].setPosition(w/2, lis_c[1][i], l, lis_c[0]);
-					}
 				}
 				sk.draw = function() {
 					sk.background(255);
@@ -623,9 +617,6 @@ function initMV(ch, title) {
 					for(let i = 0; i <= ho.length-1; i++) {
 						ho[i].show();
 					}
-// 					for(let i = 0; i <= links.length-1; i++) {
-// 						links[i].show();
-// 					}
 				}
 				sk.windowResized = function() {
 					w = mW-mW/7;
@@ -639,9 +630,6 @@ function initMV(ch, title) {
 					for(let i = 0; i <= links.length-1; i++) {
 						links[i].clicked(sk.mouseX, sk.mouseY);
 					}
-				}
-				sk.showLink = function(link) {
-					window.open(""+link, "PenguinL", "width=" + (w - mS) + ", height=" + (h - mS) + ", left=" + (w / 2 - w / 3) + "");
 				}
 				sk.goLink = function(link) {
 					if(!flag) {
@@ -666,13 +654,23 @@ function initMV(ch, title) {
 								cs_sk.setup = function() {
 									cs_sk.createCanvas(w, h);
 									lis_c = sk.locatedL(mS-mS/2, h-mS*2, links.length);
+									for(let i = 0; i <= links.length-1; i++) {
+										let l = links[i].length*10;
+										links[i] = new WondL(links[i]);
+										links[i].setPosition(w/2, lis_c[1][i], l, lis_c[0]);
+									}
 									
 								}
 								cs_sk.draw = function() {
+									cs_sk.background(255);
 									for(let i = 0; i <= links.length-1; i++) {
-										links[i].show();console.log("re_done");
+										links[i].show();
+										console.log("re_done");
 									}
 									
+								}
+								cs_sk.showLink = function(link) {
+									window.open(""+link, "PenguinL", "width=" + (w - mS) + ", height=" + (h - mS) + ", left=" + (w / 2 - w / 3) + "");
 								}
 								class WondL {
 									constructor(link) {
@@ -691,7 +689,7 @@ function initMV(ch, title) {
 									clicked(mX, mY) {
 										if(mX >= this.x && mX <= this.x+this.w)
 											if(mY >= this.y && mY <= this.y+this.h)
-												sk.showLink(this.link);
+												cs_sk.showLink(this.link);
 									}
 									show() {
 										cs_sk.textSize(or_s);
