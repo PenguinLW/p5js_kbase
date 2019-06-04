@@ -637,7 +637,7 @@ function initMV(ch, title) {
 						ho[i].clicked(sk.mouseX, sk.mouseY);
 					}
 					for(let i = 0; i <= links.length-1; i++) {
-						links[i].show();
+						links[i].clicked();
 					}
 				}
 				sk.showLink = function(link) {
