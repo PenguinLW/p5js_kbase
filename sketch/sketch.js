@@ -546,7 +546,7 @@ function initMV(ch, title) {
 		break;
 		case 3:
 			return function(sk) {
-				let w, h, links, lis, ho, frame_tmp, flag, or_s, cs_sk;
+				let w, h, sl, links, lis, ho, frame_tmp, flag, or_s, cs_sk;
 				sk.preload = function() {
 					w = mW-mW/7;
 					h = mH-mS;
@@ -556,7 +556,7 @@ function initMV(ch, title) {
 					lis.push("Дополнительные ресурсы");
 					lis.push(["Показать"]);
 
-					links = "https://ru.wikipedia.org/w/index.php?title=Метод_проектов&stable=1\n"+
+					sl = "https://ru.wikipedia.org/w/index.php?title=Метод_проектов&stable=1\n"+
 						"https://web.archive.org/web/20080503101731/http://vio.fio.ru/vio_01/Article_0_1.htm\n"+
 						"https://p5js.org/es/get-started/\n"+
 						"https://github.com/processing/p5.js/wiki/Transici%C3%B3n-desde-Processing\n"+
@@ -598,7 +598,6 @@ function initMV(ch, title) {
 					let lis_c;
 					sk.createCanvas(w, h);
 					or_s = sk.textSize();
-					links = links.split("\n");
 					for(let i = 0, k = 1; i <= lis.length-2; i+=2) {
 						ho.push(new KTheme(lis[i], lis[i+1], k));
 						k++;
@@ -649,6 +648,7 @@ function initMV(ch, title) {
 								}
 								cs_sk.setup = function() {
 									cs_sk.createCanvas(w, h);
+									links = sl.split("\n");
 									lis_c = sk.locatedL(mS-mS/2, h-mS*2, links.length);
 									for(let i = 0; i <= links.length-1; i++) {
 										let l = links[i].length*10;
@@ -705,7 +705,6 @@ function initMV(ch, title) {
 					flag = false;
 					frame_tmp.remove();
 					cs_sk.remove();
-					cs_sk = "";
 				}
 				sk.locatedL = function(s_point, all_area, count_el) {
 					let lis, step_y, size_el;
