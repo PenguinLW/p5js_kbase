@@ -546,7 +546,7 @@ function initMV(ch, title) {
 		break;
 		case 3:
 			return function(sk) {
-				let w, h, links, lis, ho, frame_tmp, flag, or_s;
+				let w, h, links, lis, ho, frame_tmp, flag, or_s, cs_sk;
 				sk.preload = function() {
 					w = mW-mW/7;
 					h = mH-mS;
@@ -633,7 +633,6 @@ function initMV(ch, title) {
 				}
 				sk.goLink = function(link) {
 					if(!flag) {
-						let cs_sk;
 						flag = !flag;
 						frame_tmp = createDiv().id("frame_tmp")
 							.parent("main_view")
@@ -704,6 +703,8 @@ function initMV(ch, title) {
 				sk.remove_tmpp = function() {
 					flag = false;
 					frame_tmp.remove();
+					cs_sk.remove();
+					cs_sk = "";
 				}
 				sk.locatedL = function(s_point, all_area, count_el) {
 					let lis, step_y, size_el;
