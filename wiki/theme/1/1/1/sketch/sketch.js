@@ -6,10 +6,9 @@ function preload() {
 }
 function setup() {
 	createCanvas(w, h);
-
 }
 function draw() {
-	background(220);
+	background(255);
 }
 function windowResized() {
 	
