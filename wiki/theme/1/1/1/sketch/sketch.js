@@ -33,8 +33,9 @@ function setup() {
 	lis[2] = new CIWrite(lis[2], pic[0]);
 	lis[3] = new CWrite(lis[3]);
 	lis[4] = new CWrite(lis[4]);
-	lis[5] = new CIWrite(lis[5], pic[1]);
-	lis[6] = new CWrite(lis[6]);
+	lis[5] = new CWrite(lis[5]);
+	lis[6] = new CIWrite(lis[6], pic[1]);
+	lis[7] = new CWrite(lis[7]);
 	tx = w/2;
 	px = tx - spacer*10;
 	ty = py = 0;
