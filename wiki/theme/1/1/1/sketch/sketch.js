@@ -46,7 +46,7 @@ function setup() {
 			ty += spacer;
 			py += ty+spacer;
 			lis[i].setPosition(tx, ty, px, py);
-			ty += spacer*10;
+			ty += spacer*20;
 		}
 	}
 }
@@ -132,6 +132,6 @@ class CIWrite {
 		textAlign(CENTER);
 		textStyle(NORMAL);
 		text(this.content, this.t_x+spacer, this.t_y+spacer);
-		image(this.p, this.p_x, this.p_y, spacer*10, spacer*10);
+		image(this.p, this.p_x, this.p_y, spacer*25, spacer*20);
 	}
 }
