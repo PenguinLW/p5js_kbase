@@ -22,7 +22,6 @@ function preload() {
 	for(let i = 0; i <= pic.length-1; i++) {
 		pic[i] = loadImage(pic[i]);
 	}
-	
 }
 function setup() {
 	let tx, ty, px, py;
@@ -39,14 +38,14 @@ function setup() {
 	for(let i = 0; i <= lis.length-1; i++) {
 		tx = px = w/2;
 		if(lis[i].isContT()) {
-			ty += spacer/2;
+			ty += spacer;
 			lis[i].setPosition(tx, ty);
 		}
 		else if(lis[i].isContP()) {
-			ty += spacer/2;
+			ty += spacer;
 			py += ty;
 			lis[i].setPosition(tx, ty, px, py);
-			ty += spacer;
+			ty += pow(spacer, 2);
 		}
 	}
 }
@@ -75,13 +74,12 @@ class TWrite {
 	setPosition(t_x, t_y) {
 		this.x = t_x;
 		this.y = t_y;
-		
 	}
 	show() {
 		textSize(spacer);
 		textAlign(CENTER);
 		textStyle(NORMAL);
-		text(this.content, this.x, this.y);
+		text(this.content, this.x+spacer, this.y+spacer);
 	}
 }
 class CWrite {
@@ -104,7 +102,7 @@ class CWrite {
 		textSize(spacer/2);
 		textAlign(CENTER);
 		textStyle(NORMAL);
-		text(this.content, this.x, this.y);
+		text(this.content, this.x+spacer, this.y+spacer);
 	}
 }
 class CIWrite {
@@ -132,7 +130,7 @@ class CIWrite {
 		textSize(spacer/2);
 		textAlign(CENTER);
 		textStyle(NORMAL);
-		text(this.content, this.t_x, this.t_y);
+		text(this.content, this.t_x+spacer, this.t_y+spacer);
 		image(this.p, this.p_x, this.p_y, spacer*4.5, spacer*4.5);
 	}
 }
