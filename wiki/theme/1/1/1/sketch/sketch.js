@@ -34,7 +34,7 @@ function setup() {
 	lis[3] = new CWrite(lis[3]);
 	lis[3] = new CWrite(lis[4]);
 	lis[4] = new CIWrite(lis[5], pic[1]);
-	lis[5] = new CWrite(lis[6]);
+	lis[6] = new CWrite(lis[6]);
 	tx = ty = px = py = 0;
 	for(let i = 0; i <= lis.length-1; i++) {
 		tx = px = w/2;
@@ -58,6 +58,7 @@ function draw() {
 	lis[3].show();
 	lis[4].show();
 	lis[5].show();
+	lis[6].show();
 }
 function windowResized() {
 	w = windowWidth-spacer/2;
