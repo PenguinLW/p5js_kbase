@@ -141,6 +141,7 @@ function initWL() {
 						for(let i = 25; i >= 0; i--) {
 							this.y += i;
 							sk.text(links[this.index], this.x+mS, this.y+mS, this.w/2, this.h/2);
+							alert("re_done");
 						}
 						this.y = or_y;
 						sk.text(links[this.index], this.x+mS, this.y+mS, this.w/2, this.h/2);
