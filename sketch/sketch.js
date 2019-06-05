@@ -148,12 +148,13 @@ function initWL() {
 				} else {
 					let or_y;
 					or_y = this.y;
-					for(let i = 25; i >= 0; i--) {
-						this.y += i;
+					if(this.y <= this.y+spacer/2) {
+						this.y += 0.4;
 						sk.text(links[this.index], this.x+mS, this.y+mS, this.w/2, this.h/2);
+					} else {
+						this.y = or_y;
+						break;
 					}
-					this.y = or_y;
-					sk.text(links[this.index], this.x+mS, this.y+mS, this.w/2, this.h/2);
 					this.flag = !this.flag;
 				}
 			}
