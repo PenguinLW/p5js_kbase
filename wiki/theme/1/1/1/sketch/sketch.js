@@ -91,7 +91,7 @@ class TWrite {
 class CWrite {
 	constructor(content) {
 		this.content = content;
-		this.x = 0x;
+		this.x = 0;
 		this.y = 0;
 	}
 	isContT() {
