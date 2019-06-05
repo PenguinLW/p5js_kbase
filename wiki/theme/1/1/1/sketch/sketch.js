@@ -30,7 +30,7 @@ function setup() {
 	lis[1] = new CWrite(lis[1], w-w+spacer, spacer*2);
 	lis[2] = new CIWrite(lis[2], w/2, spacer*3, pic[0], w/2, spacer*3);
 	lis[3] = new CWrite(lis[3], w-w+spacer, spacer*4);
-	lis[4] = new CIWrite(lis[4], w/2, spacer*3, pic[1], w/2, spacer*5);
+	lis[4] = new CIWrite(lis[4], w/2, spacer*5, pic[1], w/2, spacer*5);
 	lis[5] = new CWrite(lis[5], w-w+spacer, spacer*6);
 }
 function draw() {
