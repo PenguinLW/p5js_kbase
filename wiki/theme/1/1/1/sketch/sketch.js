@@ -34,11 +34,12 @@ function setup() {
 	lis[4] = new CWrite(lis[4]);
 	lis[5] = new CIWrite(lis[5], pic[1]);
 	lis[6] = new CWrite(lis[6]);
-	tx = ty = px = py = 0;
+	tx = px = w/2;
+	ty = py = 0;
 	for(let i = 0; i <= lis.length-1; i++) {
-		tx = px = w/2;
 		if(lis[i].isContT()) {
 			ty += spacer;
+			console.log(tx, ty);
 			lis[i].setPosition(tx, ty);
 		}
 		else if(lis[i].isContP()) {
