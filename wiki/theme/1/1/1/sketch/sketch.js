@@ -58,7 +58,6 @@ function draw() {
 	lis[3].show();
 	lis[4].show();
 	lis[5].show();
-	lis[6].show();
 }
 function windowResized() {
 	w = windowWidth-spacer/2;
