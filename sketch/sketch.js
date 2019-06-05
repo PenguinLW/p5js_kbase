@@ -135,11 +135,13 @@ function initWL() {
 				this.y = y;
 			}
 			clicked(mX, mY) {
-				this.flag = !this.flag;
-				this.or_y = this.y;
-				if((mX >= this.x && mX <= this.x+this.w))
-					if(mY >= this.y && mY <= this.y+this.h)
+				if((mX >= this.x && mX <= this.x+this.w)) {
+					if(mY >= this.y && mY <= this.y+this.h) {
 						sk.goLink(this.index, links[this.index]);
+						this.flag = !this.flag;
+						this.or_y = this.y;
+					}
+				}
 			}
 			show() {
 				if(!this.flag) {
@@ -148,7 +150,7 @@ function initWL() {
 					sk.textStyle(BOLD);
 					sk.text(links[this.index], this.x+mS, this.y+mS, this.w/2, this.h/2);
 				} else {
-					if(this.y <= this.y+spacer/2) {
+					if(this.y <= this.or_y+spacer/2) {
 						this.y += 0.4;
 						sk.text(links[this.index], this.x+mS, this.y+mS, this.w/2, this.h/2);
 					} else {
