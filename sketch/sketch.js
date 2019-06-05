@@ -161,7 +161,7 @@ function initWL() {
 						if(this.y >= this.or_y) {
 							this.y -= 0.4;
 							sk.text(links[this.index], this.x+mS, this.y+mS, this.w/2, this.h/2);
-						} wlse {
+						} else {
 							this.y = this.or_y;
 							this.flag = !this.flag;
 						}
