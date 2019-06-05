@@ -79,7 +79,6 @@ class TWrite {
 		textSize(spacer);
 		textAlign(CENTER);
 		textStyle(NORMAL);
-		console.log(this.x, this.y);
 		text(this.content, this.t_x+spacer, this.t_y+spacer);
 	}
 }
