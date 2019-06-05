@@ -52,13 +52,9 @@ function setup() {
 }
 function draw() {
 	background(255);
-	lis[0].show();
-	lis[1].show();
-	lis[2].show();
-	lis[3].show();
-	lis[4].show();
-	lis[5].show();
-	lis[6].show();
+	for(let i = 0; i <= lis.length-1; i++) {
+		lis[i].show();
+	}
 }
 function windowResized() {
 	w = windowWidth-spacer/2;
