@@ -125,6 +125,7 @@ function initWL() {
 				this.index = index;
 				this.x = 0;
 				this.y = 0;
+				this.or_y = 0;
 				this.w = w-mS;
 				this.h = h;
 				this.flag = false;
@@ -135,6 +136,7 @@ function initWL() {
 			}
 			clicked(mX, mY) {
 				this.flag = !this.flag;
+				this.or_y = this.y;
 				if((mX >= this.x && mX <= this.x+this.w))
 					if(mY >= this.y && mY <= this.y+this.h)
 						sk.goLink(this.index, links[this.index]);
@@ -146,16 +148,13 @@ function initWL() {
 					sk.textStyle(BOLD);
 					sk.text(links[this.index], this.x+mS, this.y+mS, this.w/2, this.h/2);
 				} else {
-					let or_y;
-					or_y = this.y;
 					if(this.y <= this.y+spacer/2) {
 						this.y += 0.4;
 						sk.text(links[this.index], this.x+mS, this.y+mS, this.w/2, this.h/2);
 					} else {
-						this.y = or_y;
-						break;
+						this.y = this.or_y;
+						this.flag = !this.flag;
 					}
-					this.flag = !this.flag;
 				}
 			}
 		}
