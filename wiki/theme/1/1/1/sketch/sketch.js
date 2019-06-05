@@ -8,7 +8,8 @@ function preload() {
 		"О том как выполняется, где и почему размещается наш код.. А также как этого достичь.\n"+
 		"Создаём файл web-страницы содержащий приблизительно следующий исходный код:\n"+
 		"По устоявшимся традициям, в теге \"head\" указаны \"строки-команды\", которые отвечают за подключение к web-странице файлов таблиц стилей (имеет расширение .css), файлов исходного кода javascript (имеет расширение .js)."+
-		"При помощи команды \"<script src=\"../script/my_app.js\"></script>\" мы сумеем подключить к нашей web-странице файл javascript, находящейся в директории \"script\", являющейся параллельной к директории \"index\" с содержащейся в ней web-страницей:\n"+
+		"При помощи команды \"<script src=\"../script/my_app.js\"></script>\" мы сумеем подключить к нашей web-странице файл"+
+		"javascript, находящейся в директории \"script\", являющейся параллельной к директории \"index\" с содержащейся в ней web-страницей:\n"+
 		"При ином расположении директорий и файлов в Вашем проекте относительная адресация может отличаться.\n"+
 		"";
 	pic = ""+
@@ -24,14 +25,30 @@ function preload() {
 	
 }
 function setup() {
+	let tx, ty, px, py;
 	createCanvas(w, h);
 	lis = lis.split("\n");
-	lis[0] = new TWrite(lis[0], w/2, spacer);
-	lis[1] = new CWrite(lis[1], w-w+spacer, spacer*2);
-	lis[2] = new CIWrite(lis[2], w/2, spacer*3, pic[0], w/2, spacer*3);
-	lis[3] = new CWrite(lis[3], w-w+spacer, spacer*4);
-	lis[4] = new CIWrite(lis[4], w/2, spacer*5, pic[1], w/2, spacer*5);
-	lis[5] = new CWrite(lis[5], w-w+spacer, spacer*6);
+	lis[0] = new TWrite(lis[0]);
+	lis[1] = new CWrite(lis[1]);
+	lis[2] = new CIWrite(lis[2], pic[0]);
+	lis[3] = new CWrite(lis[3]);
+	lis[3] = new CWrite(lis[4]);
+	lis[4] = new CIWrite(lis[5]);
+	lis[5] = new CWrite(lis[6]);
+	tx = ty = px = py = 0;
+	for(let i = 0; i <= lis.length-1; i++) {
+		tx = px = w/2;
+		if(lis[i].isContT()) {
+			ty += spacer/2;
+			lis[i].setPosition(tx, ty);
+		}
+		else if(lis[i].isContP()) {
+			ty += spacer/2;
+			py += ty;
+			lis.setPosition(tx, ty, px, py);
+			ty += spacer;
+		}
+	}
 }
 function draw() {
 	background(255);
@@ -41,16 +58,28 @@ function draw() {
 	lis[3].show();
 	lis[4].show();
 	lis[5].show();
+	lis[6].show();
 }
 function windowResized() {
 	w = windowWidth-spacer/2;
 	h = windowHeight-spacer/2;
 }
 class TWrite {
-	constructor(content, x, y) {
+	constructor(content) {
 		this.content = content;
-		this.x = x;
-		this.y = y;
+		this.x = 0;
+		this.y = 0;
+	}
+	isContT() {
+		return !false;
+	}
+	isContP() {
+		return false;
+	}
+	setPosition(t_x, t_y) {
+		this.x = t_x;
+		this.y = t_y;
+		
 	}
 	show() {
 		textSize(spacer);
@@ -60,24 +89,46 @@ class TWrite {
 	}
 }
 class CWrite {
-	constructor(content, x, y) {
+	constructor(content) {
 		this.content = content;
-		this.x = x;
-		this.y = y;
+		this.x = 0x;
+		this.y = 0;
+	}
+	isContT() {
+		return !false;
+	}
+	isContP() {
+		return false;
+	}
+	setPosition(t_x, t_y) {
+		this.t_x = t_x;
+		this.t_y = t_y;	
 	}
 	show() {
 		textSize(spacer/2);
-		textAlign(LEFT);
+		textAlign(CENTER);
 		textStyle(NORMAL);
 		text(this.content, this.x, this.y);
 	}
 }
 class CIWrite {
-	constructor(content, t_x, t_y, p, p_x, p_y) {
+	constructor(content, p) {
 		this.content = content;
+		this.t_x = 0;
+		this.t_y = 0;
+		this.p = p;
+		this.p_x = 0;
+		this.p_y = 0;
+	}
+	isContT() {
+		return false;
+	}
+	isContP() {
+		return !false;
+	}
+	setPosition(t_x, t_y, p_x, p_y) {
 		this.t_x = t_x;
 		this.t_y = t_y;
-		this.p = p;
 		this.p_x = p_x;
 		this.p_y = p_y;
 	}
