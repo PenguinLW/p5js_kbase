@@ -74,10 +74,9 @@ class CIWrite {
 	}
 	show() {
 		textSize(spacer/2);
-		textAlign(LEFT);
+		textAlign(CENTER);
 		textStyle(NORMAL);
 		text(this.content, this.t_x, this.t_y);
-		textAlign(CENTER);
 		image(this.p, this.p_x, this.p_y, spacer*2, spacer*2);
 	}
 }
