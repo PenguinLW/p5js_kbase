@@ -62,8 +62,8 @@ function windowResized() {
 class TWrite {
 	constructor(content) {
 		this.content = content;
-		this.x = 0;
-		this.y = 0;
+		this.t_x = 0;
+		this.t_y = 0;
 	}
 	isContT() {
 		return !false;
@@ -72,22 +72,22 @@ class TWrite {
 		return false;
 	}
 	setPosition(t_x, t_y) {
-		this.x = t_x;
-		this.y = t_y;
+		this.t_x = t_x;
+		this.t_y = t_y;
 	}
 	show() {
 		textSize(spacer);
 		textAlign(CENTER);
 		textStyle(NORMAL);
 		console.log(this.x, this.y);
-		text(this.content, this.x+spacer, this.y+spacer);
+		text(this.content, this.t_x+spacer, this.t_y+spacer);
 	}
 }
 class CWrite {
 	constructor(content) {
 		this.content = content;
-		this.x = 0;
-		this.y = 0;
+		this.t_x = 0;
+		this.t_y = 0;
 	}
 	isContT() {
 		return !false;
@@ -103,8 +103,7 @@ class CWrite {
 		textSize(spacer/2);
 		textAlign(CENTER);
 		textStyle(NORMAL);
-		console.log(this.x, this.y);
-		text(this.content, this.x+spacer, this.y+spacer);
+		text(this.content, this.t_x+spacer, this.t_y+spacer);
 	}
 }
 class CIWrite {
