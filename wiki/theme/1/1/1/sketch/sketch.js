@@ -25,7 +25,7 @@ function setup() {
 	lis = lis.split("\n");
 	lis[0] = new TWrite(lis[0], w/2, spacer);
 	lis[1] = new CWrite(lis[1], w-w+spacer, spacer*2);
-	lis[2] = new CWrite(lis[2], w-w+spacer, spacer*3, pic[0], w-w+spacer, spacer*3);
+	lis[2] = new CIWrite(lis[2], w-w+spacer, spacer*3, pic[0], w-w+spacer, spacer*3);
 }
 function draw() {
 	background(255);
@@ -63,7 +63,7 @@ class CWrite {
 		text(this.content, this.x, this.y);
 	}
 }
-class CWrite {
+class CIWrite {
 	constructor(content, t_x, t_y, p, p_x, p_y) {
 		this.content = content;
 		this.t_x = t_x;
