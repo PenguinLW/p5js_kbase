@@ -32,11 +32,25 @@ function setup() {
 	lis[1] = new CWrite(lis[1]);
 	lis[2] = new CIWrite(lis[2], pic[0]);
 	lis[3] = new CWrite(lis[3]);
-	lis[3] = new CWrite(lis[4]);
-	lis[4] = new CIWrite(lis[5], pic[1]);
+	lis[4] = new CWrite(lis[4]);
+	lis[5] = new CIWrite(lis[5], pic[1]);
 	lis[6] = new CWrite(lis[6]);
 	tx = ty = px = py = 0;
-	for(let i = 0; i <= lis.length-1; i++) {
+	console.log(lis[0].isContT());
+	console.log(lis[1].isContT());
+	console.log(lis[2].isContT());
+	console.log(lis[3].isContT());
+	console.log(lis[4].isContT());
+	console.log(lis[5].isContT());
+	console.log(lis[6].isContT());
+	console.log(lis[0].isContP());
+	console.log(lis[1].isContP());
+	console.log(lis[2].isContP());
+	console.log(lis[3].isContP());
+	console.log(lis[4].isContP());
+	console.log(lis[5].isContP());
+	console.log(lis[6].isContP());
+	for(let i = 0; i >= lis.length-1; i++) {
 		tx = px = w/2;
 		if(lis[i].isContT()) {
 			ty += spacer/2;
