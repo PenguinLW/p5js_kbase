@@ -10,7 +10,7 @@ function preload() {
 		"По устоявшимся традициям, в теге \"head\" указаны \"строки-команды\", которые отвечают за подключение к web-странице файлов таблиц стилей (имеет расширение .css), файлов исходного кода javascript (имеет расширение .js)."+
 		"При помощи команды \"<script src=\"../script/my_app.js\"></script>\" мы сумеем подключить к нашей web-странице файл"+
 		"javascript, находящейся в директории \"script\", являющейся параллельной к директории \"index\" с содержащейся в ней web-страницей:\n"+
-		"При ином расположении директорий и файлов в Вашем проекте относительная адресация может отличаться.\n"+
+		"При ином расположении директорий и файлов в Вашем проекте относительная адресация может отличаться."+
 		"";
 	pic = ""+
 		"https://kovalsky95.github.io/p5js_kbase/resources/wiki/1.jpg\n"+
@@ -36,21 +36,7 @@ function setup() {
 	lis[5] = new CIWrite(lis[5], pic[1]);
 	lis[6] = new CWrite(lis[6]);
 	tx = ty = px = py = 0;
-	console.log(lis[0].isContT());
-	console.log(lis[1].isContT());
-	console.log(lis[2].isContT());
-	console.log(lis[3].isContT());
-	console.log(lis[4].isContT());
-	console.log(lis[5].isContT());
-	console.log(lis[6].isContT());
-	console.log(lis[0].isContP());
-	console.log(lis[1].isContP());
-	console.log(lis[2].isContP());
-	console.log(lis[3].isContP());
-	console.log(lis[4].isContP());
-	console.log(lis[5].isContP());
-	console.log(lis[6].isContP());
-	for(let i = 0; i >= lis.length-1; i++) {
+	for(let i = 0; i <= lis.length-1; i++) {
 		tx = px = w/2;
 		if(lis[i].isContT()) {
 			ty += spacer/2;
