@@ -33,7 +33,7 @@ function setup() {
 	lis[2] = new CIWrite(lis[2], pic[0]);
 	lis[3] = new CWrite(lis[3]);
 	lis[3] = new CWrite(lis[4]);
-	lis[4] = new CIWrite(lis[5]);
+	lis[4] = new CIWrite(lis[5], pic[1]);
 	lis[5] = new CWrite(lis[6]);
 	tx = ty = px = py = 0;
 	for(let i = 0; i <= lis.length-1; i++) {
