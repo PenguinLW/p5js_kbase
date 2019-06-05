@@ -39,7 +39,6 @@ function setup() {
 	for(let i = 0; i <= lis.length-1; i++) {
 		if(lis[i].isContT()) {
 			ty += spacer;
-			console.log(tx, ty);
 			lis[i].setPosition(tx, ty);
 		}
 		else if(lis[i].isContP()) {
@@ -80,6 +79,7 @@ class TWrite {
 		textSize(spacer);
 		textAlign(CENTER);
 		textStyle(NORMAL);
+		console.log(this.x, this.y);
 		text(this.content, this.x+spacer, this.y+spacer);
 	}
 }
@@ -103,6 +103,7 @@ class CWrite {
 		textSize(spacer/2);
 		textAlign(CENTER);
 		textStyle(NORMAL);
+		console.log(this.x, this.y);
 		text(this.content, this.x+spacer, this.y+spacer);
 	}
 }
