@@ -35,7 +35,7 @@ function setup() {
 	lis[5] = new CIWrite(lis[5], pic[1]);
 	lis[6] = new CWrite(lis[6]);
 	tx = w/2;
-	px = tx - spacer;
+	px = tx - spacer*10;
 	ty = py = 0;
 	for(let i = 0; i <= lis.length-1; i++) {
 		if(lis[i].isContT()) {
@@ -49,6 +49,7 @@ function setup() {
 			ty += spacer*20;
 		}
 	}
+	resizeCanvas(w, ty+spacer*2)
 }
 function draw() {
 	background(255);
