@@ -45,7 +45,7 @@ function setup() {
 		else if(lis[i].isContP()) {
 			ty += spacer/2;
 			py += ty;
-			lis.setPosition(tx, ty, px, py);
+			lis[i].setPosition(tx, ty, px, py);
 			ty += spacer;
 		}
 	}
