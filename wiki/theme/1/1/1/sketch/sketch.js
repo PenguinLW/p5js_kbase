@@ -13,7 +13,7 @@ function preload() {
 		"При ином расположении директорий и файлов в Вашем проекте относительная адресация может отличаться."+
 		"";
 	pic = ""+
-		"https://kovalsky95.github.io/p5js_kbase/resources/wiki/1.jpg\n"+
+		"https://kovalsky95.github.io/p5js_kbase/wiki/theme/1/1/1/resources/theme/index.html.jpg\n"+
 		"https://kovalsky95.github.io/p5js_kbase/resources/wiki/2.jpg\n"+
 		"https://kovalsky95.github.io/p5js_kbase/resources/wiki/3.jpg\n"+
 		"https://kovalsky95.github.io/p5js_kbase/resources/wiki/4.jpg"+
