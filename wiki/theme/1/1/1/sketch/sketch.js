@@ -15,9 +15,7 @@ function preload() {
 		"";
 	pic = ""+
 		"https://kovalsky95.github.io/p5js_kbase/wiki/theme/1/1/1/resources/theme/index_html.jpg\n"+
-		"https://kovalsky95.github.io/p5js_kbase/wiki/theme/1/1/1/resources/theme/view_dir.jpg\n"+
-		"https://kovalsky95.github.io/p5js_kbase/resources/wiki/3.jpg\n"+
-		"https://kovalsky95.github.io/p5js_kbase/resources/wiki/4.jpg"+
+		"https://kovalsky95.github.io/p5js_kbase/wiki/theme/1/1/1/resources/theme/view_dir.jpg"+
 		"";
 	pic = pic.split("\n");
 	for(let i = 0; i <= pic.length-1; i++) {
