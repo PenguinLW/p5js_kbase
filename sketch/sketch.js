@@ -127,31 +127,35 @@ function initWL() {
 				this.y = 0;
 				this.w = w-mS;
 				this.h = h;
+				this.flag = false;
 			}
 			setPosition(x, y) {
 				this.x = x;
 				this.y = y;
 			}
 			clicked(mX, mY) {
-				if((mX >= this.x && mX <= this.x+this.w)) {
-					if(mY >= this.y && mY <= this.y+this.h) {
-						let or_y;
+				this.flag = !this.flag;
+				if((mX >= this.x && mX <= this.x+this.w))
+					if(mY >= this.y && mY <= this.y+this.h)
 						sk.goLink(this.index, links[this.index]);
-						or_y = this.y;
-						for(let i = 25; i >= 0; i--) {
-							this.y += i;
-							sk.text(links[this.index], this.x+mS, this.y+mS, this.w/2, this.h/2);
-						}
-						this.y = or_y;
-						sk.text(links[this.index], this.x+mS, this.y+mS, this.w/2, this.h/2);
-					}
-				}
 			}
 			show() {
-				sk.textSize(22);
-				sk.textAlign(CENTER);
-				sk.textStyle(BOLD);
-				sk.text(links[this.index], this.x+mS, this.y+mS, this.w/2, this.h/2);
+				if(!this.flag) {
+					sk.textSize(22);
+					sk.textAlign(CENTER);
+					sk.textStyle(BOLD);
+					sk.text(links[this.index], this.x+mS, this.y+mS, this.w/2, this.h/2);
+				} else {
+					let or_y;
+					or_y = this.y;
+					for(let i = 25; i >= 0; i--) {
+						this.y += i;
+						sk.text(links[this.index], this.x+mS, this.y+mS, this.w/2, this.h/2);
+					}
+					this.y = or_y;
+					sk.text(links[this.index], this.x+mS, this.y+mS, this.w/2, this.h/2);
+					this.flag = !this.flag;
+				}
 			}
 		}
 	}
