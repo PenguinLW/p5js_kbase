@@ -258,7 +258,7 @@ function initMV(ch, title) {
 							.style("align-items", "center")
 							.style("justify-content", "center")
 							.style("background", "url(\"https://kovalsky95.github.io/p5js_kbase/resources/b/t.png\")")
-							.style("opacity", "0.7");
+							.style("opacity", "1");
 						frame_tmp.mouseClicked(sk.remove_tmpp);
 					}
 				}
@@ -425,7 +425,7 @@ function initMV(ch, title) {
 							.style("align-items", "center")
 							.style("justify-content", "center")
 							.style("background", "url(\"https://kovalsky95.github.io/p5js_kbase/resources/b/t.png\")")
-							.style("opacity", "0.7");
+							.style("opacity", "1");
 						frame_tmp.mouseClicked(sk.remove_tmpp);
 					}
 				}
@@ -547,7 +547,7 @@ function initMV(ch, title) {
 // 						.style("align-items", "center")
 // 						.style("justify-content", "center")
 // 						.style("background", "url(\"https://kovalsky95.github.io/p5js_kbase/resources/b/t.png\")")
-// 						.style("opacity", "0.7");
+// 						.style("opacity", "1");
 // 					frame_tmp.mouseClicked(sk.remove_tmpp);
 // 				}
 				sk.remove_tmpp = function() {
@@ -655,7 +655,7 @@ function initMV(ch, title) {
 							.style("align-items", "center")
 							.style("justify-content", "center")
 							.style("background", "url(\"https://kovalsky95.github.io/p5js_kbase/resources/b/t.png\")")
-							.style("opacity", "0.7");
+							.style("opacity", "1");
 						frame_tmp.mouseClicked(sk.remove_tmpp);
 						cs_sk = new p5(
 							function(cs_sk) {
