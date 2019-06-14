@@ -39,7 +39,6 @@ function showContent(index, lnk) {
 	mviewm = new p5(sketches[1], "user_page");
 }
 function initStyle() {
-	alert(parent());
 	contents.push($("body"));
 	contents[0].attr("id","content");
 	contents[0].css({
