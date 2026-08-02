@@ -4,9 +4,9 @@
 #pip install -r req.txt
 #pip freeze > req.txt
 chmod u+x *.sh *.py
-l_dir=pwd
+l_dir="$(pwd)"
 
-git config --global --add safe.directory $l_dir
+git config --global --add safe.directory "$l_dir"
 #git clone -o p5js_kbase https://github.com/PenguinLW/p5js_kbase.git
 #git config --global user.email "diana1997525@gmail.com"
 #git config --global user.name "PenguinLW"

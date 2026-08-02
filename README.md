@@ -1,2 +1,12 @@
 # p5js_kbase
-Knowledge base the library p5js of Javascript language.
+
+База примеров и учебных материалов по p5.js.
+
+- `sketch` — основной эскиз;
+- `wiki/theme` — примеры по темам;
+- `wiki/template` — шаблон примера;
+- `lib` — локальные копии p5.js, p5.sound, p5.speech и jQuery;
+- `resources` — изображения;
+- `wiki/index.html` — точка входа в базу.
+
+Библиотеки хранятся локально, чтобы примеры открывались без сети.
